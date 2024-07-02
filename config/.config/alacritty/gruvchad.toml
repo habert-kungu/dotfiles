@@ -36,10 +36,14 @@ decorations = "Full"
 decorations_theme_variant =  "Dark"
 
 [font]
+# normal.family = "Fira Code"
 
-normal.family = "Fira Code"
-bold.family = "Liberation"
-italic.family = "Roboto "
-bold_italic.family = "Liberation"
-
+normal = { family = "Firacode", style = "<string>" }
+# bold = { family = "Liberation", style = "Bold" }
+# italic = { family = "Roboto", style = "Italic" }
+bold_italic = { family = "Liberation", style = "Bold Italic" }
+bold.family = "Firacode"
+# italic.family = "Roboto "
+# bold_italic.family = "Liberation"
+#
 size = 12.0
