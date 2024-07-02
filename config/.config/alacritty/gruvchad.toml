@@ -27,7 +27,7 @@
 
 [window]
 
-opacity = 0.9
+# opacity = 0.9
 
 padding.x = 10
 padding.y = 10
@@ -39,7 +39,7 @@ decorations_theme_variant =  "Dark"
 
 normal.family = "Fira Code"
 bold.family = "Liberation"
-italic.family = "Roboto sans"
+italic.family = "Roboto "
 bold_italic.family = "Liberation"
 
 size = 12.0
