@@ -24,12 +24,12 @@ exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id export GTK_THEME=Adwaita:dark
  gaps inner 10
-gaps outer 0 
+gaps outer 0
 
 #Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
-exec_always feh --bg-fill ~/Pictures/national-park-4k-3840x2160-by-a-i-v0-g4crddfnmt9a1.webp
+exec_always feh --bg-fill ~/national-park-4k-3840x2160-by-a-i-v0-g4crddfnmt9a1.webp
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 exec_always  picom --config ~/.config/picom/picom.conf
