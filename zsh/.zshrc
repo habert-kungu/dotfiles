@@ -17,7 +17,7 @@ alias makecpp='function _makecpp() { g++ -Wall -Wextra -std=c++17 -O2 "$1" -o "$
 alias make='function _make() { if [[ "$1" == *.c ]]; then makec "$1"; elif [[ "$1" == *.(cpp|cc|cxx) ]]; then makecpp "$1"; else echo "Unsupported file type"; fi; }; _make'
 
 
-
+source ~/path/to/f-sy-h/F-Sy-H.plugin.zsh
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -135,4 +135,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+    # other plugins...
