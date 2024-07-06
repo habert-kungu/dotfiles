@@ -47,3 +47,5 @@ bold.family = "Firacode"
 # bold_italic.family = "Liberation"
 #
 size = 12.0
+[shell]
+program = "/usr/bin/zsh"

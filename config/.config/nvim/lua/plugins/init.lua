@@ -99,4 +99,19 @@ return {
       end,
     },
   },
+  {
+    "adelarsq/image_preview.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("image_preview").setup()
+    end,
+  },
+  -- Example for configuring Neovim to load user-installed installed Lua rocks:
+  -- lazy snippet
+  {
+    "3rd/image.nvim",
+    config = function()
+      -- ...
+    end,
+  },
 }

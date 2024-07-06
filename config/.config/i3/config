@@ -29,7 +29,7 @@ gaps outer 0
 #Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
-exec_always feh --bg-fill ~/national-park-4k-3840x2160-by-a-i-v0-g4crddfnmt9a1.webp
+exec_always feh --bg-fill ~/Wallpapers/national-park-4k-3840x2160-by-a-i-v0-g4crddfnmt9a1.webp
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 exec_always  picom --config ~/.config/picom/picom.conf
@@ -59,7 +59,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+m exec /opt/balena
 # bindsym $mod+b exec /opt/beekeper/Beekeeper-Studio-4.3.4.AppImage

@@ -136,3 +136,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
     # other plugins...
+    #
+    #
+alias niv='nvim $(fzf -m --preview="bat --color=always {}")'
