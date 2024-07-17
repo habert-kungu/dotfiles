@@ -139,3 +139,4 @@ unset __conda_setup
     #
     #
 alias niv='nvim $(fzf -m --preview="bat --color=always {}")'
+export PATH=$HOME/.local/bin:$PATH
