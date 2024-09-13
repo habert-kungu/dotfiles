@@ -1,0 +1,1 @@
+zsh/f-sy-h/F-Sy-H.plugin.zsh
