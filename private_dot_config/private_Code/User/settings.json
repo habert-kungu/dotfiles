@@ -1,0 +1,157 @@
+{
+  "workbench.colorTheme": "Gruvchad",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 17,
+  "editor.cursorStyle": "block",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.autohide": true,
+  "editor.lineNumbers": "relative",
+  "breadcrumbs.showNumbers": false,
+  "terminal.integrated.fontWeightBold": "bold",
+  "terminal.integrated.fontLigatures.fallbackLigatures": [
+    "<--",
+    "<---",
+    "<<-",
+    "<-",
+    "->",
+    "->>",
+    "-->",
+    "--->",
+    "<==",
+    "<===",
+    "<<=",
+    "<=",
+    "=>",
+    "=>>",
+    "==>",
+    "===>",
+    ">=",
+    ">>=",
+    "<->",
+    "<-->",
+    "<--->",
+    "<---->",
+    "<=>",
+    "<==>",
+    "<===>",
+    "<====>",
+    "::",
+    ":::",
+    "<~~",
+    "</",
+    "</>",
+    "/>",
+    "~~>",
+    "==",
+    "!=",
+    "/=",
+    "~=",
+    "<>",
+    "===",
+    "!==",
+    "!===",
+    "<:",
+    ":=",
+    "*=",
+    "*+",
+    "<*",
+    "<*>",
+    "*>",
+    "<|",
+    "<|>",
+    "|>",
+    "+*",
+    "=*",
+    "=:",
+    ":>",
+    "/*",
+    "*/",
+    "+++",
+    "<!--",
+    "<!---"
+  ],
+  "terminal.integrated.fontSize": 16,
+  "explorer.confirmDragAndDrop": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "json": true
+  },
+  "workbench.sideBar.location": "left",
+
+  //vim bindings
+  "vim.leader": "<Space>",
+  "vim.useCtrlKeys": true, // Critical for Ctrl+n to work
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    // Ctrl+n → Toggle Explorer (open/close)
+    {
+      "before": ["<C-n>"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility",
+          "args": { "viewId": "workbench.view.explorer" }
+        }
+      ]
+    },
+    // Semicolon to colon (for commands)
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+
+    // Leader + fw → Fuzzy Find words (Quick Open)
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": [""]
+    },
+    // Leader + ff → Fuzzy Find (Quick Open)
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+
+    // Leader + v → Vertical terminal in editor area (side-by-side)
+    {
+      "before": ["<leader>", "v"],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.new",
+          "args": { "location": "editor" } // Confirmed side-by-side
+        }
+      ]
+    }
+  ],
+
+  //formatting
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": null,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.navigationControl.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "chat.commandCenter.enabled": false,
+  "editor.minimap.enabled": false,
+  "workbench.statusBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "window.menuBarVisibility": "compact",
+  "workbench.activityBar.location": "hidden",
+  "explorer.confirmDelete": false
+}
