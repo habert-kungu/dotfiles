@@ -26,6 +26,7 @@ chezmoi apply
 - **Neovim**: Follow instructions at https://github.com/neovim/neovim/wiki/Installing-Neovim
 - **Kitty**: `sudo apt install kitty`
 - **i3**: `sudo apt install i3`
+- **picom**: `sudo apt install picom`
 - **tmux**: `sudo apt install tmux`
 - **fd, ripgrep, bat, fzf**:
   ```sh
