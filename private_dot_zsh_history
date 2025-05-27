@@ -1,0 +1,5057 @@
+: 1741342464:0;dj
+: 1741342467:0;cd 
+: 1741342471:0;cd Downloads
+: 1741342482:0;cd
+: 1741342546:0;sudo apt install conda
+: 1741342554:0;sudo apt install anaconda
+: 1741343395:0;git clonehttps://github.com/habert-kungu/dotfiles.git
+: 1741343400:0;git clone https://github.com/habert-kungu/dotfiles.git
+: 1741343908:0;git clone --depth1 https://github.com/habert-kungu/dotfiles.git
+: 1741343916:0;git clone --depth 1 https://github.com/habert-kungu/dotfiles.git
+: 1741344081:0;nvim .zshrc
+: 1741344183:0;sudo apt install node 
+: 1741344236:0;# Download and install nvm:\
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash\
+\
+# in lieu of restarting the shell\
+\. "$HOME/.nvm/nvm.sh"\
+\
+# Download and install Node.js:\
+nvm install 22\
+\
+# Verify the Node.js version:\
+node -v # Should print "v22.14.0".\
+nvm current # Should print "v22.14.0".\
+\
+# Verify npm version:\
+npm -v # Should print "10.9.2".\
+
+: 1741344288:0;sudo apt install python3
+: 1741344295:0;sudo apt install gcc
+: 1741344360:0;nvim .tmux.conf
+: 1741344384:0;nvim .tmux.reset.conf
+: 1741344423:0;sudo apt install xclip
+: 1741344436:0;sudo apt install x-clipboard
+: 1741344440:0;sudo apt install xclipboard
+: 1741344523:0;cd .config/i3
+: 1741344531:0;cd .config
+: 1741344532:0;ls
+: 1741344551:0;mkdir i3
+: 1741344556:0;cd i3
+: 1741344599:0;touck config
+: 1741344703:0;touch config
+: 1741344705:0;nvim
+: 1741344717:0;nvim config
+: 1741344788:0;cd 
+: 1741344790:0;ls
+: 1741344798:0;cd .config
+: 1741345023:0;cd i3
+: 1741345025:0;nvim
+: 1741345037:0;ls
+: 1741345061:0;nvim .config
+: 1741345068:0;nvim config
+: 1741345162:0;sudo pacman -S polybar
+: 1741345175:0;sudo apt install  polybar
+: 1741345187:0;cd ..
+: 1741345191:0;cd kitty
+: 1741345203:0;mkdir kitty 
+: 1741345207:0;cd kitty
+: 1741345246:0;touch kitty.conf
+: 1741345253:0;nvim  kitty.conf
+: 1741345477:0;cd 
+: 1741345483:0;cd Downloads
+: 1741345484:0;ls
+: 1741345502:0;mv # kitty.conf - Gruvchad Theme\
+\
+# Font settings\
+font_family      Fira Code\
+bold_font        auto\
+italic_font      auto\
+bold_italic_font auto\
+font_size        12.0\
+\
+# Cursor settings\
+cursor_shape     block\
+cursor_blink_interval 0.5\
+\
+# Scrollback settings\
+scrollback_lines 2000\
+\
+# Window settings\
+window_padding_width 5\
+confirm_os_window_close 0\
+\
+# Gruvchad Color Scheme\
+foreground              #ebdbb2\
+background              #282828\
+selection_foreground    #ebdbb2\
+selection_background    #458588\
+\
+# Black\
+color0                  #282828\
+color8                  #928374\
+\
+# Red\
+color1                  #cc241d\
+color9                  #fb4934\
+\
+# Green\
+color2                  #98971a\
+color10                 #b8bb26\
+\
+# Yellow\
+color3                  #d79921\
+color11                 #fabd2f\
+\
+# Blue\
+color4                  #458588\
+color12                 #83a598\
+\
+# Magenta\
+color5                  #b16286\
+color13                 #d3869b\
+\
+# Cyan\
+color6                  #689d6a\
+color14                 #8ec07c\
+\
+# White\
+color7                  #a89984\
+color15                 #ebdbb2\
+\
+# Tab bar colors\
+active_tab_foreground   #ebdbb2\
+active_tab_background   #458588\
+inactive_tab_foreground #a89984\
+inactive_tab_background #282828\
+\
+# Key bindings\
+map ctrl+shift+c copy_to_clipboard\
+map ctrl+shift+v paste_from_clipboard\
+map ctrl+shift+t new_tab\
+map ctrl+shift+w close_tab\
+map ctrl+shift+right next_tab\
+map ctrl+shift+left previous_tab
+: 1741345504:0;ls
+: 1741345541:0;sudo mv # kitty.conf - Gruvchad Theme\
+\
+# Font settings\
+font_family      Fira Code\
+bold_font        auto\
+italic_font      auto\
+bold_italic_font auto\
+font_size        12.0\
+\
+# Cursor settings\
+cursor_shape     block\
+cursor_blink_interval 0.5\
+\
+# Scrollback settings\
+scrollback_lines 2000\
+\
+# Window settings\
+window_padding_width 5\
+confirm_os_window_close 0\
+\
+# Gruvchad Color Scheme\
+foreground              #ebdbb2\
+background              #282828\
+selection_foreground    #ebdbb2\
+selection_background    #458588\
+\
+# Black\
+color0                  #282828\
+color8                  #928374\
+\
+# Red\
+color1                  #cc241d\
+color9                  #fb4934\
+\
+# Green\
+color2                  #98971a\
+color10                 #b8bb26\
+\
+# Yellow\
+color3                  #d79921\
+color11                 #fabd2f\
+\
+# Blue\
+color4                  #458588\
+color12                 #83a598\
+\
+# Magenta\
+color5                  #b16286\
+color13                 #d3869b\
+\
+# Cyan\
+color6                  #689d6a\
+color14                 #8ec07c\
+\
+# White\
+color7                  #a89984\
+color15                 #ebdbb2\
+\
+# Tab bar colors\
+active_tab_foreground   #ebdbb2\
+active_tab_background   #458588\
+inactive_tab_foreground #a89984\
+inactive_tab_background #282828\
+\
+# Key bindings\
+map ctrl+shift+c copy_to_clipboard\
+map ctrl+shift+v paste_from_clipboard\
+map ctrl+shift+t new_tab\
+map ctrl+shift+w close_tab\
+map ctrl+shift+right next_tab\
+map ctrl+shift+left previous_tab /usr/share/fonts   
+: 1741345547:0;ls
+: 1741345579:0;sudo mv JetBrains_Mono.zip /usr/share/fonts\
+
+: 1741345595:0;sudo mv Barlow,JetBrains_Mono.zip  /usr/share/fonts\
+
+: 1741345649:0;ls
+: 1741345706:0;sudo mv firacode.zip  /usr/share/fonts\
+
+: 1741345712:0;cd
+: 1741345721:0;cd /usr/share/fonts
+: 1741345723:0;ls
+: 1741345739:0;unzip JetBrains_Mono.zip 
+: 1741345747:0;sudo unzip JetBrains_Mono.zip 
+: 1741345751:0;ls
+: 1741345777:0;sudo unzip firacode.zip 
+: 1741345783:0;ls
+: 1741345796:0;sudo unzip firacode.zip 
+: 1741345821:0;unzip Barlow,JetBrains_Mono.zip 
+: 1741345849:0;sudo unzip Barlow,JetBrains_Mono.zip 
+: 1741345856:0;ls
+: 1741346043:0;cd .config
+: 1741346051:0;cd i3
+: 1741346053:0;nvim
+: 1741346105:0;sudo apt install feh
+: 1741346135:0;nvim
+: 1741346253:0;kitty
+: 1741346278:0;cd .config/polybar
+: 1741346286:0;cd .config
+: 1741346298:0;mkdir polybar
+: 1741346303:0;cd polybar
+: 1741346372:0;touch launch.sh
+: 1741346375:0;nvim
+: 1741346409:0;touch config.ini
+: 1741346411:0;nvim
+: 1741346453:0;cd ..
+: 1741346504:0;mkdir picom
+: 1741346509:0;cd picom 
+: 1741346519:0;touch picom.conf
+: 1741346521:0;nvim
+: 1741346563:0;sudo apt install picom
+: 1741346594:0;launch.sh
+: 1741346596:0;ls
+: 1741348113:0;cd .cofi
+: 1741348125:0;cd .config/i3
+: 1741348129:0;nvim
+: 1741348205:0;picom --config ~/.config/picom/picom.conf
+: 1741348234:0;brave
+: 1741348237:0;Brave
+: 1741348257:0;brave-browser
+: 1741348317:0;cd .config
+: 1741348318:0;ls
+: 1741348325:0;cd polybar
+: 1741348328:0;ls
+: 1741348418:0;chmod +x launch.sh
+: 1741348425:0;picom --config ~/.config/picom/picom.conf
+: 1741348488:0;nvim
+: 1741348781:0;cd ..
+: 1741348784:0;cd picom
+: 1741348786:0;ls
+: 1741348788:0;nvim
+: 1741348836:0;cd .config/picom
+: 1741348837:0;ls
+: 1741348868:0;picom --config ~/.config/picom/picom.conf
+: 1741348954:0;sudo apt install clipboard
+: 1741349041:0;sudo apt install xclip
+: 1741349172:0;sudo apt install xclipsudo apt install xclipsudo apt install xclip
+: 1741349175:0;picom --config ~/.config/picom/picom.conf
+: 1741349320:0;nvim
+: 1741349348:0;picom --config ~/.config/picom/picom.conf
+: 1741349410:0;pkill picom && picom --config ~/.config/picom/picom.conf -b
+: 1741349416:0;picom --config ~/.config/picom/picom.conf
+: 1741349467:0;nvim
+: 1741349500:0;picom --config ~/.config/picom/picom.conf
+: 1741349653:0;nvim
+: 1741350003:0;picom --config ~/.config/picom/picom.conf
+: 1741350265:0;sudo apt install jetbrains
+: 1741350318:0;cd ..
+: 1741350322:0;cd
+: 1741350326:0;cd Downloads
+: 1741350328:0;ls
+: 1741350350:0;mv JetBrainsMono.zip  /usr/share/fonts
+: 1741350357:0;sudo mv JetBrainsMono.zip  /usr/share/fonts
+: 1741350374:0;sudo mv RobotoMono.zip /usr/share/fonts
+: 1741350391:0;sudo mv LiberationMono.zip  /usr/share/fonts
+: 1741350396:0;cd
+: 1741350406:0;cd /usr/share/fonts
+: 1741350410:0;ls
+: 1741350428:0;sudo rm -r Barlow,JetBrains_Mono.zip
+: 1741350444:0;sudo rm -r firacode.zip
+: 1741350465:0;unzip JetBrains_Mono.zip   
+: 1741350475:0;sudo unzip JetBrains_Mono.zip   
+: 1741350480:0;ls
+: 1741350530:0;sudo unzip JetBrainsMono.zip 
+: 1741350539:0;ls
+: 1741350557:0;sudo unzip LiberationMono.zip
+: 1741350563:0;ls
+: 1741350575:0;sudo unzip RobotoMono.zip
+: 1741350623:0;cd
+: 1741350627:0;cd Downloads
+: 1741350632:0;ls
+: 1741350650:0;sudo mv FiraCode.zip /usr/share/fonts
+: 1741350662:0;sudo mv NerdFontsSymbolsOnly.zip /usr/share/fonts
+: 1741350664:0;cd
+: 1741350686:0;cd /usr/share/fonts
+: 1741350690:0;ls
+: 1741350712:0;sudo unzip NerdFontsSymbolsOnly.zip
+: 1741350739:0;sudo unzip FiraCode.zip 
+: 1741350750:0;cd
+: 1741350757:0;cd .config/kitty
+: 1741350759:0;nvim
+: 1741350804:0;ls
+: 1741350854:0;jfjf
+: 1741350857:0;ls
+: 1741350879:0;tmux
+: 1741350910:0;nvim .tmux.cong
+: 1741350915:0;nvim .tmux.conf
+: 1741350975:0;ls
+: 1741350977:0;git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+: 1741351001:0;# type this in terminal if tmux is already running\
+tmux source ~/.tmux.conf
+: 1741351119:0;https://github.com/habert-kungu/dotfiles.git
+: 1741351131:0;git clone https://github.com/habert-kungu/dotfiles.git
+: 1741351180:0;nvim
+: 1741351270:0;git clone https://github.com/habert-kungu/dotfiles.git
+: 1741351276:0;git clone git@github.com:habert-kungu/dotfiles.git
+: 1741351317:0;github auth
+: 1741351361:0;sudo apt install gh
+: 1741351385:0;gh auth login
+: 1741351460:0;git clone git@github.com:habert-kungu/dotfiles.git
+: 1741351772:0;nvim .tmux.conf
+: 1741351826:0;tmux a
+: 1741351831:0;tmux
+: 1741351941:0;nvim .tmux.conf
+: 1741352106:0;git clone https://github.com/habert-kungu/IstartKenya.git
+: 1741352217:0;git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+: 1741352232:0;nvim .zshrc
+: 1741352315:0;nvim .tmux.conf
+: 1741352350:0;git clone https://github.com/habert-kungu/IstartKenya.git istart
+: 1741352377:0;cd dotfiles
+: 1741352379:0;ls
+: 1741352385:0;cd config
+: 1741352387:0;ls
+: 1741352391:0;cd confog
+: 1741352394:0;cd config
+: 1741352395:0;ls
+: 1741352398:0;cd config
+: 1741352402:0;cd .config
+: 1741352404:0;ls
+: 1741352419:0;mv nvim ~/.config/nvim
+: 1741352422:0;nvim
+: 1741352439:0;mv nvim ~/.config/
+: 1741352452:0;ls
+: 1741352465:0;mv ~/.config/nvim .
+: 1741352467:0;ls
+: 1741352483:0;cp -r nvim ~/.config/
+: 1741352485:0;nvim
+: 1741352513:0;cd
+: 1741352519:0;cd .config/nvim
+: 1741352522:0;nvim
+: 1741352826:0;ls
+: 1741352834:0;cat init.lua
+: 1741352962:0;ls
+: 1741352973:0;cd .config/nvim
+: 1741352975:0;nvim
+: 1741353005:0;-- ~/.config/nvim/init.lua\
+\
+-- Set base46 cache path\
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"\
+\
+-- Set leader key\
+vim.g.mapleader = " "\
+\
+-- Bootstrap lazy.nvim\
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"\
+\
+if not vim.loop.fs_stat(lazypath) then\
+  local repo = "https://github.com/folke/lazy.nvim.git"\
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }\
+end\
+\
+vim.opt.rtp:prepend(lazypath)\
+\
+-- Load lazy.nvim configuration\
+local lazy_config = require "configs.lazy"\
+\
+-- Set up plugins with lazy.nvim\
+require("lazy").setup({\
+  {\
+    "NvChad/NvChad",\
+    lazy = false,\
+    branch = "v2.5",\
+    import = "nvchad.plugins",\
+  },\
+  { import = "plugins" },\
+}, lazy_config)\
+\
+-- Load base46 defaults and statusline (comment out if files are missing)\
+-- dofile(vim.g.base46_cache .. "defaults")\
+-- dofile(vim.g.base46_cache .. "statusline")\
+\
+-- Load options, autocmds, and mappings\
+require "options"\
+require "nvchad.autocmds"\
+\
+vim.schedule(function()\
+  require "mappings"\
+end)
+: 1741353006:0;nvim
+: 1741353188:0;nvim .tmux.conf
+: 1741354614:0;nvim
+: 1741354810:0;git clone https://github.com/NvChad/starter  test
+: 1741354816:0;cd test
+: 1741354817:0;nvim
+: 1741354865:0;ls
+: 1741354870:0;cat init.lua
+: 1741354906:0;nvim
+: 1741355023:0;nvi
+: 1741355030:0;nvim --version
+: 1741355045:0;sudo apt install nvim
+: 1741355054:0;sudo apt install neovim
+: 1741355099:0;curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz\
+tar xzf nvim-macos-x86_64.tar.gz\
+./nvim-macos-x86_64/bin/nvim
+: 1741355121:0;sudo apt uninstall neovim
+: 1741355172:0;sudo apt remove neovim
+: 1741355177:0;curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz\
+tar xzf nvim-macos-x86_64.tar.gz\
+./nvim-macos-x86_64/bin/nvim
+: 1741355211:0;curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz\
+sudo rm -rf /opt/nvim\
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+: 1741355222:0;nvim
+: 1741355239:0;nvim .zshrc
+: 1741355244:0;cd
+: 1741355247:0;nvim .zshrc
+: 1741355255:0;vim .zshrc
+: 1741355263:0;nano .zshrc
+: 1741355289:0;nvim
+: 1741355311:0;sudo apt-get install neovim
+: 1741355336:0;nvim --version
+: 1741355571:0;sudo add-apt-repository ppa:neovim-ppa/stable
+: 1741355893:0;python3 --version
+: 1741355899:0;sudo add-apt-repository ppa:neovim-ppa/stable
+: 1741355907:0;sudo apt install --reinstall python3-launchpadlib
+: 1741355922:0;echo "deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/neovim-ppa.list\
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 73C2AFADE2D0C929\
+sudo apt update\
+sudo apt install neovim
+: 1741355937:0;nvim --version
+: 1741355945:0;nvim
+: 1741355990:0;sudo add-apt-repository ppa:neovim-ppa/stable\
+sudo apt update
+: 1741356028:0;sudo add-apt-repository ppa:neovim-ppa/stable\
+
+: 1741356061:0;sudo apt update
+: 1741356075:0;sudo apt install neovim
+: 1741356138:0;sudo add-apt-repository ppa:neovim-ppa/stable\
+sudo apt update
+: 1741356323:0;sudo apt install ninja-build gettext cmake unzip curl
+: 1741356354:0;git clone https://github.com/neovim/neovim\
+cd neovim
+: 1741356376:0;sudo apt remove neovim
+: 1741356425:0;git clone --depth 1https://github.com/neovim/neovim\
+cd neovim
+: 1741356434:0;git clone --depth 1 https://github.com/neovim/neovim\
+cd neovim
+: 1741356459:0;make CMAKE_BUILD_TYPE=RelWithDebInfo\
+sudo make install
+: 1741356553:0;nvim --version
+: 1741356562:0;nvim
+: 1741356653:0;cd
+: 1741356655:0;wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+: 1741356676:0;cinda init 
+: 1741356682:0;conda init 
+: 1741356718:0;curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+: 1741356755:0;cd istart
+: 1741356758:0;ls
+: 1741356763:0;npm install
+: 1741356776:0;npm run dev
+: 1741356816:0;cd istart
+: 1741356823:0;npm run build
+: 1741356837:0;nvim
+: 1741356881:0;bash ~/Anaconda3-2024.10-1-Linux-x86_64.sh
+: 1741356906:0;npm run build
+: 1741356974:0;conda init 
+: 1741357001:0;evit
+: 1741357009:0;exit
+: 1741357047:0;npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch
+: 1741357053:0;cd istart
+: 1741357055:0;npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch
+: 1741357082:0;npx tailwindcss init
+: 1741357093:0;cat /home/habert/.npm/_logs/2025-03-07T14_15_06_904Z-debug-0.log
+: 1741357124:0;node -v
+: 1741357181:0;conda create env colours
+: 1741357201:0;conda config --set auto_activate_base false
+: 1741357286:0;conda create --name colours python numpy pandas matplotlib
+: 1741357293:0;nvim
+: 1741357367:0;cd .config/nvim
+: 1741357369:0;nvim
+: 1741357456:0;cd .config/nvim
+: 1741357458:0;nvim
+: 1741357612:0;sudo apt install ripgrep
+: 1741357761:0;sudo apt install python3
+: 1741357797:0;conda activate colours
+: 1741357807:0;conda deactivate
+: 1741357811:0;ls
+: 1741357855:0;tmux 
+: 1741358106:0;cd
+: 1741358109:0;cd istart
+: 1741358111:0;nvim
+: 1741358172:0;nvim .tmux.conf
+: 1741358600:0;ls
+: 1741358621:0;cd .config/kitty
+: 1741358623:0;nvim
+: 1741358653:0;ls
+: 1741358701:0;cd istart
+: 1741358703:0;nvim
+: 1741358725:0;cd
+: 1741358731:0;cd .config/nvim
+: 1741358733:0;nvim
+: 1741358994:0;nvim  .config/i3/config
+: 1741359242:0;cd .config/i3
+: 1741359245:0;nvim
+: 1741359512:0;ls
+: 1741359521:0;cd .config/i3
+: 1741359523:0;vnim
+: 1741359525:0;nvim
+: 1741359557:0;tmux a
+: 1741359686:0;cd istart
+: 1741359691:0;npm run build
+: 1741359844:0;npm install tailwindcss
+: 1741359852:0;npm run build
+: 1741359874:0;npm install npx
+: 1741359894:0;npm run build
+: 1741359962:0;nvim  .config/kitty/kitty.conf
+: 1741360067:0;ls
+: 1741360099:0;npm run build
+: 1741360121:0;npm install tailwindcss@latest
+: 1741360128:0;npm run build
+: 1741360144:0;npm install npx
+: 1741360152:0;npm run build
+: 1741360168:0;ls
+: 1741360182:0;sudo rm -r node_modules
+: 1741360192:0;npm install
+: 1741360228:0;npm run dev
+: 1741360235:0;npm run build
+: 1741360280:0;nvm install --lts
+: 1741360294:0;npm cache clean --force
+: 1741360311:0;npm install tailwindcss@latest
+: 1741360362:0;npm run build
+: 1741360582:0;npm install tailwindcss @tailwindcss/vite\
+
+: 1741360610:0;npm run build
+: 1741360707:0;npm install tailwindcss @tailwindcss/cli\
+
+: 1741360810:0;npm run build
+: 1741361109:0;npm run dev
+: 1741361225:0;npm run build
+: 1741361432:0;ls
+: 1741361547:0;rm -r dist
+: 1741361572:0;npm run build
+: 1741362004:0;npm run dev
+: 1741362039:0;cd
+: 1741362052:0;sudo rm -r istart
+: 1741362076:0;cd
+: 1741362106:0;git clone https://github.com/habert-kungu/IstartKenya.git
+: 1741362125:0;sudo rm -r IstartKenya
+: 1741362135:0;git clone https://github.com/habert-kungu/IstartKenya.git istart
+: 1741362149:0;cd istart
+: 1741362154:0;npm install
+: 1741362166:0;;q
+: 1741362167:0;cd
+: 1741362169:0;cd istart
+: 1741362178:0;nvim
+: 1741362224:0;npm install -D tailwindcss @tailwindcss/cli\
+
+: 1741362314:0;npm run dev
+: 1741362331:0;npm run build
+: 1741362431:0;npm run dev
+: 1741362727:0;npm run build
+: 1741363559:0;npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741363577:0;npm run dev
+: 1741364391:0;npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741364798:0;rm -r dist
+: 1741364811:0;mkdir dist
+: 1741364924:0;npx tailwindcss -i /src/input.css -o /src/output.css --watch
+: 1741364956:0;npm run build
+: 1741365546:0;npm install -D postcss autoprefixer
+: 1741365601:0;npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch
+: 1741365619:0;npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741365634:0;npm run dev
+: 1741365702:0;npm install -D @tailwindcss/postcss
+: 1741365710:0;npm run dev
+: 1741365785:0;npm install -D @tailwindcss/postcss
+: 1741365811:0;npm run dev
+: 1741366315:0;npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741366354:0;npm build dev 
+: 1741366372:0;npm run build
+: 1741366376:0;npm build dev 
+: 1741366382:0;npm run dev
+: 1741366393:0;npm run build  
+: 1741366462:0;npm run dev
+: 1741366626:0;npm run build  
+: 1741367050:0;npm run dev
+: 1741367104:0;npm run build  
+: 1741367113:0;npm run dev
+: 1741367151:0;npm run build  
+: 1741367170:0;npm install
+: 1741367175:0;npm run build  
+: 1741367319:0;npm install -D  tailwindcss @tailwindcss/postcss postcss\
+
+: 1741367444:0;npm rundev
+: 1741367449:0;npm run dev
+: 1741367525:0;npm install -D  flowbite
+: 1741367594:0;cd .config/i3
+: 1741367596:0;nvim
+: 1741367757:0;sudo apt install rofi
+: 1741367898:0;shut down
+: 1741367907:0;shutdown now
+: 1741367912:0;reboot
+: 1741376449:0;cd test
+: 1741376451:0;nvim
+: 1741376697:0;cd .config/i3
+: 1741376699:0;nvim
+: 1741377826:0;cd i
+: 1741377831:0;cd istart
+: 1741377841:0;npm run dev
+: 1741377880:0;cd istart
+: 1741377882:0;nvim
+: 1741377986:0;cd istart
+: 1741377988:0;tree
+: 1741377997:0;sudo apt install tree
+: 1741378014:0;tree
+: 1741378032:0;ls  tree
+: 1741378036:0;tree ls
+: 1741378040:0;tree
+: 1741378048:0;cp tree
+: 1741378055:0;cp -r tree
+: 1741378401:0;npm run build
+: 1741378456:0;npm install -D postcss-cli 
+: 1741378491:0;npm run build
+: 1741379172:0;npm run dev
+: 1741394363:0;tmux
+: 1741394366:0;nvim .tmux.conf
+: 1741394376:0;cd istartcp
+: 1741394392:0;cd istart
+: 1741394395:0;cd
+: 1741394401:0;cd istartcp
+: 1741394407:0;cd istart
+: 1741394418:0;nvim
+: 1741394433:0;cd
+: 1741394435:0;cd istart
+: 1741394442:0;git add .
+: 1741394468:0;git commit -m fixing npx bug"
+: 1741394473:0;git commit -m" fixing npx bug"
+: 1741394570:0;git push origin main
+: 1741394637:0;gh auth login
+: 1741394709:0;git push origin main
+: 1741395348:0;npm run dev
+: 1741395381:0;npm run build
+: 1741395601:0;sudo apt install webstorm
+: 1741395843:0;npm install -D tailwindcss @tailwindcss/vite\
+
+: 1741395952:0;npm install -D flowbite\
+
+: 1741396064:0;npm run dev
+: 1741396191:0;nvimOAOA
+: 1741396505:0;npm install -D tailwindcss postcss autoprefixer\
+npx tailwindcss init -p
+: 1741396560:0;npm install -D tailwindcss postcss autoprefixer
+: 1741396578:0;\
+npx tailwindcss init -p
+: 1741396609:0;âƒ¾ƒ¼  istart git:(main) âƒ¼ƒ·                                  âƒ´‚  run `npm fund` for details\
+npx tailwindcss init -p                                 âƒ´‚\
+npm error could not determine executable to run         âƒ´‚found 0 vulnerabilities\
+npm error A complete log of this run can be found in: /hâƒ´‚âƒ¾ƒ¼  istart git:(main) âƒ¼ƒ· \
+ome/habert/.npm/_logs/2025-03-08T01_16_18_603Z-debug-0.lâƒ´‚\
+og                       
+: 1741396635:0;npm install -g npm\
+
+: 1741396660:0;npm uninstall tailwindcss postcss autoprefixer\
+npm install -D tailwindcss postcss autoprefixer
+: 1741396674:0;npx tailwindcss@latest init -p
+: 1741396696:0;npx --no-global tailwindcss init -p
+: 1741397032:0;npm run build
+: 1741397069:0;tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741397091:0;npm install -D tailwindcss
+: 1741397107:0;tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741397116:0;npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+: 1741397148:0;npm run buil
+: 1741397150:0;npm run build
+: 1741397185:0;npm install -D tailwindcss-cli
+: 1741397216:0;npm install tailwindcss @tailwindcss/cli\
+
+: 1741397258:0;npm run build
+: 1741397268:0;npm run dev
+: 1741397357:0;npm run build
+: 1741397938:0;git add .
+: 1741397975:0;git commit -m" fixing tailwind css bugs manually"
+: 1741397978:0;git push origin main
+: 1741398069:0;npm run build
+: 1741398318:0;git add .
+: 1741398327:0;git commit -m" fixing tailwind css bugs"
+: 1741398332:0;git push origin main
+: 1741511623:0;ls
+: 1741511626:0;tmux
+: 1741511630:0;nvim .tmux.conf
+: 1741511632:0;cd istart
+: 1741511635:0;cd
+: 1741511645:0;cd istart
+: 1741511648:0;ls
+: 1741511651:0;nvim
+: 1741511689:0;cd istart
+: 1741511703:0;npm rundev
+: 1741511706:0;npm run dev
+: 1741512219:0;npm run buid
+: 1741512227:0;npm run build
+: 1741512257:0;npm install -D  @tailwindcss/cli\
+
+: 1741512272:0;npm install
+: 1741512290:0;npm run build
+: 1741513523:0;cd .config/i3
+: 1741513525:0;nvim
+: 1741513560:0;ls
+: 1741513567:0;cd .config/kitty
+: 1741513569:0;nvim
+: 1741513625:0;cd /usr/share/fonts
+: 1741513626:0;ls
+: 1741513705:0;cd .tmux.conf
+: 1741513712:0;nvim .tmux.conf
+: 1741513823:0;ls
+: 1741513905:0;cd .tmux.reset.conf
+: 1741513919:0;cd .tmux.conf.reset
+: 1741513928:0;nvim.tmux.reset.conf
+: 1741513932:0;nvim .tmux.reset.conf
+: 1741513965:0;ls
+: 1741514045:0;cd /usr/share/fonts
+: 1741514047:0;ls
+: 1741514139:0;cd /usr/share/fonts
+: 1741514141:0;nvim
+: 1741514160:0;ls
+: 1741514434:0;kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+: 1741514498:0;kitty @ set-font --ligatures 1
+: 1741514503:0;kitty @ set-font --ligatures 
+: 1741514535:0;kitty @ set-font enable-ligatures 
+: 1741514588:0;kitty @ disable-ligatures never
+: 1741514643:0;cd .config/kitty
+: 1741514644:0;nvim
+: 1741514726:0;ls
+: 1741514730:0;]
+: 1741514736:0;cd istart
+: 1741514739:0;ls
+: 1741514759:0;=>
+: 1741514775:0;cd
+: 1741514779:0;nvim
+: 1741514792:0;cd istart
+: 1741514796:0;nvim
+: 1741515175:0;tmux a
+: 1741515178:0;tmux 
+: 1741515181:0;nvim .tmux.conf
+: 1741515298:0;fzf
+: 1741515309:0;sudo apt install fzf
+: 1741515334:0;fzf
+: 1741515375:0;q
+: 1741515413:0;nvim .tmux.conf
+: 1741515542:0;sudo apt install bat
+: 1741515594:0;tmux kill server
+: 1741515598:0;tmux
+: 1741515623:0;nvim .tmux.conf
+: 1741515702:0;ls
+: 1741515793:0;nvim .tmux.conf
+: 1741515811:0;nvim .tmux.reset.conf
+: 1741516605:0;1
+: 1741516607:0;ls
+: 1741516621:0;sudo rm -r istart
+: 1741516631:0;git clone https://github.com/habert-kungu/IstartKenya.git istart
+: 1741517666:0;sudo apt install anytype
+: 1741517675:0;sudo apt install notion
+: 1741519849:0;tmux
+: 1741519853:0;ls
+: 1741523259:0;cd
+: 1741523280:0;nvim .tmux.reset.conf
+: 1741523357:0;ls
+: 1741523466:0;nvim .config/i3/cinfig
+: 1741523473:0;nvim .config/i3/config
+: 1741523646:0;pactl set-sink-volume @DEFAULT_SINK@ +10%
+: 1741523648:0;pactl set-sink-mute @DEFAULT_SINK@ toggle
+: 1741523670:0;sudo usermod -aG audio $USER
+: 1741523676:0;pactl set-sink-mute @DEFAULT_SINK@ toggle
+: 1741523679:0;pactl set-sink-volume @DEFAULT_SINK@ +10%
+: 1741523687:0;sudo apt install pactl
+: 1741524014:0;pulseaudio --check\
+
+: 1741524022:0;sudo apt update\
+sudo apt install pulseaudio
+: 1741524042:0;sudo apt update\
+sudo apt install alsa-base alsa-utils
+: 1741524219:0;sudo nano /etc/apt/sources.list
+: 1741524231:0;sudo nvim /etc/apt/sources.list
+: 1741524351:0;sudo apt update\
+sudo apt install alsa-base alsa-utils
+: 1741524430:0;nvim /etc/apt/sources.list
+: 1741524498:0;ls /etc/apt/sources.list.d/
+: 1741524510:0;cd  /etc/apt/sources.list.d/
+: 1741524512:0;ls
+: 1741524525:0;rm -r neovim-ppa.list
+: 1741524534:0;sudo rm -r neovim-ppa.list
+: 1741524538:0;cd
+: 1741524544:0;sudo apt update\
+sudo apt install alsa-base alsa-utils
+: 1741524580:0;cd  /etc/apt/sources.list.d/
+: 1741524581:0;ls
+: 1741524605:0;sudo rm -r google-chrome.list~  neovim-ppa-ubuntu-stable-bookworm.list
+: 1741524618:0;sudo apt update\
+sudo apt install alsa-base alsa-utils
+: 1741524674:0;sudo apt update
+: 1741524708:0;sudo apt install alsa-base alsa-utils
+: 1741524757:0;cd
+: 1741524759:0;sudo apt install alsa-utils pulseaudio pavucontrol
+: 1741524845:0;cd .config/nvim
+: 1741524848:0;nvim
+: 1741525105:0;ls
+: 1741525107:0;cd
+: 1741525139:0;aplay -l
+: 1741525156:0;amixer set Master 50%\
+
+: 1741525169:0;pavucontrol
+: 1741525201:0;nvim .config/i3/config
+: 1741525915:0;pavucontrol
+: 1741526076:0;pactl set-sink-mute @DEFAULT_SINK@ toggle
+: 1741526714:0;npm create vite@latest
+: 1741526796:0;npm install tailwindcss @tailwindcss/vite
+: 1741526845:0;npm install 
+: 1741526917:0;cd kenya
+: 1741526921:0;nvim
+: 1741527064:0;npm install yarn
+: 1741527427:0;my-tailwind-project/\
+âƒ´ƒ¼âƒ´€âƒ´€ dist/                    # Output folder (auto-generated by Vite)\
+âƒ´ƒ¼âƒ´€âƒ´€ src/                     # Source files\
+âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ assets/              # Static assets\
+âƒ´‚   âƒ´‚   âƒ´ƒ´âƒ´€âƒ´€ logo.png\
+âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ styles/              # CSS files\
+âƒ´‚   âƒ´‚   âƒ´ƒ´âƒ´€âƒ´€ main.css\
+âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ js/                  # JavaScript files\
+âƒ´‚   âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ main.js          # Shared or index-specific JS\
+âƒ´‚   âƒ´‚   âƒ´ƒ´âƒ´€âƒ´€ about.js         # JS for about page (optional)\
+âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ pages/               # Folder for HTML files\
+âƒ´‚   âƒ´‚   âƒ´ƒ¼âƒ´€âƒ´€ index.html       # Main page\
+âƒ´‚   âƒ´‚   âƒ´ƒ´âƒ´€âƒ´€ about.html       # Additional page\
+âƒ´ƒ¼âƒ´€âƒ´€ package.json\
+âƒ´ƒ¼âƒ´€âƒ´€ vite.config.js           # Updated for multi-page support\
+âƒ´ƒ¼âƒ´€âƒ´€ tailwind.config.js       # Same as before\
+âƒ´ƒ´âƒ´€âƒ´€ README.md
+: 1741527489:0;rm -r kenya
+: 1741527499:0;yarn create vite
+: 1741527509:0;sudo apt install yarn
+: 1741527528:0;yarn create vite
+: 1741527544:0;yarn --v
+: 1741527547:0;yarn --version
+: 1741527575:0;node install bun
+: 1741527582:0;sudo apt install yarn
+: 1741527606:0;yarn create vite@latest
+: 1741527615:0;npm create vite@latest
+: 1741527688:0;npm install
+: 1741527702:0;npm install --global yarn\
+
+: 1741527709:0;npm install --global bun\
+
+: 1741527727:0;cd istart
+: 1741527728:0;nvim
+: 1741527739:0;cd kenys
+: 1741527742:0;cd kenya
+: 1741527776:0;nvim
+: 1741527853:0;cp -r istart/public   kenya/src/
+: 1741528537:0;npm install -D tailwindcss @tailwindcss/cli\
+
+: 1741539920:0;ls
+: 1741539934:0;npm run dev
+: 1741539980:0;npm run build
+: 1741540290:0;npx @tailwindcss/cli -i ./src/styles/main.css -o ./dist/output.css --watch
+: 1741580964:0;cd
+: 1741580985:0;rm -r CarePulse
+: 1741581005:0;git clone https://github.com/habert-kungu/CarePulse.git carepulse
+: 1741581034:0;cd
+: 1741581038:0;rm -r kenya
+: 1741581045:0;npm create vite@latest 
+: 1741581079:0;npm install
+: 1741581094:0;cd .config/nvim
+: 1741581095:0;nvim
+: 1741581237:0;cd
+: 1741581241:0;cd kenya
+: 1741581242:0;nvim
+: 1741581303:0;cd
+: 1741581305:0;cd kenya
+: 1741581312:0;npm run dev
+: 1741581330:0;npm install tailwindcss @tailwindcss/cli\
+
+: 1741581338:0;npm install -D tailwindcss @tailwindcss/cli\
+
+: 1741581767:0;cd
+: 1741581769:0;cd kenya
+: 1741581774:0;npm run dev
+: 1741581839:0;npx @tailwindcss/cli -i ./src/style.css -o ./src/output.css --watch\
+
+: 1741581988:0;lsof -i :5173
+: 1741582008:0;npx kill-port 5173
+: 1741582049:0;npm run dev
+: 1741582374:0;tmux a
+: 1741582379:0;npm install -D tailwindcss postcss autoprefixer
+: 1741582458:0;npx tailwindcss init -p
+: 1741582704:0;npm run dev
+: 1741582708:0;npx live-server
+: 1741583477:0;cd
+: 1741583479:0;rm 
+: 1741583483:0;rm -r kenya
+: 1741583491:0;npm init vite@latest kenya
+: 1741583505:0;cd kenya
+: 1741583510:0;npm install 
+: 1741583721:0;npm install -D tailwindcss postcss autoprefixer
+: 1741583748:0;npx tailwindcss init -p\
+
+: 1741583817:0;npx tailwindcss init -p
+: 1741583827:0;npm install -g npm
+: 1741583851:0;npx tailwindcss init -p
+: 1741583864:0;sudo npx tailwindcss init -p
+: 1741583881:0;/home/habert/.npm/_logs/2025-03-10T05_15_48_895Z-debug-0.log
+: 1741583889:0;sudo /home/habert/.npm/_logs/2025-03-10T05_15_48_895Z-debug-0.log
+: 1741583905:0;/home/habert/.npm/_logs/2025-03-10T05_15_48_895Z-debug-0.log
+: 1741583909:0;node -v
+: 1741583914:0;npm -v
+: 1741583940:0;npx tailwindcss init -p
+: 1741584293:0;nvim
+: 1741584334:0;npm run dev
+: 1741584340:0;npm install
+: 1741584382:0;cd
+: 1741584385:0;cd kenya
+: 1741584395:0;npm install
+: 1741584436:0;npm run dev
+: 1741584469:0;npm install -D tailwindcss postcss autoprefixer
+: 1741584478:0;npx tailwindcss init -p
+: 1741584809:0;npx @tailwindcss/cli -i ./src/style.css -o ./src/output.css --watch\
+
+: 1741584813:0;cd
+: 1741584815:0;cd kenya
+: 1741584817:0;npx @tailwindcss/cli -i ./src/style.css -o ./src/output.css --watch\
+
+: 1741584862:0;npm run dev
+: 1741585181:0;cd
+: 1741585184:0;rm -r kenya
+: 1741585237:0;ccd
+: 1741585238:0;cd
+: 1741585240:0;cd istart
+: 1741585249:0;npm run dev
+: 1741586107:0;git add .
+: 1741586132:0;git commit -m" addidng styles and routing for navbar "
+: 1741586138:0;git push origin main
+: 1741586644:0;git add src/components/navbar.html\
+git commit -m "Add navbar component"\
+git push origin main
+: 1741586664:0;git add .\
+git commit -m "Add navbar component"\
+git push origin main
+: 1741586999:0;git add .\
+git commit -m "Add navbar componentto the public folder"\
+git push origin main
+: 1741588620:0;git log
+: 1741588723:0;git revert commit 31bb1fa22a1360978689bf42928b1fefd877fcc2
+: 1741588757:0;git revert 31bb1fa22a1360978689bf42928b1fefd877fcc2\
+
+: 1741588791:0;git add .\
+git commit -m "Add navbar componentfolder"\
+git push origin main
+: 1741588842:0;cd istart
+: 1741588845:0;git revert 31bb1fa22a1360978689bf42928b1fefd877fcc2\
+
+: 1741588855:0;ls
+: 1741588915:0;cd
+: 1741588923:0;sudo rm -r istart
+: 1741589203:0;cd istart
+: 1741589213:0;ls
+: 1741589223:0;cd
+: 1741589239:0;git clone https://github.com/habert-kungu/IstartKenya.git istart
+: 1741589253:0;cd istart
+: 1741589254:0;nvim
+: 1741589290:0;git log -- src/pages/about.html
+: 1741589299:0;cd istart
+: 1741589300:0;git log -- src/pages/about.html
+: 1741589326:0;git log
+: 1741589373:0;git restore public/components/about.html
+: 1741589376:0;ls
+: 1741589461:0;npm run dev
+: 1741589463:0;cd
+: 1741589465:0;cd istart
+: 1741589467:0;cd
+: 1741589469:0;cd istart
+: 1741589471:0;npm run dev
+: 1741589797:0;git add .
+: 1741589823:0;git commit -m" adding vervel and routing to the navnar  "
+: 1741589829:0;git push origin main
+: 1741589968:0;git add .
+: 1741589982:0;git commit -m""
+: 1741589986:0;git commit -m" "
+: 1741589992:0;git commit -m"navbar "
+: 1741589997:0;git push origin main
+: 1741590198:0;git add .
+: 1741590203:0;git commit -m"navbar "
+: 1741590207:0;git push origin main
+: 1741590693:0;git add .
+: 1741590704:0;git commit -m"adding vercel.json "
+: 1741590708:0;git push origin main
+: 1741590767:0;git add .
+: 1741590777:0;git commit -m"removing vercel.json "
+: 1741590781:0;git push origin main
+: 1741591320:0;vite build
+: 1741591323:0;ls
+: 1741591329:0;nnpm run build
+: 1741591334:0;npm run build
+: 1741591443:0;OA
+: 1741591445:0;npm run build
+: 1741591738:0;git add .
+: 1741591764:0;git commit -m"build for production and added vite config "
+: 1741591771:0;git push origin main
+: 1741591823:0;npm run build
+: 1741591841:0;npm run dev
+: 1741591890:0;npm install --save-dev vite
+: 1741591918:0;git add package.json package-lock.json\
+git commit -m "Add vite as devDependency"\
+git push
+: 1741592542:0;npm run dev
+: 1741593347:0;git add .
+: 1741593365:0;git commit -m"adding mobile toggle  "
+: 1741593371:0;git pushourgin main
+: 1741593376:0;git push origin main
+: 1741593401:0;git pull origin main
+: 1741593425:0;git config pull.rebase false
+: 1741593435:0;git push origin main
+: 1741593440:0;git config pull.rebase false
+: 1741593445:0;git merge 
+: 1741593468:0;git push origin main
+: 1741606129:0;tmux
+: 1741606134:0;cd istart
+: 1741606144:0;nvim
+: 1741606216:0;npm run dev
+: 1741608481:0;cd test
+: 1741608484:0;nvim
+: 1741608524:0;npm start live-server
+: 1741608532:0;ls
+: 1741608545:0;live-server navbar.html
+: 1741608627:0;live-server
+: 1741608634:0;npm install -g live-server
+: 1741608664:0;live-server navbar.html
+: 1741609593:0;nvim
+: 1741609600:0;git add .
+: 1741609617:0;git commit -m"adding mobile toggle and making it responsive "
+: 1741609622:0;git push origin main
+: 1741609982:0;npm i @vercel/speed-insights
+: 1741610032:0;git add .
+: 1741610049:0;git commit -m"adding speed insights "
+: 1741610053:0;git push origin main
+: 1741612190:0;cd
+: 1741612195:0;cd careplus
+: 1741612207:0;cd carepulse
+: 1741612219:0;ls
+: 1741612221:0;cd
+: 1741612223:0;cd carepulse
+: 1741612225:0;ls
+: 1741612232:0;nvim
+: 1741612247:0;nvim .env.local
+: 1741612299:0;cd .config/rofi
+: 1741612302:0;cd .config
+: 1741612307:0;mkdir rofi
+: 1741612311:0;cd rofi
+: 1741612384:0;touch config.rasi
+: 1741612386:0;nvim
+: 1741614028:0;ls
+: 1741614041:0;npm run dev
+: 1741614048:0;npm install
+: 1741614229:0;npm run dev
+: 1741614350:0;cd
+: 1741614353:0;cd carepulse
+: 1741614359:0;nvim
+: 1741626520:0;npx shadcn-ui@latest add radio
+: 1741628703:0;npx shadcn@latest add radio-group\
+
+: 1741628782:0;sudo apt install gnome-screenshot
+: 1741631795:0;npx shadcn@latest add select\
+
+: 1741633421:0;npm install react-datepicker --save\
+
+: 1741634633:0;npx shadcn@latest add select\
+
+: 1741634651:0;npx shadcn@latest add textarea checkbox\
+
+: 1741636501:0;nvim
+: 1741636513:0;git add .
+: 1741636545:0;git commit -m"Add register: personal info section "
+: 1741636550:0;git push origin main
+: 1741637149:0;;q
+: 1741754391:0;tmux
+: 1741754395:0;cd carepulse
+: 1741754397:0;nvim
+: 1741754548:0;cd carepulse
+: 1741754556:0;npm install
+: 1741754569:0;npm run dev
+: 1741754991:0;npx shadcn@latest add radio-group\
+
+: 1741755404:0;npm run dev
+: 1741764971:0;nvim
+: 1741765323:0;npm run dev
+: 1741766532:0;npx shadcn@latest add textarea\
+
+: 1741768505:0;npm install react-dropzone
+: 1741768525:0;npm install --save react-dropzone
+: 1741771199:0;npx shadcn@latest add textarea\
+
+: 1741771208:0;npx shadcn@latest add checkbox\
+
+: 1741772214:0;git add .
+: 1741772229:0;npm run dev
+: 1741772276:0;git add .
+: 1741772440:0;git commit -m "add registration ui on the registration page and added responsiveness"
+: 1741772445:0;git push origin main
+: 1741781256:0;npm run dev
+: 1741782354:0;nvim .tmux.conf
+: 1741782390:0;;q:
+: 1741782394:0;exit
+: 1741782425:0;npm run dev
+: 1741784884:0;cd carepulse
+: 1741784889:0;npm run dev
+: 1741787564:0;nvim .env.local
+: 1741790998:0;cd Downloads
+: 1741791001:0;ls
+: 1741791008:0;cd standard_ca0779b40615e2aed6967726ad315ab5b2fd9c1c70368b08c5b9e5e7845db15c848e8061cf587f8f6f6f53d49b15c38a3c000a770106ca3930b3b4c3aa6bf4ecf23a6139a3e7063ff5bb317392c14dfafc50809bdba4c6683708468fce451803529158d3dccaa489a1fc06e6fe20cadf29a0e9f1506aa39a9d6dcf43f5a54cde
+: 1741791017:0;cd WebStorm-2024.3.4
+: 1741791019:0;ls
+: 1741791027:0;cd WebStorm-243.25659.40
+: 1741791028:0;ls
+: 1741791033:0;cd bin
+: 1741791034:0;ls
+: 1741791044:0;./webstorm.sh
+: 1741791164:0;cd Downloads
+: 1741791165:0;ls
+: 1741791191:0;sudo tar -xzf WebStorm-2024.3.4.tar.gz -C /opt
+: 1741791230:0;sudo nano /usr/share/applications/webstorm.desktop
+: 1741791259:0;sudo nvim /usr/share/applications/webstorm.desktop
+: 1741791461:0;sudo chmod +x /usr/share/applications/webstorm.desktop
+: 1741791573:0;cd /opt
+: 1741791574:0;ls
+: 1741791594:0;mv WebStorm-243.25659.40 Webstorm
+: 1741791601:0;sudo mv WebStorm-243.25659.40 Webstorm
+: 1741791605:0;ls
+: 1741791614:0;cd WebStorm
+: 1741791625:0;cd Webstorm
+: 1741791626:0;ls
+: 1741791633:0;cd bin
+: 1741791635:0;ls
+: 1741791638:0;pwd
+: 1741791650:0;./webstorm.sh
+: 1741791663:0;pwd
+: 1741791787:0;sudo nvim /usr/share/applications/webstorm.desktop
+: 1741792264:0;tmux a
+: 1741798467:0;npm run dev
+: 1741811343:0;shutdown now
+: 1741811357:0;sudo apt install shutdown 
+: 1741811368:0;sudo apt install shutdown now
+: 1741834158:0;tmux
+: 1741834165:0;cd carepulse
+: 1741834168:0;nvim
+: 1741834173:0;cd carepulse
+: 1741834180:0;npm run dev
+: 1741835947:0;git add .
+: 1741835971:0;git commit -m "add registration functionality  and redirect"
+: 1741835976:0;git push origin main
+: 1741846850:0;tmux
+: 1741846882:0;cd carepulse
+: 1741846884:0;nvim
+: 1741846890:0;cd carepulse
+: 1741846894:0;npm run dev
+: 1741851368:0;tmux a
+: 1741858627:0;npm run dev
+: 1741866004:0;cd carepulse
+: 1741866008:0;nvim .env.local
+: 1741866066:0;https://github.com/adrianhajdin/healthcare.git 
+: 1741866072:0;git clone https://github.com/adrianhajdin/healthcare.git
+: 1741866100:0;cp -r  .env.local  ~/healthcare
+: 1741866110:0;cd healthcare
+: 1741866115:0;npm install
+: 1741866122:0;nvim
+: 1741866130:0;cd healthcare
+: 1741866132:0;nvim
+: 1741866368:0;npm run dev
+: 1741866716:0;nvim
+: 1741866720:0;npm run dev
+: 1741922810:0;npm install 
+: 1741926643:0;cd 
+: 1741926646:0;cd healthcare
+: 1741926652:0;npm run dev
+: 1741926832:0;cd healthcare
+: 1741926835:0;nvim .env.local
+: 1741927033:0;npm run dev
+: 1741927502:0;cd
+: 1741927505:0;cd healthcare
+: 1741927508:0;nvim
+: 1741928577:0;cd
+: 1741928579:0;cd carepulse
+: 1741928584:0;npm run dev
+: 1741929290:0;;q
+: 1741929292:0;cd
+: 1741929304:0;sudo rm - carepulse 
+: 1741929317:0;sudo rm -r carepulse 
+: 1741929327:0;cd
+: 1741929330:0;sudo rm -r carepulse 
+: 1741929347:0;sudo rm -r healthcare
+: 1741929355:0;;
+: 1741929356:0;qcd
+: 1741929357:0;cd
+: 1741929358:0;c
+: 1741929363:0;cd
+: 1741932490:0;git clone https://github.com/habert-kungu/CarePulse.git
+: 1741932507:0;https://github.com/habert-kungu/CarePulse.git carepulse
+: 1741932513:0;git clone https://github.com/habert-kungu/CarePulse.git carepulse
+: 1741932530:0;cd carepulse
+: 1741932532:0;nvim
+: 1741932547:0;cd carepulse
+: 1741932583:0;npm run dev
+: 1741932591:0;npm install
+: 1741932623:0;nvim
+: 1741932636:0;cd carepulse
+: 1741932644:0;npm install
+: 1741932665:0;npm run dev
+: 1741933157:0;cd carepulse
+: 1741933159:0;npm run dev
+: 1741933439:0;git clone https://github.com/adrianhajdin/healthcare.git healthcare
+: 1741933448:0;cd
+: 1741933451:0;cd carepulse
+: 1741933457:0;ls -a
+: 1741933477:0;cd healthcare
+: 1741933479:0;ls -a
+: 1741933487:0;rm -e .git 
+: 1741933497:0;rm -r .git 
+: 1741933505:0;sudo rm -r /git
+: 1741933510:0;sudo rm -r .git
+: 1741933551:0;cp ~/.carepulse/.git .
+: 1741933561:0;cp -r  ~/.carepulse/.git .
+: 1741933572:0;cd
+: 1741933574:0;cd carepulse
+: 1741933580:0;ls -a
+: 1741933595:0;mv .git ~/carepulse
+: 1741933608:0;mv -r  .git ~/carepulse
+: 1741933616:0;sudo cp  -r  .git ~/carepulse
+: 1741933623:0;nvim
+: 1741933637:0;cd
+: 1741933639:0;cd healthcare
+: 1741933643:0;nvim
+: 1741933692:0;cd healthcare
+: 1741933729:0;mv .git 
+: 1741933746:0;cd
+: 1741933751:0;cd carepulse
+: 1741933760:0;cd carepulse ~/healthcare
+: 1741933768:0;cd carepulse healthcare
+: 1741933792:0;mv ~/carepulse/.git 
+: 1741933800:0;mv ~/carepulse/.git .
+: 1741933803:0;nvim
+: 1741933828:0;git add .
+: 1741933857:0;git commit -m "add admin sentury and twilio "
+: 1741933860:0;git push origin main
+: 1741934215:0;git add .
+: 1741934231:0;git commit -m "updating readme  "
+: 1741934235:0;git push origin main
+: 1741934300:0;git add .
+: 1741934304:0;git commit -m "updating readme  "
+: 1741934306:0;git push origin main
+: 1741934353:0;cd
+: 1741934360:0;cd healthcare
+: 1741934364:0;npm install
+: 1741934437:0;cd healthcare
+: 1741934439:0;nvim
+: 1741934455:0;cat .env.local
+: 1741934459:0;ls -a
+: 1741934472:0;cd carepulse 
+: 1741934475:0;ls -a
+: 1741934494:0;npm run dev
+: 1741935169:0;npm run build
+: 1741935392:0;cd
+: 1741935394:0;cd healthcare
+: 1741935415:0;nvim
+: 1741935619:0;npx @sentry/wizard@latest -i nextjs --saas --org habertkungu --project javascript-nextjs
+: 1741935669:0;npm run build
+: 1741935908:0;npx @sentry/wizard@latest -i nextjs --saas --org habertkungu --project javascript-nextjs
+: 1741936441:0;cd
+: 1741936451:0;sudo rm -r carepulse
+: 1741936462:0;sudo rm -r healthcare
+: 1741936472:0;cd
+: 1741936475:0;cd healthcare
+: 1741937035:0;git clone https://github.com/habert-kungu/subtrack.git
+: 1741937044:0;cd subtrack
+: 1741937054:0;npm install
+: 1741937062:0;cd subtrack
+: 1741937064:0;nvim
+: 1741938483:0;cd
+: 1741938486:0;cd 
+: 1741938490:0;ls
+: 1741938506:0;cd .config/nvim
+: 1741938518:0;nvim
+: 1741939111:0;cd
+: 1741939123:0;sudo apt install go
+: 1741939419:0;cd Downloads
+: 1741939421:0;ls
+: 1741939423:0;$ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz\
+
+: 1741939431:0;rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz\
+
+: 1741939452:0;sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz\
+
+: 1741939463:0;go --version
+: 1741939474:0;export PATH=$PATH:/usr/local/go/bin
+: 1741939509:0;go --version
+: 1741939524:0;nvim .zshrc
+: 1741939566:0;go --version
+: 1741939586:0;go -v
+: 1741939589:0;go --version
+: 1741939603:0;go version
+: 1741939610:0;tmux 
+: 1741939624:0;nvim .config/nvim
+: 1741939631:0;cd .config/nvim
+: 1741939632:0;nvim
+: 1741939642:0;cd testing 
+: 1741939645:0;cd test
+: 1741939647:0;nvi
+: 1741939649:0;nvim
+: 1741941541:0;go get -u github.com/segmentio/golines
+: 1741941563:0;go install  github.com/segmentio/golines
+: 1741941583:0;go install  github.com/segmentio/golines@latest
+: 1741941651:0;go install  incu6us/homebrew-tap/goimports-reviser
+: 1741941658:0;go install  incu6us/homebrew-tap/goimports-reviser@latest
+: 1741941692:0;go install -v github.com/incu6us/goimports-reviser/v3@latest
+: 1741942371:0;ls
+: 1741942380:0;go run hello.go
+: 1741945234:0;cd
+: 1741945249:0;cd test
+: 1741945252:0;cd
+: 1741945256:0;rm -r test 
+: 1741945268:0;sudo rm -r test
+: 1741945273:0;ls
+: 1741946087:0;cd go
+: 1741946088:0;ls
+: 1741946089:0;cd
+: 1741959945:0;tmux a
+: 1741959959:0;go mod init hello
+: 1741959976:0;go mod init example/hello
+: 1741959989:0;ls
+: 1741960001:0;rm -e go.mod
+: 1741960014:0;rm -r go.mod
+: 1741960059:0;go mod init example/hello
+: 1741960065:0;ls
+: 1741960071:0;nvim go.mod
+: 1741960084:0;rm -r go.mod
+: 1741960091:0;mkdir testing
+: 1741960095:0;cd testing
+: 1741960101:0;go mod init example/hello
+: 1741960119:0;nvim
+: 1741960138:0;cd testing
+: 1741960148:0;go mod init hello
+: 1741960360:0;ls
+: 1741960369:0;go run hello.go
+: 1741961679:0;go get rsc.io/quote
+: 1741961709:0;go run hello.go
+: 1741961785:0;go mod tidy
+: 1741961798:0;go run .
+: 1741962702:0;neofetch
+: 1741962712:0;sudo apt install neofetch
+: 1741962787:0;man ls
+: 1741962816:0;neofetch
+: 1741963038:0;sudo apt install ansible
+: 1741963916:0;ansible
+: 1741965170:0;npm install typescript
+: 1741965179:0;npm -g  install typescript
+: 1741965239:0;npm install -g typescript
+: 1741967210:0;nvim
+: 1741967736:0;sudo apt install alacritty
+: 1741967791:0;ls
+: 1741967803:0;cd nvim
+: 1741967811:0;cd testing
+: 1741967813:0;nvim
+: 1742180763:0;cd
+: 1742183449:0;cd subtrack
+: 1742269386:0;mkdir wholesale && cd wholesale 
+: 1742269437:0;tmux 
+: 1742269448:0;cd
+: 1742269454:0;cd wholesale
+: 1742269457:0;nvim
+: 1742269465:0;cd wholesale
+: 1742269466:0;nvim
+: 1742289344:0;sudo apt upgrade
+: 1742294288:0;sudo apt install spidermonkey
+: 1742294298:0;sudo apt install spider monkey
+: 1742294306:0;sudo apt install spider monke
+: 1742294982:0;git clone https://github.com/habert-kungu/data-structures-algorithms.git dsa
+: 1742294989:0;cd dsa
+: 1742294995:0;l
+: 1742294999:0;sls
+: 1742295000:0;ls
+: 1742295023:0;mkdir control arrays linked-list
+: 1742295024:0;ls
+: 1742295054:0;touch arrays/while.js
+: 1742295063:0;tmux kill server
+: 1742295068:0;tmux
+: 1742295074:0;nvim
+: 1742295080:0;cd dsa
+: 1742295103:0;gir add .
+: 1742295107:0;git add .
+: 1742295123:0;git commit -m "updating directory struct "
+: 1742295128:0;git push origin main
+: 1742295339:0;cd control
+: 1742295343:0;ls
+: 1742295371:0;node while.js
+: 1742296475:0;node factorial.js
+: 1742297161:0;node void.js
+: 1742297567:0;node factorial.js
+: 1742298407:0;node object.js
+: 1742356664:0;cd /arrays
+: 1742356669:0;cd -
+: 1742356676:0;cd arrays
+: 1742356683:0;node add.js
+: 1742357545:0;node words.js
+: 1742357553:0;node word.js
+: 1742359905:0;ls
+: 1742359915:0;node aggregate.js
+: 1742361122:0;ls
+: 1742361126:0;node aggregate.js
+: 1742361132:0;node slc.js
+: 1742363245:0;ls
+: 1742363251:0;node square.j
+: 1742363253:0;node square.js
+: 1742363803:0;node even .js
+: 1742363810:0;node even.js
+: 1742364390:0;ls
+: 1742364398:0;node reducer.js
+: 1742368756:0;ls
+: 1742368766:0;node map.js
+: 1742370183:0;ls
+: 1742370190:0;node filter.js
+: 1742400509:0;tmux 
+: 1742400518:0;cd dsa
+: 1742400520:0;nvim
+: 1742400527:0;cd dsa
+: 1742400911:0;cd arrays
+: 1742400914:0;pwd
+: 1742401287:0;node multi.js
+: 1742401726:0;node multi.ts
+: 1742401778:0;node headmap.ts
+: 1742448128:0;npx create-next-app@latest
+: 1742448377:0;cd healthcare
+: 1742448379:0;nvim
+: 1742448390:0;cd healthcare
+: 1742448398:0;npm install 
+: 1742448516:0;npm run dev
+: 1742452614:0;\
+npm install tailwindcss @tailwindcss/postcss postcss
+: 1742453498:0;npm install tailwindcss-animate
+: 1742454143:0;npx shadcn@latest init\
+
+: 1742454290:0;npx shadcn@latest add button\
+
+: 1742456559:0;mv healthcare 
+: 1742456561:0;nvim
+: 1742458454:0;cd Downloads
+: 1742458455:0;ls
+: 1742458493:0;sudo unzip lexend.zip /usr/share/fonts
+: 1742458503:0;sudo unzip lexend.zip /usr/share/fonts/
+: 1742458510:0;sudo unzip lexend.zip ~/usr/share/fonts/
+: 1742458516:0;cd /usr
+: 1742458518:0;cd 
+: 1742458521:0;cd Downloads
+: 1742458529:0;sudo unzip lexend.zip ~/usr/share/font
+: 1742458538:0;cd /usr/share
+: 1742458539:0;ls
+: 1742458543:0;cd fonts
+: 1742458545:0;ls
+: 1742458598:0;unzip -l lexend.zip
+: 1742458630:0;sudo unzip lexend.zip -d /usr/share/fonts/
+: 1742458654:0;cd
+: 1742458665:0;cd .config/kitty
+: 1742458666:0;nvim
+: 1742458696:0;cd 
+: 1742458702:0;cd /usr/share/fonts
+: 1742458703:0;ls
+: 1742458735:0;cd lexend
+: 1742458738:0;ls
+: 1742458767:0;cd Lexend
+: 1742458769:0;ls
+: 1742458818:0;mv Lexend-VariableFont_wght.ttf  /usr/share/fonts
+: 1742458824:0;sudo mv Lexend-VariableFont_wght.ttf  /usr/share/fonts
+: 1742458828:0;ls
+: 1742458831:0;cd
+: 1742458841:0;sudo rm -r Lexend 
+: 1742458857:0;cd /usr/share/fonts
+: 1742458860:0;s
+: 1742458863:0;sudo rm -r Lexend 
+: 1742458866:0;pikaboo
+: 1742458870:0;sudo rm -r Lexend 
+: 1742458876:0;ls
+: 1742458925:0;cd
+: 1742458927:0;ls
+: 1742459134:0;cd
+: 1742459137:0;cd healthcare
+: 1742459139:0;nvim
+: 1742459316:0;npx shadcn@latest add navbar\
+
+: 1742460019:0;git clone https://github.com/adrianhajdin/healthcare.git care
+: 1742460032:0;cd care
+: 1742460033:0;nvim
+: 1742470815:0;jj
+: 1742470817:0;ls
+: 1742470823:0;ranger
+: 1742470831:0;sudo pacman -S ranger
+: 1742470847:0;sudo apt install ranger
+: 1742470869:0;ranger
+: 1742471109:0;r
+: 1742471109:0;ranger
+: 1742471125:0;npm install @headlessui/react
+: 1742478384:0;npm uninstall @headlessui/react
+: 1742478390:0;\\ 
+: 1742478536:0;npx shadcn@latest add dropdown-menu\
+
+: 1742479165:0;npm install @headlessui/react
+: 1742480199:0;npx create-strapi-app@latest
+: 1742481685:0;cd Admin
+: 1742481695:0;npm run develop
+: 1742482000:0;cd -
+: 1742482004:0;ks
+: 1742482005:0;ls
+: 1742482087:0;cd
+: 1742483007:0;tmux
+: 1742483032:0;cd healthcare
+: 1742483034:0;nvim
+: 1742483052:0;cd healthcare
+: 1742483060:0;npx create-strapi-app@latest
+: 1742483065:0;ls
+: 1742483081:0;cd grocery_admin
+: 1742483084:0;npm run develop
+: 1742483095:0;npm run dev
+: 1742483097:0;cd
+: 1742483107:0;sudo rm -r  grocery_admin
+: 1742483117:0;npx create-strapi-app@latest
+: 1742483425:0;mv healthcare grocery
+: 1742483430:0;cd -
+: 1742483431:0;mv healthcare grocery
+: 1742483582:0;cd grocery
+: 1742483586:0;git init 
+: 1742483602:0;git config --global init.defaultBranch main
+: 1742483614:0;git add .
+: 1742483652:0;git commit -m "the initial config for grogery store  "
+: 1742483664:0;git remote add url https://github.com/habert-kungu/grocery-wholesales.git
+: 1742483671:0;git pull origin main
+: 1742483720:0;git pul
+: 1742483722:0;git remote add origin https://github.com/habert-kungu/grocery-wholesales.git
+: 1742483728:0;git pull origin main
+: 1742483755:0;git config pull.rebase false
+: 1742483765:0;git pull origin main
+: 1742483823:0;git merge --allow unrelated-histories
+: 1742483845:0;git push origin master:main --force
+: 1742483964:0;git pull origin main
+: 1742483991:0;cd strapi_grocery\
+
+: 1742484002:0;npm run develop
+: 1742484026:0;npm run develop --debug
+: 1742484035:0;cd strapi_grocery\
+
+: 1742484036:0;nvim
+: 1742484240:0;ls -a
+: 1742484248:0;nvim .env
+: 1742484292:0;npm run develop --debug
+: 1742484339:0;npm run develop 
+: 1742485899:0;npm run develop --debug
+: 1742486945:0;ccd
+: 1742486946:0;cd
+: 1742486954:0;cd grocery
+: 1742486965:0;git branch -M main
+: 1742486977:0;git branch 
+: 1742487443:0;nvim
+: 1742487569:0;\
+git remote add origin https://github.com/habert-kungu/strapi-grocery-admin.git
+: 1742487598:0;git add .
+: 1742487711:0;git commit -m "Add base config     implemented strapi base config for the grocery store  "
+: 1742487729:0;git push origin main
+: 1742487776:0;cd
+: 1742487778:0;cd grocery
+: 1742487779:0;nvim
+: 1742487852:0;git remote add origin https://github.com/habert-kungu/strapi-grocery-admin.git
+: 1742487864:0;git branch -M main\
+git push -u origin main
+: 1742548389:0;tmux
+: 1742548594:0;cd dsa
+: 1742548596:0;nvim
+: 1742550027:0;cd dsa
+: 1742550029:0;ls
+: 1742550035:0;cd arrays
+: 1742550038:0;ls
+: 1742550047:0;cd multudimensional
+: 1742550055:0;cd multidimensional
+: 1742550072:0;node column.js
+: 1742550123:0;ls
+: 1742550197:0;node column.js
+: 1742550201:0;q
+: 1742550333:0;node column.js
+: 1742550381:0;q
+: 1742550448:0;node column.js
+: 1742552695:0;cd -
+: 1742552703:0;cd leetcode
+: 1742552705:0;ld
+: 1742552706:0;ls
+: 1742552713:0;cd multidimensional
+: 1742552717:0;cd leetcode
+: 1742552720:0;ls
+: 1742552733:0;node twosum.js
+: 1742559792:0;tmux a
+: 1742825822:0;ls
+: 1742825826:0;tmux
+: 1742825837:0;ls
+: 1742825840:0;cd grocery
+: 1742825842:0;nvim
+: 1742825905:0;cd grocery
+: 1742825913:0;npm run dev
+: 1742842476:0;dc
+: 1742842476:0;cd
+: 1742842479:0;ls
+: 1742842486:0;cd testing
+: 1742842488:0;nvim
+: 1742842761:0;cd
+: 1742842764:0;cd testing
+: 1742842766:0;ls
+: 1742842778:0;node user.ts
+: 1742876902:0;tmux a
+: 1742876905:0;tmux 
+: 1742876910:0;cd grocery
+: 1742876912:0;nvi
+: 1742876914:0;nvim
+: 1742876918:0;cd grocery
+: 1742876922:0;npm run dev
+: 1742876928:0;cd strapi_grocery\
+
+: 1742876938:0;nvim
+: 1742876948:0;cd strapi_grocery\
+
+: 1742876954:0;npm run develop
+: 1742903046:0;npm install axios
+: 1742906201:0;ls
+: 1742906203:0;cd care
+: 1742906205:0;nvim
+: 1742910053:0;ls -a
+: 1742910068:0;nvim .env.local
+: 1742911482:0;npm run dev
+: 1742968405:0;tmux 
+: 1742968413:0;cd care
+: 1742968419:0;nvim
+: 1742968430:0;cd care
+: 1742968438:0;npm install
+: 1742968487:0;npm audit fix
+: 1742968729:0;npm audit fix --force
+: 1742968774:0;npm run dev
+: 1742968788:0;nom install
+: 1742968794:0;npm install
+: 1742968869:0;npm run dev
+: 1742968964:0;ls -a
+: 1742968978:0;touch .env.local
+: 1742968983:0;nvim .env.local
+: 1742969101:0;git init
+: 1742969104:0;git add .
+: 1742969108:0;git remote add origin https://github.com/habert-kungu/healthcare.git\
+git branch -M main\
+git push -u origin main
+: 1742969118:0;git add .
+: 1742969146:0;git commit -m "Push final code for healthare "
+: 1742969150:0;git push origin main
+: 1742969386:0;git add .
+: 1742969403:0;git commit -m "Modifying readme  "
+: 1742969406:0;git push origin main
+: 1742969508:0;git add .
+: 1742969516:0;git commit -m ""
+: 1742969521:0;git commit -m " "
+: 1742969528:0;git commit -m "Modifying readme  "
+: 1742969531:0;git push origin main
+: 1742969871:0;npm run dev
+: 1742972990:0;cd grocery
+: 1742972992:0;nvim
+: 1742973421:0;npm run dev
+: 1742983893:0;tmux kill server
+: 1742983902:0;tmux kill-server
+: 1742983905:0;tmux
+: 1742983923:0;git clone https://github.com/Watcher1223/AI_jobs.git jobs
+: 1742985245:0;cd jobs
+: 1742985247:0;nvim
+: 1742985300:0;cd jobs
+: 1742985302:0;ls
+: 1742985309:0;cd client
+: 1742985315:0;cd -
+: 1742985320:0;cd ..
+: 1742985324:0;cd server
+: 1742985389:0;node setup.js
+: 1742985398:0;cd ..
+: 1742985400:0;node setup.js
+: 1742985406:0;npm install
+: 1742985544:0;ls -a
+: 1742985556:0;nvim .env
+: 1742985584:0;ls -a
+: 1742985731:0;npm start
+: 1742985737:0;npm install 
+: 1742985886:0;npm start
+: 1742985930:0;cd jobs
+: 1742985931:0;node setup.js
+: 1742985937:0;ls
+: 1742985947:0;node setup.cjs
+: 1742985982:0;npm start
+: 1742985989:0;cd
+: 1742985991:0;cd jobs
+: 1742985996:0;cd server
+: 1742986060:0;cd
+: 1742986063:0;cd jobs
+: 1742986078:0;ls
+: 1742986081:0;ls -a
+: 1742986087:0;nvim .env
+: 1742986112:0;cd ..
+: 1742986114:0;ls
+: 1742986116:0;ls -a
+: 1742986121:0;nvim .env
+: 1742986167:0;cd server
+: 1742986176:0;npm start
+: 1742986410:0;cd
+: 1742986418:0;sudo rm -r jobs
+: 1742986433:0;cd
+: 1742986618:0;;
+: 1742986624:0;git clone https://github.com/habert-kungu/AI_jobs.git
+: 1742986633:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1742986645:0;cd jobs
+: 1742986648:0;ls
+: 1742986656:0;nvim
+: 1742986725:0;cd jobs
+: 1742986748:0;https://github.com/habert-kungu/AI_jobs
+: 1742986755:0;node setup.js
+: 1742986764:0;node setup.cjs
+: 1742986791:0;cd server
+: 1742986811:0;ls -a
+: 1742986815:0;nvim .env
+: 1742986838:0;npm start
+: 1742986845:0;cd client
+: 1742986848:0;cd ..
+: 1742986851:0;cd client
+: 1742986861:0;npm run dev
+: 1742986921:0;npm install
+: 1742986937:0;npm run dev
+: 1742987191:0;npm install
+: 1742987224:0;cd ..
+: 1742987228:0;npm run dev
+: 1742987238:0;cd client
+: 1742987239:0;npm run dev
+: 1742987934:0;ls
+: 1742987945:0;npm run dev
+: 1742991057:0;tmux 
+: 1742991065:0;cd jobs
+: 1742991069:0;nvim
+: 1742991076:0;cd jobs
+: 1742991078:0;ls
+: 1742991080:0;cd serve
+: 1742991080:0;r
+: 1742991080:0;cd serve
+: 1742991083:0;cd server
+: 1742991087:0;npm start
+: 1742991091:0;cd ..
+: 1742991095:0;cd client 
+: 1742991101:0;npm run start
+: 1742991107:0;npm run dev
+: 1742997225:0;npm install autoprefixer --save-dev
+: 1742997294:0;npm run dev
+: 1742997349:0;npm install tailwindcss @tailwindcss/postcss postcss
+: 1742997427:0;npm run dev
+: 1742997559:0;;q
+: 1742997569:0;cd
+: 1742997572:0;sudo rm -r jobs
+: 1742997617:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1742997636:0;cd jobs
+: 1742997638:0;nvim
+: 1742997642:0;cd jobs
+: 1742997646:0;ls
+: 1742997653:0;node setup.cjs
+: 1742997677:0;ls
+: 1742997686:0;ls -a
+: 1742997697:0;cd server
+: 1742997704:0;npm star
+: 1742997706:0;npm start
+: 1742997714:0;cd client
+: 1742997717:0;cd ..
+: 1742997723:0;cd server 
+: 1742997728:0;cd ./client
+: 1742997744:0;cd ../client
+: 1742997752:0;ls
+: 1742997772:0;npm run dev
+: 1742998415:0;npm install
+: 1742998435:0;npm run dev
+: 1743002476:0;cd ..
+: 1743002484:0;git add .
+: 1743002573:0;git commit -m "Resolve TSConfckParseError in Vite build\
+Vite failed to scan deps due to missing tsconfig.node.json.\
+Added it with minimal Node settings. Also synced tsconfig.app.json. "
+: 1743002576:0;git push origin main
+: 1743004345:0;git lof
+: 1743004348:0;git log
+: 1743004484:0;ls
+: 1743004488:0;cd ..
+: 1743004493:0;git log 
+: 1743004630:0;cd ..
+: 1743004633:0;git log 
+: 1743004646:0;git reset --hard <git reset --hard <commit-hash>
+: 1743004656:0;[200~ 75d963b6ae5c34bba6023e1b8bbf1532110d830f
+: 1743004657:0;~
+: 1743004663:0;cd jobs
+: 1743004679:0;git reset --hard < 75d963b6ae5c34bba6023e1b8bbf1532110d830f\
+>
+: 1743004691:0;git reset --hard < 75d963b6ae5c34bba6023e1b8bbf1532110d830f>
+: 1743004699:0;git reset --hard <75d963b6ae5c34bba6023e1b8bbf1532110d830f>
+: 1743004778:0;git reset --hard 75d963b6ae5c34bba6023e1b8bbf1532110d830f
+: 1743004788:0;git log --oneline
+: 1743004817:0;nvim
+: 1743005569:0;ls
+: 1743005573:0;node setup.cjs
+: 1743005619:0;cd client
+: 1743005625:0;npm install
+: 1743005672:0;npm run dev
+: 1743006331:0;ls
+: 1743006367:0;cd client
+: 1743006368:0;ls
+: 1743006378:0;rm -r node_modules
+: 1743006385:0;cd ..
+: 1743006389:0;cd server
+: 1743006393:0;rm -r node_modules
+: 1743006396:0;ls
+: 1743006410:0;rm -r package-lock.json 
+: 1743006414:0;cd .
+: 1743006417:0;cd ..
+: 1743006435:0;node setup.cjs
+: 1743006489:0;nvim .env
+: 1743006498:0;cd ../server
+: 1743006501:0;nvim .env
+: 1743006991:0;node setup.cjs
+: 1743010046:0;npm run dev
+: 1743011774:0;gir add .
+: 1743011794:0;git commit -m "Resolve TSConfckParseError in Vite build\
+Vite failed to scan deps due to missing tsconfig.node.json.\
+Added it with minimal Node settings. Also synced tsconfig.app.json. and modifiesd the readme "
+: 1743011811:0;git add .
+: 1743011814:0;git commit -m "Resolve TSConfckParseError in Vite build\
+Vite failed to scan deps due to missing tsconfig.node.json.\
+Added it with minimal Node settings. Also synced tsconfig.app.json. and modifiesd the readme "
+: 1743011818:0;git push origin main
+: 1743011847:0;git pull origin main
+: 1743011878:0;git config pull.rebase false
+: 1743011881:0;git pull origin main
+: 1743012066:0;git add .
+: 1743012073:0;git commit
+: 1743012090:0;git push origin main
+: 1743012325:0;npm install
+: 1743013251:0;npm install --save react react-dom\
+npm install --save-dev @types/react @types/react-dom
+: 1743013358:0;npm install --save react react-dom react-router\
+npm install --save-dev @types/react @types/react-dom
+: 1743013448:0;npm run dev
+: 1743013511:0;npm install --save react react-dom react-router\
+npm uninstall --save-dev @types/react @types/react-dom
+: 1743013521:0;npm run dev
+: 1743013580:0;cd client
+: 1743013585:0;npm run dev
+: 1743013688:0;cd care
+: 1743013690:0;nvim
+: 1743013828:0;npm install react react-helmet
+: 1743013990:0;npm install 
+: 1743014027:0;npm install sooner
+: 1743014176:0;npm install --save react react-dom react-helmet sooner  @types/react @types/react-dom
+: 1743017715:0;git add .
+: 1743017738:0;git commit -m"removing merging error "
+: 1743017741:0;git push origin main
+: 1743017833:0;node -v
+: 1743018227:0;cd
+: 1743018231:0;sudo rm -r jobs
+: 1743018251:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1743018261:0;cd
+: 1743018263:0;cd jobs
+: 1743018266:0;nvim
+: 1743018273:0;cd jobs
+: 1743018275:0;ls
+: 1743018279:0;node setup.cjs
+: 1743018306:0;ls
+: 1743018314:0;cd client 
+: 1743018316:0;ls
+: 1743018325:0;npm run dev
+: 1743044458:0;cd jobs
+: 1743044461:0;tmux
+: 1743044469:0;nvum
+: 1743044471:0;nvim
+: 1743044480:0;cd server
+: 1743044491:0;cd jobs/server
+: 1743044506:0;cd ../client
+: 1743044513:0;npm run dev
+: 1743044535:0;npm start
+: 1743045819:0;cd Downloads
+: 1743045822:0;ls
+: 1743045852:0;tar -xf  postman-linux-x64.tar.gz\
+
+: 1743045858:0;ls
+: 1743045876:0;cd Postman
+: 1743045877:0;ls
+: 1743045885:0;./Postman
+: 1743045901:0;cd 
+: 1743045904:0;cd Downloads
+: 1743045919:0;cd /opt
+: 1743045920:0;ls
+: 1743045947:0;mv Postman /opt
+: 1743045952:0;sudo mv Postman /opt
+: 1743045959:0;ls
+: 1743046066:0;cd
+: 1743046090:0;sudo nano /usr/share/applications/postman.desktop
+: 1743046187:0;cd Postman
+: 1743046190:0;ld
+: 1743046191:0;l
+: 1743046191:0;sls
+: 1743046193:0;ls
+: 1743046195:0;cd Postman
+: 1743046203:0;ls
+: 1743046208:0;cd app
+: 1743046209:0;ls
+: 1743046239:0;cd icons
+: 1743046240:0;ls
+: 1743046276:0;sudo nano /usr/share/applications/postman.desktop
+: 1743047028:0;node setup.cjs
+: 1743047039:0;cd ..
+: 1743047054:0;cd jobs
+: 1743047056:0;node setup.cjs
+: 1743047480:0;cd .config/nvim
+: 1743047482:0;nvim
+: 1743049611:0;cd
+: 1743049612:0;curl -fsSL https://deno.land/install.sh | sh
+: 1743051962:0;npm start
+: 1743054452:0;cd Downloads
+: 1743054454:0;ls
+: 1743054472:0;./ Cursor-0.47.9-x86_64.AppImage  
+: 1743054485:0;chmod +x  Cursor-0.47.9-x86_64.AppImage  
+: 1743054493:0;./Cursor-0.47.9-x86_64.AppImage  
+: 1743054618:0;./Cursor.AppImage  
+: 1743054649:0;sudo mv Cursor.AppImage  /opt
+: 1743054671:0;sudo nano /usr/share/applications/cursor.desktop
+: 1743055497:0;npm install -D @types/react @types/react-dom @types/node @vitejs/plugin-react-swc react-dropzone @types/react-dropzone
+: 1743055512:0;npm install -D @types/vitest @types/testing-library__jest-dom
+: 1743056620:0;cd ..
+: 1743056622:0;nvim
+: 1743056669:0;cd jobs/client
+: 1743056679:0;npm install -D @types/vitest @types/testing-library__jest-dom
+: 1743056744:0;sudo nano /usr/share/applications/cursor.desktop
+: 1743056810:0;npm run dev
+: 1743056835:0;cd ../server
+: 1743056839:0;npm start
+: 1743057897:0;npm run dev
+: 1743058387:0;cd
+: 1743058594:0;ls
+: 1743058599:0;sudo rm -r jobs
+: 1743058606:0;cd
+: 1743059686:0;sudo apt install ghostty
+: 1743059717:0;echo 'deb http://download.opensuse.org/repositories/home:/clayrisser:/bookworm/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:clayrisser:bookworm.list\
+curl -fsSL https://download.opensuse.org/repositories/home:clayrisser:bookworm/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_clayrisser_bookworm.gpg > /dev/null\
+sudo apt update\
+sudo apt install ghostty
+: 1743060342:0;tmux
+: 1743060370:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1743060379:0;cd jobs
+: 1743061053:0;git add .
+: 1743061066:0;git commit -m"adding readme "
+: 1743061070:0;git push origin main
+: 1743062401:0;1
+: 1743062407:0;cd jobs
+: 1743062408:0;1
+: 1743062413:0;cd jobs
+: 1743062419:0;cd client 
+: 1743062421:0;npm run dev
+: 1743062435:0;cd ..
+: 1743062444:0;node setup.cjs
+: 1743062466:0;npm run dev
+: 1743062506:0;cd  jobs
+: 1743062508:0;nvim
+: 1743063268:0;cd server
+: 1743063270:0;ls
+: 1743063279:0;npm start
+: 1743064113:0;cd ../cl
+: 1743064117:0;cd ../client
+: 1743064121:0;npm install
+: 1743066756:0;cd jobs
+: 1743066758:0;nvim
+: 1743066917:0;npm install eslint-plugin-react --save-dev
+: 1743066972:0;npm install eslint --save-dev
+: 1743067045:0;sudo mv jobs/clients ~
+: 1743067072:0;sudo mv jobs/client ~
+: 1743067078:0;cd client 
+: 1743067100:0;cd ../clientcd
+: 1743067100:0;cd
+: 1743067120:0;sudo mv jobs/public ~client
+: 1743067126:0;sudo mv jobs/public ~client/
+: 1743067129:0;ls
+: 1743067138:0;cd client
+: 1743067140:0;nvim
+: 1743067428:0;npm install --save-dev eslint-config-prettier
+: 1743067460:0;npm install
+: 1743067467:0;npx depcheck
+: 1743067619:0;* eslint-config-prettier\
+Missing dependencies\
+* tailwindcss: ./tailwind.config.ts\
+* tailwindcss-animate: ./tailwind.config.ts\
+* vite: ./vite.config.ts\
+* @vitejs/plugin-react-swc: ./vite.config.ts\
+* lovable-tagger: ./vite.config.ts\
+* react: ./src/App.tsx\
+* react-router-dom: ./src/App.tsx\
+* sonner: ./src/App.tsx\
+* react-dom: ./src/main.tsx\
+* jspdf: ./src/utils/pdfGeneration.ts\
+* jspdf-autotable: ./src/utils/pdfGeneration.ts\
+* lucide-react: ./src/pages/Index.tsx\
+* react-helmet: ./src/pages/Privacy.tsx\
+* date-fns: ./src/pages/dashboard/Applications.tsx\
+* zod: ./src/pages/auth/ResetPassword.tsx\
+* react-hook-form: ./src/pages/auth/ResetPassword.tsx\
+* @hookform/resolvers: ./src/pages/auth/ResetPassword.tsx\
+* clsx: ./src/lib/utils.ts\
+* tailwind-merge: ./src/lib/utils.ts\
+* @supabase/supabase-js: ./src/integrations/supabase/client.ts\
+* @stripe/stripe-js: ./src/integrations/stripe/client.ts\
+* @radix-ui/react-accordion: ./src/components/ui/accordion.tsx\
+* @radix-ui/react-alert-dialog: ./src/components/ui/alert-dialog.tsx\
+* class-variance-authority: ./src/components/ui/alert.tsx\
+* @radix-ui/react-aspect-ratio: ./src/components/ui/aspect-ratio.tsx\
+* @radix-ui/react-avatar: ./src/components/ui/avatar.tsx\
+* @radix-ui/react-slot: ./src/components/ui/breadcrumb.tsx\
+* react-day-picker: ./src/components/ui/calendar.tsx\
+* embla-carousel-react: ./src/components/ui/carousel.tsx\
+* recharts: ./src/components/ui/chart.tsx\
+* @radix-ui/react-checkbox: ./src/components/ui/checkbox.tsx\
+* @radix-ui/react-collapsible: ./src/components/ui/collapsible.tsx\
+* @radix-ui/react-dialog: ./src/components/ui/command.tsx\
+* cmdk: ./src/components/ui/command.tsx\
+* @radix-ui/react-context-menu: ./src/components/ui/context-menu.tsx\
+* vaul: ./src/components/ui/drawer.tsx\
+* @radix-ui/react-dropdown-menu: ./src/components/ui/dropdown-menu.tsx\
+* @radix-ui/react-label: ./src/components/ui/form.tsx\
+* @radix-ui/react-hover-card: ./src/components/ui/hover-card.tsx\
+* input-otp: ./src/components/ui/input-otp.tsx\
+* @radix-ui/react-menubar: ./src/components/ui/menubar.tsx\
+* @radix-ui/react-navigation-menu: ./src/components/ui/navigation-menu.tsx\
+* @radix-ui/react-popover: ./src/components/ui/popover.tsx\
+* @radix-ui/react-progress: ./src/components/ui/progress.tsx\
+* @radix-ui/react-radio-group: ./src/components/ui/radio-group.tsx\
+* react-resizable-panels: ./src/components/ui/resizable.tsx\
+* @radix-ui/react-scroll-area: ./src/components/ui/scroll-area.tsx\
+* @radix-ui/react-select: ./src/components/ui/select.tsx\
+* @radix-ui/react-separator: ./src/components/ui/separator.tsx\
+* @radix-ui/react-slider: ./src/components/ui/slider.tsx\
+* next-themes: ./src/components/ui/sonner.tsx\
+* @radix-ui/react-switch: ./src/components/ui/switch.tsx\
+* @radix-ui/react-tabs: ./src/components/ui/tabs.tsx\
+* @radix-ui/react-toast: ./src/components/ui/toast.tsx\
+* @radix-ui/react-toggle-group: ./src/components/ui/toggle-group.tsx\
+* @radix-ui/react-toggle: ./src/components/ui/toggle.tsx\
+* @radix-ui/react-tooltip: ./src/components/ui/tooltip.tsx\
+* @stripe/react-stripe-js: ./src/components/payment/PaymentProcessor.tsx\
+
+: 1743067628:0;npm install * eslint-config-prettier\
+Missing dependencies\
+* tailwindcss: ./tailwind.config.ts\
+* tailwindcss-animate: ./tailwind.config.ts\
+* vite: ./vite.config.ts\
+* @vitejs/plugin-react-swc: ./vite.config.ts\
+* lovable-tagger: ./vite.config.ts\
+* react: ./src/App.tsx\
+* react-router-dom: ./src/App.tsx\
+* sonner: ./src/App.tsx\
+* react-dom: ./src/main.tsx\
+* jspdf: ./src/utils/pdfGeneration.ts\
+* jspdf-autotable: ./src/utils/pdfGeneration.ts\
+* lucide-react: ./src/pages/Index.tsx\
+* react-helmet: ./src/pages/Privacy.tsx\
+* date-fns: ./src/pages/dashboard/Applications.tsx\
+* zod: ./src/pages/auth/ResetPassword.tsx\
+* react-hook-form: ./src/pages/auth/ResetPassword.tsx\
+* @hookform/resolvers: ./src/pages/auth/ResetPassword.tsx\
+* clsx: ./src/lib/utils.ts\
+* tailwind-merge: ./src/lib/utils.ts\
+* @supabase/supabase-js: ./src/integrations/supabase/client.ts\
+* @stripe/stripe-js: ./src/integrations/stripe/client.ts\
+* @radix-ui/react-accordion: ./src/components/ui/accordion.tsx\
+* @radix-ui/react-alert-dialog: ./src/components/ui/alert-dialog.tsx\
+* class-variance-authority: ./src/components/ui/alert.tsx\
+* @radix-ui/react-aspect-ratio: ./src/components/ui/aspect-ratio.tsx\
+* @radix-ui/react-avatar: ./src/components/ui/avatar.tsx\
+* @radix-ui/react-slot: ./src/components/ui/breadcrumb.tsx\
+* react-day-picker: ./src/components/ui/calendar.tsx\
+* embla-carousel-react: ./src/components/ui/carousel.tsx\
+* recharts: ./src/components/ui/chart.tsx\
+* @radix-ui/react-checkbox: ./src/components/ui/checkbox.tsx\
+* @radix-ui/react-collapsible: ./src/components/ui/collapsible.tsx\
+* @radix-ui/react-dialog: ./src/components/ui/command.tsx\
+* cmdk: ./src/components/ui/command.tsx\
+* @radix-ui/react-context-menu: ./src/components/ui/context-menu.tsx\
+* vaul: ./src/components/ui/drawer.tsx\
+* @radix-ui/react-dropdown-menu: ./src/components/ui/dropdown-menu.tsx\
+* @radix-ui/react-label: ./src/components/ui/form.tsx\
+* @radix-ui/react-hover-card: ./src/components/ui/hover-card.tsx\
+* input-otp: ./src/components/ui/input-otp.tsx\
+* @radix-ui/react-menubar: ./src/components/ui/menubar.tsx\
+* @radix-ui/react-navigation-menu: ./src/components/ui/navigation-menu.tsx\
+* @radix-ui/react-popover: ./src/components/ui/popover.tsx\
+* @radix-ui/react-progress: ./src/components/ui/progress.tsx\
+* @radix-ui/react-radio-group: ./src/components/ui/radio-group.tsx\
+* react-resizable-panels: ./src/components/ui/resizable.tsx\
+* @radix-ui/react-scroll-area: ./src/components/ui/scroll-area.tsx\
+* @radix-ui/react-select: ./src/components/ui/select.tsx\
+* @radix-ui/react-separator: ./src/components/ui/separator.tsx\
+* @radix-ui/react-slider: ./src/components/ui/slider.tsx\
+* next-themes: ./src/components/ui/sonner.tsx\
+* @radix-ui/react-switch: ./src/components/ui/switch.tsx\
+* @radix-ui/react-tabs: ./src/components/ui/tabs.tsx\
+* @radix-ui/react-toast: ./src/components/ui/toast.tsx\
+* @radix-ui/react-toggle-group: ./src/components/ui/toggle-group.tsx\
+* @radix-ui/react-toggle: ./src/components/ui/toggle.tsx\
+* @radix-ui/react-tooltip: ./src/components/ui/tooltip.tsx\
+* @stripe/react-stripe-js: ./src/components/payment/PaymentProcessor.tsx\
+
+: 1743067682:0;npm install eslint-config-prettier tailwindcss tailwindcss-animate vite @vitejs/plugin-react-swc lovable-tagger react react-router-dom sonner react-dom jspdf jspdf-autotable lucide-react react-helmet date-fns zod react-hook-form @hookform/resolvers clsx tailwind-merge @supabase/supabase-js @stripe/stripe-js @radix-ui/react-accordion @radix-ui/react-alert-dialog class-variance-authority @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-slot react-day-picker embla-carousel-react recharts @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-dialog cmdk @radix-ui/react-context-menu vaul @radix-ui/react-dropdown-menu @radix-ui/react-label @radix-ui/react-hover-card input-otp @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group react-resizable-panels @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider next-themes @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-toggle-group @radix-ui/react-toggle @radix-ui/react-tooltip @stripe/react-stripe-js --save && npm install eslint-config-prettier tailwindcss vite @vitejs/plugin-react-swc lovable-tagger --save-dev
+: 1743067984:0;npm run dev
+: 1743076050:0;;q
+: 1743076056:0;git log
+: 1743076096:0;git reset --hard 28b054c17cb41c1a7670b875be2d052c64c9d9ee\
+
+: 1743076101:0;nvim
+: 1743076317:0;cd
+: 1743076320:0;cd jobs
+: 1743076323:0;npm install eslint --save-dev
+: 1743076442:0;node setup.cjs
+: 1743076462:0;cd client
+: 1743076466:0;npm run dev
+: 1743076500:0;cd 
+: 1743076506:0;sudo rm -r jobs
+: 1743076520:0;sudo rm -r client
+: 1743076526:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1743076558:0;cd jobs
+: 1743076570:0;ls
+: 1743076629:0;nv
+: 1743076661:0;cd jobs
+: 1743076662:0;nvim
+: 1743076912:0;cd client 
+: 1743076913:0;m install --save react@latest react-dom@latest
+: 1743076922:0;npm install --save react@latest react-dom@latest
+: 1743077363:0;npm install -g npm-check-updates
+: 1743077442:0;ncu -u
+: 1743077592:0;npm install -g yarn-upgrade-all
+: 1743077607:0;yarn-upgrade-all
+: 1743077730:0;npx create-supertokens-app@latest
+: 1743078014:0;cd care
+: 1743078015:0;nvim
+: 1743078370:0;cd heal
+: 1743078372:0;ls
+: 1743078374:0;nvim
+: 1743078684:0;ls
+: 1743078771:0;npm install
+: 1743080700:0;cd heal
+: 1743080702:0;nvim
+: 1743081349:0;npm run start
+: 1743081519:0;nvim
+: 1743088319:0;cd ../server
+: 1743088331:0;npm start
+: 1743088339:0;pwd
+: 1743088348:0;npm start
+: 1743088380:0;cd ..
+: 1743088383:0;ls
+: 1743088403:0;node setup.cjs
+: 1743088476:0;cd ..
+: 1743088489:0;ls
+: 1743088498:0;npm run dev
+: 1743088506:0;ls
+: 1743088510:0;node setup.cjs
+: 1743088593:0;ls
+: 1743088637:0;npm run dev
+: 1743088659:0;ls
+: 1743089040:0;cd
+: 1743089049:0;sudo rm -r jobs
+: 1743089059:0;cd
+: 1743089063:0;git clone https://github.com/habert-kungu/AI_jobs.git jobs
+: 1743089083:0;cd jobs
+: 1743089085:0;nvim
+: 1743089096:0;cd jobs
+: 1743089112:0;node setup.cjs
+: 1743089142:0;cd server
+: 1743089149:0;cd client 
+: 1743089161:0;npm run dev 
+: 1743089176:0;npm start
+: 1743091718:0;tmux 
+: 1743091726:0;cd jobs
+: 1743091743:0;cd server
+: 1743091745:0;npm start
+: 1743091750:0;cd client 
+: 1743091754:0;npm run dev 
+: 1743091814:0;nvim
+: 1743092490:0;npm start
+: 1743093599:0;;q
+: 1743093601:0;cd
+: 1743093607:0;sudo rm -r jobs
+: 1743093628:0;cd
+: 1743097815:0;ls
+: 1743097820:0;cd care
+: 1743097838:0;git chekckout -b bug-fix
+: 1743097854:0;git checkout -b bug-fix
+: 1743097859:0;nvim
+: 1743097888:0;cd care
+: 1743097899:0;npm run dev 
+: 1743098100:0;ls
+: 1743100030:0;npm run dev 
+: 1743100360:0;cd care
+: 1743100361:0;nvim
+: 1743100417:0;ls -a
+: 1743100427:0;nvim .env.local
+: 1743101879:0;npm run build
+: 1743102016:0;git merge main
+: 1743102128:0;git add .
+: 1743102141:0;git commit -m"bug fix  "
+: 1743102149:0;git merge main
+: 1743102167:0;git checkout main
+: 1743102177:0;git status
+: 1743102184:0;git push
+: 1743102194:0;git push origin main
+: 1743102205:0;git add .
+: 1743102220:0;git commit -m"bug fix and random changes "
+: 1743102229:0;git push origin main
+: 1743102238:0;pit merge
+: 1743102243:0;git merge
+: 1743102298:0;nvim
+: 1743102334:0;git checkout bug-fic
+: 1743102337:0;git checkout
+: 1743102347:0;git checkout bug-fix
+: 1743102350:0;nvim
+: 1743102432:0;git fetch
+: 1743102458:0;git merge origin/main
+: 1743102474:0;git push
+: 1743102491:0;it push --set-upstream origin bug-fix\
+
+: 1743102496:0;git push --set-upstream origin bug-fix\
+
+: 1743102519:0;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+: 1743102652:0;npm run build
+: 1743102704:0;git checkout main
+: 1743102706:0;nvim
+: 1743102772:0;git merge bug-fix
+: 1743102778:0;nvim
+: 1743102823:0;npm run build
+: 1743103277:0;nvim
+: 1743103403:0;npm run build
+: 1743103670:0;tmux a
+: 1743103772:0;npm run build
+: 1743103927:0;nvim
+: 1743104184:0;npm run build
+: 1743104658:0;npm run dev
+: 1743105320:0;git add .
+: 1743105325:0;git commit -m"bug fix and random changes "
+: 1743105339:0;git push origin main
+: 1743105399:0;git stash
+: 1743105409:0;git pull origin main
+: 1743105463:0;git pull origin main --no-rebase
+: 1743105482:0;git pull origin main --rebase
+: 1743105516:0;git add .\
+git rebase --continue  # if rebasing
+: 1743105531:0;git add .\
+git rebase --continue
+: 1743105541:0;git add .\
+
+: 1743105547:0;git commit -m "Merge remote changes"
+: 1743105563:0;git add .\
+
+: 1743105573:0;git config --global pull.rebase true
+: 1743105641:0;git pull origin main --rebase
+: 1743105661:0;git add .\
+
+: 1743105669:0;git commit -m "Merge remote changes"
+: 1743105677:0;git push origin main
+: 1743105704:0;npm run build
+: 1743106276:0;cd
+: 1743106278:0;# Add Docker's official GPG key:\
+sudo apt-get update\
+sudo apt-get install ca-certificates curl\
+sudo install -m 0755 -d /etc/apt/keyrings\
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc\
+sudo chmod a+r /etc/apt/keyrings/docker.asc\
+\
+# Add the repository to Apt sources:\
+echo \\
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \\
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \\
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\
+sudo apt-get update
+: 1743106348:0;cd care
+: 1743106354:0;nvim
+: 1743106363:0;git add .\
+
+: 1743106373:0;git commit -m "Bug fixx "
+: 1743106378:0;git push origin main
+: 1743106385:0;nvim
+: 1743106532:0;docker build -t next-app .
+: 1743106550:0;sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+: 1743106746:0;docker build -t next-app .
+: 1743106823:0;ls -l /var/run/docker.sock
+: 1743106832:0;sudo usermod -aG docker $USER
+: 1743106843:0;newgrp docker
+: 1743106851:0;docker build -t next-app .
+: 1743107736:0;docker run -p 3000:3000 next-app
+: 1743107915:0;docker run -p 3000:3000 --env-file .env next-app
+: 1743107927:0;docker run -p 3000:3000 --env-file .env.local next-app
+: 1743108189:0;npm i sharp
+: 1743108249:0;nvim
+: 1743108309:0;docker run -p 3000:3000 --env-file .env.local next-app
+: 1743108641:0;npm i sharp
+: 1743108966:0;k
+: 1743108967:0;sudo systemctl enable docker.service\
+sudo systemctl enable containerd.service
+: 1743109124:0;docker run -p 3000:3000 --env-file .env.local next-app
+: 1743110301:0;docker build -t next-app .
+: 1743110362:0;tmux a
+: 1743111532:0;nvim
+: 1743111555:0;git pull origin main
+: 1743111565:0;git stash
+: 1743111578:0;git pull origin main
+: 1743111586:0;git add .\
+
+: 1743111591:0;git commit -m "Bug fixx "
+: 1743111598:0;git push origin main
+: 1743111604:0;nvim
+: 1743133548:0;git clone https://github.com/habert-kungu/AI_jobs.git job
+: 1743133608:0;git clone https://github.com/Watcher1223/AI_jobs.git job
+: 1743134135:0;ps aux | grep -E 'code|vim|nano|gedit'
+: 1743134172:0;swapon --show
+: 1743134202:0;sudo apt update && sudo apt install testdisk
+: 1743134335:0;git remote -v
+: 1743134356:0;history | grep rm
+: 1743134529:0;git clone https://github.com/Pha12thom/AI_jobs.git
+: 1743134535:0;git clone https://github.com/Pha12thom/AI_jobs.git jobs
+: 1743134542:0;cd jobs
+: 1743134544:0;nvim
+: 1743134628:0;cd
+: 1743139444:0;ls
+: 1743139983:0;cd care
+: 1743139988:0;nvim .env.local
+: 1743145079:0;tmux a
+: 1743145082:0;tmux 
+: 1743145088:0;cd care
+: 1743145090:0;nvim
+: 1743167781:0;tmux 
+: 1743167793:0;cd care
+: 1743167980:0;cd
+: 1743167983:0;cd jobs
+: 1743167996:0;nvim
+: 1743168077:0;cd
+: 1743168081:0;ls
+: 1743171475:0;git clone https://github.com/habert-kungu/subtrack.git
+: 1743171482:0;cd subtrack
+: 1743171488:0;nvim
+: 1743171593:0;cd subtrack
+: 1743171594:0;ls
+: 1743171603:0;npm create vite@latest client -- --template react
+: 1743171611:0;cd client 
+: 1743171616:0;npm run dev
+: 1743171622:0;npm install
+: 1743171712:0;cd ..
+: 1743171716:0;git add ,
+: 1743171719:0;git add .
+: 1743171758:0;git commit -m "Adding ui adding react ui so that it can be a full stack proj "
+: 1743171762:0;git push origin main
+: 1743396453:0;cd
+: 1743396458:0;cd heal
+: 1743396459:0;nvim
+: 1743398855:0;cd ca
+: 1743398857:0;cd care
+: 1743398868:0;npm run dev
+: 1743400445:0;tmux 
+: 1743400463:0;git log 
+: 1743400487:0;git revert  b03045157b1342a8f5fb7ec9927b2bd9ce8ce1b1 
+: 1743400500:0;npm run dev
+: 1743400548:0;nvim
+: 1743400554:0;cd care
+: 1743400555:0;nvim
+: 1743400589:0;cd
+: 1743400600:0;sudo rm -r care
+: 1743400638:0;git clone https://github.com/habert-kungu/healthcare.git
+: 1743400651:0;cd healthcare
+: 1743400652:0;nvim
+: 1743400656:0;cd
+: 1743400662:0;cd healthcare
+: 1743400667:0;npm run dev
+: 1743400672:0;npm install
+: 1743400701:0;npm run dev
+: 1743401005:0;mkdir -p app/patient-form
+: 1743402139:0;npm run buils
+: 1743402142:0;npm run build
+: 1743402585:0;cd
+: 1743402607:0;cd healthcare
+: 1743402609:0;nvim
+: 1743402876:0;npm run buils
+: 1743402879:0;npm run build
+: 1743402944:0;ls
+: 1743402949:0;ls -a
+: 1743402982:0;touch .env.local
+: 1743402985:0;nvim .env.local
+: 1743403351:0;npm run build
+: 1743403444:0;npm run dev
+: 1743403941:0;git add .
+: 1743403968:0;git commit -m "Adding the home page and routing the initial fprm to a patients form  "
+: 1743403973:0;git push origin main
+: 1743406701:0;npm run dev
+: 1743407515:0;git add .
+: 1743407547:0;git commit -m "Adding routing to the patient forms and fixing classnames "
+: 1743407553:0;git push origin main
+: 1743407830:0;;q
+: 1743407831:0;cd
+: 1743409504:0;q
+: 1743409505:0;;q
+: 1743409511:0;nvim
+: 1743411638:0;cd healthcare
+: 1743411641:0;npm run dev
+: 1743411723:0;cd
+: 1743411729:0;sudo rm -r healthcare
+: 1743425758:0;npm run dev
+: 1743425857:0;nvim
+: 1743425863:0;cd healthcare
+: 1743425865:0;nvim
+: 1743425967:0;git add .
+: 1743426005:0;git commit -m "Fiing routing in the home page and patient form"
+: 1743426007:0;git pu
+: 1743426011:0;git push origin main
+: 1743426656:0;;q
+: 1743426721:0;cd
+: 1743426723:0;cd subtrack
+: 1743426725:0;nvim
+: 1743426936:0;cd
+: 1743426938:0;cd subtrack
+: 1743426944:0;npm run dev
+: 1743427019:0;cd subtrack
+: 1743427025:0;nvim .env.local
+: 1743427135:0;;s
+: 1743427137:0;ls
+: 1743427158:0;cd heal
+: 1743427160:0;nvim
+: 1743427173:0;;q
+: 1743427175:0;cd
+: 1743427206:0;mkdir server
+: 1743427217:0;mv . server
+: 1743427340:0;cd heal
+: 1743427342:0;nvim
+: 1743427506:0;npm run dev
+: 1743427511:0;ls
+: 1743427534:0;npm run start
+: 1743427675:0;cd server 
+: 1743427679:0;npm install
+: 1743427707:0;npm run start
+: 1743427734:0;d
+: 1743427734:0;cd
+: 1743427739:0;cd subtrack
+: 1743428059:0;npm run start
+: 1743428296:0;ls -a
+: 1743428324:0;mv .env .env.development.local
+: 1743428328:0;npm run start
+: 1743428647:0;ls -a 
+: 1743428662:0;touch .env.production.local
+: 1743428665:0;ls -a 
+: 1743428853:0;nvim .env.development.local
+: 1743428862:0;ls -a
+: 1743428877:0;rm -r  .env.development.local
+: 1743428881:0;cd server 
+: 1743428885:0;nvim .env.development.local
+: 1743429402:0;npm run dev
+: 1743430006:0;curl -s ifconfig.me
+: 1743430106:0;npm run dev
+: 1743430506:0;sudo apt update\
+sudo apt install -y mongodb\
+sudo systemctl start mongodb\
+sudo systemctl enable mongodb # Auto-start on boot
+: 1743430718:0;sudo apt-get install gnupg curl
+: 1743430723:0;curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \\
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \\
+   --dearmor
+: 1743430743:0;echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+: 1743430754:0;sudo apt-get update
+: 1743430775:0;sudo apt-get install -y mongodb-org
+: 1743431061:0;sudo systemctl start mongod\
+
+: 1743431065:0;sudo systemctl daemon-reload\
+
+: 1743431076:0;sudo systemctl status mongod\
+
+: 1743431087:0;sudo systemctl enable mongod\
+
+: 1743431106:0;mongosh
+: 1743431133:0;sudo apt install wget
+: 1743431195:0;wget https://downloads.mongodb.com/compass/mongodb-compass_1.28.1_amd64.deb
+: 1743431297:0;neofetch
+: 1743434685:0;sudo dpkg -i mongodb-compass_1.28.1_amd64.deb
+: 1743435499:0;mongosh
+: 1743435699:0;nvim .env.development.local
+: 1743435731:0;npm run dev
+: 1743436577:0;cd ../client
+: 1743436579:0;ls
+: 1743436584:0;npm run dev
+: 1743438676:0;npm install tailwindcss @tailwindcss/vite\
+
+: 1743440554:0;tmux a
+: 1743498791:0;[200~sudo snap install notion-desktop~
+: 1743498795:0;sudo snap install notion-desktop
+: 1743498810:0;sudo apt install snap
+: 1743498905:0;echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list\
+sudo apt update
+: 1743498926:0;sudo apt install notion-app
+: 1743498939:0;apt --fix-broken install
+: 1743498945:0;sudo apt --fix-broken install
+: 1743498960:0;sudo apt install notion-app
+: 1743499202:0;sudo apt remove notion-app
+: 1743499227:0;sudo snap install notion-snap-reborn
+: 1743499239:0;sudo apt install snap
+: 1743499270:0;sudo snap install notion-snap-reborn
+: 1743499286:0;snap --version
+: 1743499332:0;sudo apt update\
+sudo apt install snapd
+: 1743499538:0;sudo snap install snapd
+: 1743499580:0;sudo snap install notion-snap-reborn\
+
+: 1743499809:0;sudo snap remove  notion-snap-reborn\
+
+: 1743499835:0;sudo snap revove snapd
+: 1743499848:0;sudo snap remove snapd\
+
+: 1743499862:0;sudo apt remove snap
+: 1743499873:0;snapd --version
+: 1743500010:0;cd Downloads
+: 1743500011:0;ls
+: 1743500054:0;chmod +x Notion-3.10.0-1.AppImage
+: 1743500058:0;./Notion-3.10.0-1.AppImage
+: 1743500135:0;mv Notion-3.10.0-1.AppImage Notion.AppImage
+: 1743500150:0;mv  Notion.AppImage /opt/
+: 1743500156:0;sudo mv  Notion.AppImage /opt/
+: 1743500174:0;sudo nano /usr/share/applications/cursor.desktop
+: 1743500189:0;sudo nano /usr/share/applications/notion.desktop
+: 1743500293:0;cd /opt
+: 1743500294:0;ls
+: 1743500305:0;mkdir Notion
+: 1743500322:0;sudo mkdir Notion
+: 1743500333:0;sudo mv  Notion.AppImage /Notion
+: 1743500334:0;ls
+: 1743500384:0;sudo mv ~/Downloads/icon.png  /Notion
+: 1743500391:0;cd Notion
+: 1743500392:0;ls
+: 1743500396:0;ls -a
+: 1743500406:0;cd ..
+: 1743500407:0;ls
+: 1743500411:0;nvim
+: 1743500448:0;./Notion
+: 1743500485:0;cd ..
+: 1743500503:0;sudo mv Notion Notion.AppImage
+: 1743500512:0;./Notion.AppImage
+: 1743500518:0;cd ..
+: 1743500519:0;ls
+: 1743500535:0;sudo rm Notion.AppImage
+: 1743500625:0;cd ~/Downloads
+: 1743500627:0;ls
+: 1743500635:0;mkdir Notion
+: 1743500668:0;mv icon.png Notion.AppImage Notion/
+: 1743500672:0;cd Notion
+: 1743500675:0;ls
+: 1743500677:0;cd ..
+: 1743500696:0;sudo mv Notion /opt
+: 1743500703:0;sudo nano /usr/share/applications/notion.desktop
+: 1743500777:0;cd /op
+: 1743500779:0;cd /opt
+: 1743500783:0;cd Notion
+: 1743500790:0;chmod +x Notion.AppImage
+: 1743504913:0;nvim
+: 1743506810:0;tmux a
+: 1743506814:0;cd
+: 1743506834:0;git clone https://github.com/habert-kungu/keiko-engineering-builder.git keiko
+: 1743506841:0;cd keiko
+: 1743506843:0;ls
+: 1743506848:0;cd
+: 1743506862:0;cd keiko
+: 1743506864:0;ls
+: 1743506867:0;nvim
+: 1743506904:0;npm install
+: 1743507118:0;npm run dev
+: 1743507185:0;npm install bun
+: 1743507194:0;npm install -g  bun
+: 1743507222:0;git pull
+: 1743507227:0;git pull main
+: 1743507242:0;git pull origin main
+: 1743507250:0;npm run dev
+: 1743507303:0;cd 
+: 1743507311:0;sudo rm -r keiko
+: 1743507328:0;git clone https://github.com/habert-kungu/keiko-engineering-builder.git keiko
+: 1743507341:0;cd keiko
+: 1743507346:0;nvim
+: 1743507350:0;npm install
+: 1743507376:0;npm run dev
+: 1743508309:0;npm run build
+: 1743509015:0;npm run dev 
+: 1743509284:0;shutdown now
+: 1743509287:0;shutdown 
+: 1743509289:0;reboot
+: 1743577152:0;ls
+: 1743577158:0;cd keiko
+: 1743577159:0;nvim
+: 1743602617:0;cd keiko
+: 1743602624:0;git cherrypick
+: 1743602630:0;git cherry-pick
+: 1743602667:0;git spit
+: 1743602679:0;git disect
+: 1743602685:0;git bisect
+: 1743602697:0;git bisect help
+: 1743704911:0;ls
+: 1743704913:0;tmux
+: 1743704915:0;ls
+: 1743704919:0;cd dsa
+: 1743704927:0;nvim
+: 1743705980:0;cd lists
+: 1743705981:0;ls
+: 1743705985:0;cd list
+: 1743705987:0;ls
+: 1743705993:0;node names.js
+: 1743706078:0;1
+: 1743706079:0;node names.js
+: 1743706146:0;ls
+: 1743706151:0;cd list
+: 1743706153:0;ls
+: 1743706156:0;node names.js
+: 1743707305:0;cd ./stack
+: 1743707310:0;cd ../stack
+: 1743707317:0;node class.js
+: 1743708655:0;;q
+: 1743708656:0;node class.js
+: 1743709176:0;ls
+: 1743709184:0;node palinrome.js
+: 1743709192:0;node palindrome.js
+: 1743712147:0;# Clone this repository
+: 1743712147:0;git clone https://github.com/aaddrick/claude-desktop-debian.git
+: 1743712150:0;cd claude-desktop-debian
+: 1743712150:0;# Build the package (You will be prompted to choose .deb or .AppImage)
+: 1743712150:0;sudo ./build.sh 
+: 1743713047:0;tmux a
+: 1743713987:0;# Replace VERSION and ARCHITECTURE with the actual values from the filename\
+sudo dpkg -i ./claude-desktop_VERSION_ARCHITECTURE.deb \
+\
+# If you encounter dependency issues, run:\
+sudo apt --fix-broken install 
+: 1743714001:0;ls -a
+: 1743714045:0;chmod +x ./claude-desktop-0.9.1-amd64.AppImage 
+: 1743714247:0;ld
+: 1743714249:0;ls
+: 1743714299:0;sudo mv claude-desktop-0.9.1-amd64.AppImage claude.AppImage
+: 1743714330:0;sudo mv  claude.AppImage /opt/Cursor
+: 1743714337:0;cd /opt
+: 1743714338:0;ls
+: 1743714344:0;cd Cursor
+: 1743714350:0;./Cursor.AppImage  
+: 1743714364:0;ls
+: 1743714389:0;ls Cursor
+: 1743714390:0;ls
+: 1743714399:0;cd Cursor
+: 1743714432:0;sudo mv Cursor  claude.AppImage
+: 1743714462:0;ls
+: 1743714499:0;sudo mv claude.AppImage Claude.AppImage
+: 1743714527:0;sudo nano /usr/share/applications/notion.desktop
+: 1743714549:0;sudo nano /usr/share/applications/claude.desktop
+: 1743714638:0;ls
+: 1743714652:0;cd claude-desktop-debian 
+: 1743714653:0;ls
+: 1743757766:0;cd ../queue
+: 1743757778:0;node browser.js
+: 1743757782:0;ls
+: 1743757803:0;cd ../linked-list
+: 1743757806:0;node browser.js
+: 1743759706:0;ls
+: 1743759716:0;cd ../dict
+: 1743759718:0;ls
+: 1743759721:0;node class.js
+: 1743762937:0;cd healthcare
+: 1743762939:0;nvim
+: 1743763091:0;cd healthcare
+: 1743763094:0;npm run dev 
+: 1743764049:0;git add .
+: 1743764065:0;git commit -m "adding animation to the image "
+: 1743764071:0;git push origin main
+: 1743769444:0;nvim .config/i3
+: 1743769877:0;tmux a
+: 1743769882:0;cd healthcare
+: 1743769883:0;nvim
+: 1743770225:0;cd healthcare
+: 1743770228:0;npm run dev 
+: 1743770248:0;npm install motion\
+
+: 1743772869:0;git add .
+: 1743772885:0;git commit -m "adding animation to the image and fixing admin links  "
+: 1743773893:0;git push origin main
+: 1743774087:0;git run build
+: 1743774103:0;npm run build
+: 1743774195:0;git add .
+: 1743774222:0;git commit -m "fixing buld error   "
+: 1743774226:0;git push origin main
+: 1743955242:0;tmux
+: 1743955246:0;ls
+: 1743955252:0;cd keiko
+: 1743955257:0;npm run dev
+: 1743955306:0;cd 
+: 1743955308:0;ls
+: 1743955330:0;mkdir profile
+: 1743955355:0;mv Downloads/page.tsx profile
+: 1743955361:0;mv /Downloads/page.tsx profile
+: 1743955370:0;cd Downloads
+: 1743955382:0;mv page.tsx ~/profile
+: 1743955384:0;ls
+: 1743955402:0;mv Page-1.tsx ~/profile
+: 1743955409:0;cd ../profile
+: 1743955411:0;ls
+: 1743955415:0;npm run dev
+: 1743955419:0;nvim
+: 1744016722:0;tmux
+: 1744016726:0;cd dsa
+: 1744016728:0;nvim
+: 1744016732:0;cd dsa
+: 1744016735:0;ls
+: 1744016749:0;mkdir hash
+: 1744016753:0;cd hash
+: 1744018678:0;ls
+: 1744018682:0;node class.js
+: 1744018997:0;ls
+: 1744019011:0;touch names.js
+: 1744019357:0;ls
+: 1744019364:0;node names.js
+: 1744019761:0;l
+: 1744019762:0;ls
+: 1744019764:0;node names.js
+: 1744019858:0;nvim /home/habert/package.json
+: 1744019876:0;ls
+: 1744019919:0;node names.js
+: 1744030087:0;nvim
+: 1744030511:0;ls
+: 1744030516:0;cd separate 
+: 1744030523:0;l
+: 1744030525:0;ls
+: 1744030536:0;node hash.js
+: 1744031296:0;cd ..
+: 1744031302:0;cd ../dsa
+: 1744031305:0;cd -
+: 1744031313:0;cd ..
+: 1744031323:0;git add 
+: 1744031327:0;git add .
+: 1744031347:0;git commit -m "implementing some dsa  "
+: 1744031355:0;git push origin main
+: 1744031395:0;git add .
+: 1744031398:0;git commit -m "implementing some dsa  "
+: 1744031405:0;git push origin main
+: 1744033247:0;git reflog
+: 1744033257:0;cd 
+: 1744033260:0;cd healthcare
+: 1744033262:0;git reflog
+: 1744033286:0;cd healthcare
+: 1744033287:0;cd
+: 1744033289:0;cd healthcare
+: 1744033293:0;git biscect
+: 1744033300:0;git bisect
+: 1744033311:0;git bisect start
+: 1744033361:0;git grep "searhz"
+: 1744033372:0;git grep "csreplus"
+: 1744033389:0;git diff
+: 1744034223:0;nvim
+: 1744045369:0;cd ../keiko
+: 1744045371:0;nvim
+: 1744045411:0;cd ../keiko
+: 1744045415:0;npm run dev
+: 1744045567:0;npm run build
+: 1744046196:0;Hi David,\
+\
+I hope you're doing well! I wanted to follow up regarding the website project. Iâ€ƒ¹ve already laid some of the groundwork, including"the homepage structure, branding elements, and initial UX flow  so weâ€ƒ¹re off to a solid start.\
+\
+I completely understand needing time to secure fundsâ€ƒ´just know that Iâ€ƒ¹m here to work with you whenever youâ€ƒ¹re ready. To give you a clearer picture, hereâ€ƒ¹s a sneak peek  to what weâ€ƒ¹ve got so far: https://keiko-engineering-builder.vercel.app/\
+\
+Let me know if youâ€ƒ¹d like to:\
+\
+Discuss timelines or payment flexibility.\
+\
+Adjust the scope to align with your budget.\
+\
+Pause and revisit this later.\
+\
+No pressure just keeping you in the loop! Either way, Iâ€ƒ¹m happy to help when the time is right.\
+\
+\
+q\
+exit
+: 1744046201:0;npm run dev
+: 1744107870:0;tmux a
+: 1744107874:0;tmux 
+: 1744107881:0;cd dsa
+: 1744107882:0;nvim
+: 1744130116:0;tmux a
+: 1744207346:0;nctl
+: 1744303727:0;tmux a
+: 1744303732:0;tmux 
+: 1744303735:0;ls
+: 1744303751:0;cd subtrack
+: 1744303752:0;nvim
+: 1744303758:0;cd subtrack
+: 1744304280:0;cd
+: 1744359397:0;cd subtrack
+: 1744359398:0;nvim
+: 1744359404:0;3;1:3utmux
+: 1744359410:0;tmux 
+: 1744359414:0;cd subtrack
+: 1744359418:0;nvim
+: 1744359422:0;cd subtrack
+: 1744359621:0;npm run dev
+: 1744359626:0;npm run start
+: 1744359633:0;npm start
+: 1744359638:0;ls
+: 1744359643:0;cd server 
+: 1744359646:0;n
+: 1744359649:0;npm start
+: 1744360386:0;cd subtrack
+: 1744360389:0;ls -a
+: 1744360400:0;cd server
+: 1744360402:0;ls -a
+: 1744360434:0;nvim .env.development.local
+: 1744360539:0;sudo apt install httpie
+: 1744360718:0;httpie
+: 1744360731:0;https POST pie.dev/post hello=world\
+
+: 1744360766:0;https POST pie.dev/post http://localhost:5500/api/v1/auth/sign-up\
+
+: 1744360859:0;npm start
+: 1744361055:0;cd ~/.Downloads
+: 1744361061:0;cd
+: 1744361062:0;cd ~/.Downloads
+: 1744361068:0;cd Downloads
+: 1744361072:0;ls
+: 1744361098:0;chmod +x  ./Httpie.AppImage  
+: 1744361102:0;./ Httpie.AppImage  
+: 1744361109:0;./Httpie.AppImage  
+: 1744361145:0;mkdir Httpie
+: 1744361156:0;nv  Httpie.AppImage   Httpie/
+: 1744361161:0;mv  Httpie.AppImage   Httpie/
+: 1744361162:0;ls
+: 1744361167:0;nvim
+: 1744361186:0;mv Httpie /opt/
+: 1744361193:0;sudo mv Httpie /opt/
+: 1744361206:0;sudo nano /usr/share/applications/claude.desktop
+: 1744361221:0;sudo nano /usr/share/applications/httpie.desktop
+: 1744361526:0;sudo service mongod stop
+: 1744361540:0;sudo chmod -R 777 /etc/mongod.conf\
+
+: 1744361551:0;nano /etc/mongod.conf
+: 1744361618:0;nvim /etc/mongod.conf
+: 1744361635:0;sudo service mongod start
+: 1744361646:0;mongosh
+: 1744361696:0;npm start
+: 1744361746:0;sudo service mongod start
+: 1744361756:0;npm start
+: 1744361807:0;ls
+: 1744361812:0;npm install
+: 1744361828:0;npm start
+: 1744361913:0;cd subtrack/server
+: 1744361916:0;nvim
+: 1744361925:0;ls -a
+: 1744361933:0;nvim .env.development.local
+: 1744361954:0;npm start live-server
+: 1744362068:0;sudo systemctl start  mongod\
+
+: 1744362092:0;mongo --host localhost --port 27017
+: 1744362109:0;sudo systemctl status  mongod\
+
+: 1744362130:0;npm start 
+: 1744362309:0;nvim /etc/mongod.conf
+: 1744362323:0;npm start 
+: 1744362346:0;sudo systemctl stop  mongod\
+
+: 1744362354:0;sudo systemctl start  mongod\
+
+: 1744362359:0;sudo systemctl enable  mongod\
+
+: 1744362366:0;npm start 
+: 1744362376:0;nvim /etc/mongod.conf
+: 1744362457:0;mongo
+: 1744362460:0;mongod
+: 1744362672:0;nvim /etc/mongod.conf
+: 1744362708:0;sudo systemctl restart mongod\
+
+: 1744362714:0;nvim .env.development.local
+: 1744362720:0;npm start 
+: 1744362871:0;re.status
+: 1744362877:0;mongod
+: 1744362884:0;mongo
+: 1744362923:0;mongo rs.status
+: 1744362938:0;mongo rs.status()
+: 1744362940:0;replication:\
+
+: 1744362947:0;rs.status()
+: 1744363044:0;sudo apt install mongosh
+: 1744363292:0;nvim .env.development.local
+: 1744363395:0;cd subtrack/server
+: 1744363398:0;npm start 
+: 1744364259:0;ls
+: 1744364279:0;npm install mongodb mongoose
+: 1744364317:0;npm start 
+: 1744366051:0;cd ../client
+: 1744366054:0;npm install tailwindcss @tailwindcss/vite\
+
+: 1744366085:0;npm install
+: 1744366244:0;npm run dev
+: 1744367299:0;cd healthcare
+: 1744367300:0;nvim
+: 1744370048:0;npm run dev
+: 1744371397:0;npm install motion
+: 1744371577:0;npm run dev
+: 1744372901:0;npm install
+: 1744373040:0;cd healthcare
+: 1744373041:0;nvim
+: 1744373180:0;npm run dev
+: 1744373187:0;npm install
+: 1744373193:0;npm run dev
+: 1744373577:0;cd client
+: 1744373577:0;npm install
+: 1744373592:0;npm run dev
+: 1744373911:0;cd client\
+npm install axios
+: 1744374275:0;cd ../server
+: 1744374282:0;npm start
+: 1744377575:0;ls
+: 1744384619:0;tmux 
+: 1744384621:0;;q
+: 1744384632:0;npm run dev
+: 1744384828:0;npm start
+: 1744561392:0;tmux 
+: 1744561396:0;cd dsa
+: 1744561398:0;nvim
+: 1744561610:0;sudo pacman -S blueman-manager
+: 1744561631:0;sudo pacman -S blueman
+: 1744561714:0;sudo pacman -S bluez
+: 1744561729:0;sudo apt update\
+sudo apt install blueman
+: 1744561866:0;blueman
+: 1744561877:0;sudo apt update\
+sudo apt install rofi-bluetooth
+: 1744562094:0;git clone https://github.com/adi1090x/rofi-bluetooth.git\
+cd rofi-bluetooth\
+chmod +x rofi-bluetooth\
+sudo cp rofi-bluetooth /usr/local/bin/
+: 1744562270:0;cd .config/i3
+: 1744562271:0;nvim
+: 1744626283:0;cd ~/dsa
+: 1744626287:0;cd graph
+: 1744626289:0;ls
+: 1744626295:0;lss
+: 1744626297:0;cd graphs
+: 1744627672:0;ls
+: 1744627683:0;node undirected.js
+: 1744627689:0;sl
+: 1744627691:0;l
+: 1744627693:0;sls
+: 1744627694:0;ls
+: 1744627700:0;node undericted.js\
+
+: 1744627815:0;apt --fix-broken install
+: 1744627820:0;node undericted.js\
+
+: 1744634724:0;tmu
+: 1744634726:0;xtmux
+: 1744634728:0;tmux
+: 1744634733:0;ls
+: 1744634741:0;cd dsa
+: 1744634742:0;nvim
+: 1744634746:0;d
+: 1744634747:0;cd
+: 1744634751:0;nvim dsa
+: 1744634758:0;cd dsa
+: 1744634760:0;nvm
+: 1744634783:0;nvim
+: 1744636111:0;cd
+: 1744636113:0;ls
+: 1744636119:0;cd profile
+: 1744636247:0;git init
+: 1744636256:0;git add .
+: 1744636275:0;git add remote url https://github.com/habert-kungu/profile.git
+: 1744636306:0;git remote add origin  https://github.com/habert-kungu/profile.git
+: 1744636318:0;git commit -m "profile  "
+: 1744636322:0;git push origin main
+: 1744704102:0;tmux 
+: 1744704108:0;cd dsa
+: 1744704111:0;nvim
+: 1744705182:0;cd dsa
+: 1744705184:0;ls
+: 1744705192:0;cd arra
+: 1744705196:0;cd arrays
+: 1744705197:0;ls
+: 1744705212:0;node sum.js
+: 1744708806:0;tmux
+: 1744708827:0;tmux a
+: 1744708844:0;cd ds
+: 1744708847:0;cd dsa
+: 1744708849:0;nvim
+: 1744730912:0;cd
+: 1744730927:0;git clone https://github.com/habert-kungu/kungu-noir-folio.git portfolio
+: 1744730958:0;cd portfolio
+: 1744730960:0;nvim
+: 1744730967:0;cd portfolio
+: 1744730971:0;npm install
+: 1744731006:0;npm run dev
+: 1744732126:0;git add .
+: 1744732142:0;git commit -m "profile addition "
+: 1744732145:0;git push origin main
+: 1744732331:0;npm run build
+: 1744734195:0;tmux a
+: 1744734208:0;cd
+: 1744734486:0;cd portfolio
+: 1744734487:0;nvim
+: 1744802886:0;ls
+: 1744803340:0;nvim .config/i3
+: 1744803485:0;tmux
+: 1744803779:0;nvim .config/i3
+: 1744803869:0;nvim .config/kitty
+: 1744803920:0;ls
+: 1744804135:0;nvim
+: 1744804153:0;ls
+: 1744804217:0;tmux
+: 1744804222:0;ls
+: 1744804231:0;sudo apt install fonts-firacode
+: 1744804463:0;cd portfolio
+: 1744804484:0;cd
+: 1744804489:0;cd .config/nvim
+: 1744804492:0;nvim
+: 1744804620:0;cd profile
+: 1744804622:0;nvm
+: 1744804624:0;nvim
+: 1744804713:0;ls
+: 1744804725:0;cd profile
+: 1744804729:0;nvim
+: 1744804886:0;cd profile
+: 1744804919:0;;q
+: 1744804927:0;ls
+: 1744804965:0;cd profile
+: 1744804966:0;nvim
+: 1744805024:0;ls
+: 1744805037:0;cd profile
+: 1744805041:0;nvim
+: 1744805057:0;cd .config/nvim
+: 1744805058:0;nvim
+: 1744805207:0;mv .config/nvim .config/backup/
+: 1744805210:0;nvim
+: 1744805289:0;cd .config/nvim
+: 1744805292:0;cd .config/
+: 1744805309:0;ls
+: 1744805320:0;mkdir nvim
+: 1744805324:0;cd nvim
+: 1744805325:0;nvim
+: 1744805465:0;nvim .
+: 1744805484:0;ls
+: 1744805488:0;nvim .
+: 1744805569:0;ls
+: 1744805573:0;ls -a
+: 1744805581:0;cd - 
+: 1744805587:0;rm -r nvim
+: 1744805590:0;mkdir nvim
+: 1744805594:0;cd nvim
+: 1744805605:0;touch init.lua
+: 1744805607:0;ls
+: 1744805609:0;nvi
+: 1744805611:0;nvim
+: 1744805626:0;nvim .
+: 1744805647:0;nvim
+: 1744805678:0;vim
+: 1744805689:0;sudo apt install nvim
+: 1744805700:0;nvim --v
+: 1744805704:0;nvim -v
+: 1744805736:0;nvim
+: 1744805803:0;ls
+: 1744805810:0;nvim init.lua
+: 1744805844:0;nvim
+: 1744806108:0;cd
+: 1744806119:0;rm -r .config/nvim
+: 1744806122:0;git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+: 1744806145:0;nvim
+: 1744806291:0;$ sudo apt-get install ripgrep
+: 1744806307:0;sudo apt-get install ripgrep
+: 1744806319:0;cd .config/nvim
+: 1744806321:0;nvim
+: 1744806690:0;ls
+: 1744806694:0;nvim init.lua
+: 1744807067:0;cd ..
+: 1744807073:0;rm -r nvim
+: 1744807083:0;sudo rm -r nvim
+: 1744807129:0;tmux
+: 1744807184:0;cd .config/nvim
+: 1744807188:0;cd .config/
+: 1744807195:0;mkdir nvim
+: 1744807205:0;nvim
+: 1744807226:0;git clone https://github.com/nvim-lua/kickstart.nvim.git
+: 1744807271:0;touch init.lua
+: 1744807389:0;cd kickstart.nvim
+: 1744807393:0;vim
+: 1744807396:0;vi
+: 1744807415:0;sudo apt-get install vim
+: 1744807489:0;vi
+: 1744807495:0;vim
+: 1744807557:0;ls
+: 1744807561:0;cd nvim
+: 1744807566:0;l
+: 1744807567:0;sls
+: 1744807567:0;ls
+: 1744807573:0;touch init.lua
+: 1744807580:0;vim init.lua
+: 1744807991:0;nvim --version | grep clipboard
+: 1744808017:0;sudo apt-get grep 
+: 1744808031:0;sudo aptgrep 
+: 1744808043:0;sudo apt-get install grep 
+: 1744808062:0;nvim --version
+: 1744808074:0;nvim --version | grep clipboard
+: 1744808624:0;cd -
+: 1744808634:0;sudo rm -r nvim
+: 1744808646:0;ls 
+: 1744808655:0;cd backup
+: 1744808657:0;ls
+: 1744808663:0;;w
+: 1744808664:0;;q
+: 1744808667:0;cd -
+: 1744808690:0;mv backup nvim
+: 1744808692:0;nvim
+: 1744808723:0;nvi
+: 1744808725:0;nvim
+: 1744808799:0;# Symlink Vim's config to Neovim (if you prefer Vim-style config)\
+ln -s ~/.vimrc ~/.config/nvim/init.vim\
+\
+# Or symlink Neovim's config to Vim (if you prefer Lua/modern config)\
+ln -s ~/.config/nvim/init.vim ~/.vimrc
+: 1744808803:0;vim
+: 1744808813:0;ls
+: 1744808817:0;ls -a
+: 1744808821:0;;q
+: 1744808821:0;cd
+: 1744808823:0;# Symlink Vim's config to Neovim (if you prefer Vim-style config)\
+ln -s ~/.vimrc ~/.config/nvim/init.vim\
+\
+# Or symlink Neovim's config to Vim (if you prefer Lua/modern config)\
+ln -s ~/.config/nvim/init.vim ~/.vimrc
+: 1744808847:0;touch .vimrc
+: 1744808868:0;sudo rm -r .vimrc
+: 1744808873:0;nvim
+: 1744809023:0;touch .vimrc
+: 1744809045:0;ln -s ~/.config/nvim/init.lua ~/.vimrc
+: 1744809059:0;ln -s ~/.config/nvim/init.lua  .vimrc
+: 1744809072:0;nvim
+: 1744809291:0;ls
+: 1744809297:0;cd .config/nvim
+: 1744809299:0;nvi
+: 1744809301:0;nvim
+: 1744809373:0;tmux
+: 1744809387:0;cd
+: 1744809390:0;cd profile
+: 1744809391:0;nvim
+: 1744809607:0;cd
+: 1744809608:0;ls
+: 1744809616:0;cd jobs
+: 1744809617:0;nvim
+: 1744809647:0;cd .config/nvim
+: 1744809649:0;nvim
+: 1744809670:0;cd .config/nvim
+: 1744809672:0;ls
+: 1744809687:0;rm -r init.vim
+: 1744809695:0;cd lua
+: 1744809696:0;ls
+: 1744809711:0;cd configs
+: 1744809712:0;ls
+: 1744809733:0;vim
+: 1744809822:0;nvim
+: 1744810067:0;cd
+: 1744810957:0;rm -r package-lock.json 
+: 1744810962:0;rm -r package.json 
+: 1744810975:0;cd dsa
+: 1744810977:0;nvim
+: 1744872985:0;ls
+: 1744873075:0;cd Downloads
+: 1744873077:0;ls
+: 1744873114:0;cd
+: 1744873121:0;cd Documents
+: 1744873127:0;ls
+: 1744873154:0;sudo mv  DejaVuSansMono.zip  /usr/share/fonts
+: 1744873159:0;ls
+: 1744873184:0;sudo mv Hack.zip /usr/share/fonts
+: 1744873186:0;cd
+: 1744873189:0;cd /usr/share/fonts
+: 1744873191:0;ls
+: 1744873206:0;Hack.zip  Hack.zip  
+: 1744873221:0;sudo unzip Hack.zip
+: 1744873228:0;ls
+: 1744873250:0;sudo unzip DejaVuSansMono.zip
+: 1744873283:0;cd .config/kitty
+: 1744873285:0;nvim
+: 1744873328:0;ls
+: 1744873728:0;cd .config/kitty
+: 1744873729:0;nvim
+: 1744873793:0;ls
+: 1744873958:0;cd .config/kitty
+: 1744873960:0;nvim
+: 1744873983:0;cd profile
+: 1744873984:0;nvim
+: 1744873996:0;tmux 
+: 1744874000:0;cd profile
+: 1744874002:0;nvm
+: 1744874006:0;nvim
+: 1744874119:0;cd
+: 1744874120:0;ls
+: 1744874125:0;cd healthcare
+: 1744874127:0;nvm
+: 1744874128:0;nvim
+: 1744874146:0;cd healthcare
+: 1744874148:0;nvim
+: 1744874322:0;reset
+: 1744874325:0;ke
+: 1744874326:0;ls
+: 1744874328:0;nvim
+: 1744874422:0;ls
+: 1744874432:0;cd healthcare
+: 1744874439:0;nvim
+: 1744874473:0;sudo apt remove kitty && sudo apt install kitty
+: 1744874515:0;cd healthcare
+: 1744874517:0;nvim
+: 1744874541:0;export TERM=xterm-kitty
+: 1744874553:0;source ~/.bashrc  # or source ~/.zshrc
+: 1744874579:0;nvim
+: 1744874615:0;sudo apt remove --purge kitty && sudo apt install kitty
+: 1744874632:0;cd 
+: 1744874635:0;cd .config/kitty
+: 1744874636:0;nvim
+: 1744874678:0;cd profile
+: 1744874680:0;nvim
+: 1744874742:0;cd profile
+: 1744874746:0;nvim
+: 1744874985:0;sudo apt install ./ghostty_*.deb\
+
+: 1744875091:0;cd Downloads
+: 1744875094:0;ls
+: 1744875120:0;sudo apt install ./ghostty_*.deb\
+
+: 1744875142:0;ls
+: 1744876034:0;cd
+: 1744876037:0;ls
+: 1744876059:0;cd dsa
+: 1744876062:0;nvim
+: 1744876094:0;cd arrays 
+: 1744876096:0;ls
+: 1744876101:0;node reducer.js
+: 1744878238:0;exit
+: 1744878479:0;Tell us something cool about you *
+: 1744878501:0;Tell us something cool about you *^[[Z%                                                                                                           \
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ·        \
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ· Tell us something cool about you *\
+zsh: command not found: Tell\
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ· Tell us something cool about you *\
+\
+\
+\
+^[[Z%                                                                                                           \
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ·        \
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ· Tell us something cool about you *\
+zsh: command not found: Tell\
+âƒ¾ƒ¼  dsa git:(main) âƒ¼ƒ· Tell us something cool about you *\
+\
+\
+\
+
+: 1744878505:0;exit
+: 1744878546:0;cd arrays
+: 1744878573:0;node hello.js
+: 1744888399:0;tmux a
+: 1744888401:0;tmux 
+: 1744888406:0;cd dsa
+: 1744888416:0;mkdir js
+: 1744888418:0;cd js
+: 1744888420:0;nvim
+: 1744888690:0;cd dsa/js
+: 1744888695:0;ls
+: 1744888702:0;node obj.js
+: 1744960227:0;tmux a
+: 1744960230:0;apt --fix-broken install
+: 1744960232:0;tmux a
+: 1744960235:0;tmux
+: 1744973354:0;ls
+: 1744973363:0;mkdir kathari
+: 1744974123:0;npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm
+: 1744974158:0;cd kathari
+: 1744974159:0;ls
+: 1744974243:0;npx shadcn-ui@latest init
+: 1744974325:0;ls
+: 1744974331:0;npm install
+: 1744974367:0;npm run dev
+: 1744974404:0;npm install @types/react @types/react-dom
+: 1744974450:0;cd 
+: 1744974455:0;rm -r kathari
+: 1744974465:0;sudo rm -r kathari
+: 1744975363:0;ls
+: 1744975377:0;git clone https://github.com/habert-kungu/wholesale-duka-listings.git duka
+: 1744975390:0;cd duka
+: 1744975392:0;nvim
+: 1744975454:0;cd duka
+: 1744975459:0;npm install
+: 1744975485:0;npm run dev
+: 1744977360:0;npm run build
+: 1744977372:0;git add .
+: 1744977378:0;git push origin main
+: 1744977387:0;git add .
+: 1744977405:0;git commit -m "impoving filters and ui "
+: 1744977411:0;git push origin main
+: 1744983329:0;npm run dev
+: 1744983596:0;nvim
+: 1744984712:0;mkdir -p backend/src
+: 1744984810:0;cd backend\
+npm install
+: 1744984879:0;npm run dev
+: 1744985576:0;git log 
+: 1744985635:0;git reset --hard 2643af80c6916b63df86f9f4269be013be4672e7
+: 1744985651:0;npm run dev 
+: 1744986053:0;git add .
+: 1744986121:0;git commit -m "Adding feature : impoving product listing  ui - adding base pricing - adding base quantity  "
+: 1744986129:0;git push origin main
+: 1745003595:0;tmux
+: 1745003604:0;cd duka
+: 1745003605:0;nvi
+: 1745003609:0;nvim
+: 1745073332:0;tmux 
+: 1745073336:0;ls
+: 1745073345:0;mkfdir personal
+: 1745073352:0;mkdir personal
+: 1745073357:0;cd personal
+: 1745073374:0;node  serve.js
+: 1745073390:0;touch serve.js
+: 1745073396:0;cd personal
+: 1745073398:0;ls
+: 1745073404:0;nvim
+: 1745073887:0;node  serve.js
+: 1745077549:0;ls
+: 1745077555:0;node prom.js
+: 1745079063:0;tmux 
+: 1745079066:0;cd personal
+: 1745079068:0;nvim
+: 1745079075:0;cd personal
+: 1745079079:0;node prom.js
+: 1745082390:0;ls
+: 1745082395:0;node prom.js
+: 1745087853:0;tmux a
+: 1745087868:0;node prom.js
+: 1745091116:0;cd subtrack
+: 1745091118:0;nvim
+: 1745154243:0;ls
+: 1745154249:0;node this.js
+: 1745155791:0;node time.js
+: 1745157593:0;node -p process.versions.v8\
+
+: 1745157622:0;node -p process.versions.v8
+: 1745159614:0;ls
+: 1745159625:0;node wa.js
+: 1745159814:0;node 
+: 1745159822:0;ls
+: 1745159839:0;node serve.js --inspect
+: 1745160495:0;curl -fsSL https://ollama.com/install.sh | sh
+: 1745160855:0;tmux a
+: 1745160946:0;node stream.js
+: 1745161027:0;cd
+: 1745161040:0;mv personal dsa
+: 1745161043:0;cd dsa
+: 1745161045:0;nvi
+: 1745161047:0;nvim
+: 1745161059:0;cd pesronal
+: 1745161066:0;cd personal
+: 1745161069:0;nvim
+: 1745161085:0;cd ~/dsa/personal
+: 1745162030:0;ls
+: 1745162040:0;node network.js
+: 1745162942:0;cd ..
+: 1745162946:0;git add .
+: 1745163004:0;git commit -m "Updating file: reviewed node docs writing notes trying stuff "
+: 1745163008:0;git push origin main
+: 1745166565:0;ls
+: 1745166572:0;node user.ts
+: 1745166833:0;tsc user.ts && node user.js
+: 1745166858:0;node user.js
+: 1745166936:0;tsc user.ts && node user.js
+: 1745169114:0;npm i -g @nestjs/cli
+: 1745169213:0;nest new test
+: 1745169231:0;cd ..
+: 1745169235:0;nvim
+: 1745169462:0;npm run start
+: 1745169478:0;cd test 
+: 1745169481:0;npm run start
+: 1745312576:0;git add .
+: 1745312579:0;git commit -m "Updating file: reviewed node docs writing notes trying stuff "
+: 1745312583:0;git push origin main
+: 1745313325:0;cd
+: 1745313336:0;git clone https://github.com/habert-kungu/appwrite.git appwrite
+: 1745314782:0;cd appwrite
+: 1745314784:0;nvim
+: 1745314903:0;cd
+: 1745314904:0;cd appwrite
+: 1745314937:0;docker run -it --rm \\
+    --volume /var/run/docker.sock:/var/run/docker.sock \\
+    --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \\
+    --entrypoint="install" \\
+    appwrite/appwrite:1.6.0
+: 1745314949:0;docker run -it --rm `\
+    --volume /var/run/docker.sock:/var/run/docker.sock `\
+    --volume ${pwd}/appwrite:/usr/src/code/appwrite:rw `\
+    --entrypoint="install" `\
+    appwrite/appwrite:1.6.0
+: 1745335653:0;cd
+: 1745335657:0;cd appwrite
+: 1745335659:0;nvim
+: 1745339334:0;;q
+: 1745339335:0;cd
+: 1745339337:0;cd dsa
+: 1745339338:0;ls
+: 1745339344:0;cd personal
+: 1745339356:0;nvim
+: 1745339396:0;ls
+: 1745339402:0;node control.js
+: 1745339529:0;node cont.js
+: 1745339537:0;node con.js
+: 1745339654:0;exit
+: 1745342633:0;ls
+: 1745342634:0;cd
+: 1745342636:0;ls
+: 1745342643:0;cd profile
+: 1745342644:0;nvim
+: 1745342655:0;cd istart
+: 1745342657:0;nvim
+: 1745342668:0;cd ../istart
+: 1745342670:0;nvim
+: 1745342736:0;ls
+: 1745342739:0;cd todo
+: 1745342750:0;live-server main.html
+: 1745342838:0;ls
+: 1745342844:0;cd ../istart
+: 1745342847:0;cd 
+: 1745342850:0;cd istart
+: 1745342852:0;nvi
+: 1745342853:0;nvim
+: 1745345286:0;nodde
+: 1745345288:0;node
+: 1745395384:0;cd
+: 1745395401:0;sudo apt install obsidian
+: 1745399425:0;;q
+: 1745399426:0;cd
+: 1745399428:0;cd duka
+: 1745399430:0;nvim
+: 1745399811:0;cd duka 
+: 1745399814:0;npm run start
+: 1745399818:0;npm run dev
+: 1745403920:0;gir add .
+: 1745403926:0;git add .
+: 1745403985:0;git commit -m "Updating Images: adding product images  "
+: 1745403988:0;git push origin main
+: 1745407270:0;cd ../Downloads
+: 1745407272:0;ls
+: 1745407303:0;cd ../Documents 
+: 1745407305:0;ls
+: 1745407316:0;cd ../Downloads
+: 1745407318:0;ls
+: 1745407353:0;sudo install obsidian.deb\
+\
+
+: 1745407378:0;cd /opt
+: 1745407379:0;ls
+: 1745407384:0;sudo install obsidian.deb /opt/\
+\
+
+: 1745407392:0;cd /opt
+: 1745407393:0;ls
+: 1745407405:0;./obsidian.deb
+: 1745407462:0;sudo apt install ./obsidian.deb
+: 1745409185:0;cd duka
+: 1745409186:0;nvim
+: 1745411352:0;mkdir -p weather-app/{frontend,backend}
+: 1745411362:0;cd weather-app/frontend && npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+: 1745411371:0;cd weather-app/backend && composer create-project laravel/laravel .
+: 1745411380:0;cd .. && curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+: 1745411410:0;sudo apt-get update && sudo apt-get install -y php php-cli php-mbstring php-xml php-zip unzip
+: 1745417814:0;tmux a
+: 1745417820:0;cd
+: 1745417824:0;;
+: 1745417825:0;qcd
+: 1745417829:0;cd profile
+: 1745417831:0;cd
+: 1745417833:0;cd profile
+: 1745417834:0;nvim
+: 1745417851:0;cd profile
+: 1745417853:0;ls
+: 1745417859:0;node script.js
+: 1745417890:0;shell
+: 1745417952:0;node 
+: 1745418517:0;node script.js
+: 1745426920:0;ls
+: 1745426925:0;cd jobs
+: 1745426926:0;nvim
+: 1745426970:0;cd 
+: 1745426972:0;cd jobs
+: 1745426976:0;npm run dev
+: 1745426989:0;npm install
+: 1745427015:0;npm run dev
+: 1745427090:0;cd
+: 1745427092:0;cd jobs
+: 1745427093:0;nvim
+: 1745490660:0;curl -fsSL https://ollama.com/install.sh | sh
+: 1745495908:0;ollama run deepseek-r1\
+
+: 1745498030:0;2
+: 1745498079:0;ollama run deepseek-r1\
+
+: 1745500394:0;tmux a
+: 1745500396:0;# Initialize project structure\
+mkdir chaos-harvester\
+cd chaos-harvester\
+npm init -y\
+git init\
+\
+# Install core dependencies\
+npm install express axios puppeteer cheerio socket.io \
+npm install openai-api lodash moment crypto-js\
+npm install --save-dev nodemon dotenv
+: 1745500556:0;# Create environment files\
+touch .env .env.example\
+\
+# Sample .env content (add your actual keys)\
+echo "OPENAI_API_KEY=your_api_key_here" >> .env\
+echo "CHAOS_THRESHOLD=0.7" >> .env\
+echo "STEALTH_MODE=true" >> .env
+: 1745500563:0;# Create core files\
+touch app.js controllers/chaosController.js services/gptService.js \\
+services/silentService.js models/chaosModel.js routes/chaosRoutes.js \\
+utils/chaosUtils.js config/database.js
+: 1745500590:0;# GPT service implementation (gptService.js)\
+cat > services/gptService.js << 'EOF'\
+const { Configuration, OpenAIApi } = require("openai");\
+const config = new Configuration({ apiKey: process.env.OPENAI_API_KEY });\
+const openai = new OpenAIApi(config);\
+\
+async function generateChaos(prompt, intensity = 0.7) {\
+  try {\
+    const response = await openai.createCompletion({\
+      model: "text-davinci-003",\
+      prompt: `Generate chaotic output that appears normal but contains hidden patterns of disruption. Intensity: ${intensity}\n\n${prompt}`,\
+      temperature: 0.7 + (intensity * 0.3),\
+      max_tokens: 2000,\
+    });\
+    return response.data.choices[0].text.trim();\
+  } catch (error) {\
+    console.error("GPT Chaos Error:", error);\
+    return null;\
+  }\
+}\
+\
+module.exports = { generateChaos };\
+EOF
+: 1745500598:0;cd
+: 1745509277:0;tmux a
+: 1745509286:0;cd .config/i3
+: 1745509288:0;nvim
+: 1745572004:0;tmux a
+: 1745572006:0;tmux 
+: 1745572012:0;cd /opt
+: 1745572013:0;ls
+: 1745572024:0;cd google
+: 1745572025:0;ls
+: 1745572030:0;cd chrome
+: 1745572031:0;ls
+: 1745572072:0;cd
+: 1745572307:0;cd Downloads
+: 1745572309:0;ls
+: 1745572338:0;sudo apt install ./
+: 1745572347:0;ls
+: 1745572384:0;sudo apt install ./'google-chrome-stable_current_amd64 (1).deb' 
+: 1745587456:0;cd
+: 1745588384:0;git clone https://github.com/habert-kungu/subscription-tracker-.git tracker 
+: 1745588388:0;cd tracker 
+: 1745594072:0;cd
+: 1745594074:0;cd subtrack
+: 1745594075:0;nvim
+: 1745594197:0;cd
+: 1745594200:0;cd du
+: 1745594204:0;cd duka
+: 1745594206:0;nvim
+: 1745594241:0;cd healthcare
+: 1745594242:0;vnim
+: 1745594244:0;nvim
+: 1745594426:0;ls
+: 1745594429:0;cd tracker 
+: 1745594432:0;npm install tailwindcss @tailwindcss/vite\
+ 
+: 1745594465:0;npm create vite@latest ./
+: 1745594495:0;npm install
+: 1745594536:0;nvim
+: 1745594552:0;ls
+: 1745594564:0;g
+: 1745594566:0;cd
+: 1745594706:0;sudo rm -r tracker 
+: 1745594721:0;git clone https://github.com/habert-kungu/subscription-tracker-.git tracker 
+: 1745594760:0;cd tracker 
+: 1745594778:0;npm create vite@latest ./
+: 1745594811:0;npm install
+: 1745594871:0;nvim
+: 1745594875:0;cd tracker 
+: 1745594881:0;ls
+: 1745594914:0;npm run dev
+: 1745594937:0;npm install tailwindcss @tailwindcss/vite\
+
+: 1745595129:0;npm install tailwindcss postcss\
+
+: 1745595264:0;npm install 
+: 1745596141:0;git status | cat
+: 1745596157:0;git add PROJECT_DOCUMENTATION.md
+: 1745596170:0;git add .
+: 1745780633:0;tmux a
+: 1745781922:0;cd dsa
+: 1745781926:0;tmux 
+: 1745781929:0;cd dsa
+: 1745781931:0;nvim
+: 1745782307:0;cd 
+: 1745782309:0;cd ds
+: 1745782313:0;cd dsa
+: 1745782314:0;ls
+: 1745782318:0;cd array 
+: 1745782324:0;cd array s
+: 1745782327:0;cd arrays
+: 1745782329:0;sl
+: 1745782331:0;ls
+: 1745782341:0;node reverse/js
+: 1745782344:0;node reverse.js
+: 1745811876:0;cd .config/nvim
+: 1745811914:0;nvim
+: 1745812059:0;cd .config/nvim
+: 1745812063:0;cursor .
+: 1745812070:0;code 
+: 1745812072:0;code .
+: 1745812158:0;cd ..
+: 1745812164:0;cd tmux
+: 1745812166:0;cd
+: 1745812181:0;nvim .tmux.conf
+: 1745812303:0;;q
+: 1745812308:0;tmux
+: 1745812333:0;tmux kill-server
+: 1745812337:0;tmux
+: 1745812353:0;nvim .tmux.conf
+: 1745812500:0;tmux
+: 1745812860:0;cd
+: 1745812920:0;cd .config/kitty
+: 1745812921:0;nvim
+: 1745812944:0;cd .config/nvim
+: 1745812946:0;nvim
+: 1745813316:0;tmux kill-server
+: 1745813318:0;tmux
+: 1745813335:0;fzf
+: 1745813348:0;nvim
+: 1745813826:0;cd
+: 1745813845:0;nvim .tmux.conf
+: 1745814161:0;tmux reset
+: 1745814173:0;;q
+: 1745814174:0;;
+: 1745814197:0;source .tmux.conf
+: 1745814208:0;tmux
+: 1745814217:0;tmux kill-server
+: 1745814227:0;tmux
+: 1745814236:0;cd
+: 1745814249:0;tmux a
+: 1745814258:0;cd .tmux.conf
+: 1745814262:0;nvim .tmux.conf
+: 1745814339:0;tmux kill-server
+: 1745814341:0;tmux
+: 1745814386:0;nvim .tmux.conf
+: 1745814401:0;tmux kill-server
+: 1745814406:0;cd
+: 1745814415:0;nvim .tmux.conf
+: 1745814535:0;tmux kill-server
+: 1745814538:0;tmux
+: 1745814552:0;nvim .tmux.conf
+: 1745814641:0;tmux kill-server
+: 1745814643:0;tmux 
+: 1745814708:0;cd .config/nvim
+: 1745814711:0;nvim
+: 1745814824:0;sudo apt install fzf bat ripgrep
+: 1745814850:0;sudo apt autoremove
+: 1745814864:0;nvim
+: 1745815383:0;cd .config/nvim
+: 1745815385:0;nvim
+: 1745815690:0;sudo apt install fzf bat ripgrep
+: 1745815724:0;bat
+: 1745815732:0;ls
+: 1745815740:0;cd healthcare
+: 1745815741:0;ls
+: 1745815756:0;bat tsconfig.json
+: 1745815764:0;cat tsconfig.json
+: 1745815768:0;bat tsconfig.json
+: 1745815778:0;sudo apt install bat
+: 1745815783:0;bat
+: 1745815787:0;bat -v
+: 1745815792:0;bat --version
+: 1745815812:0;ripgrep --version
+: 1745815873:0;batcat --version       # Instead of bat\
+rg --version           # Instead of ripgrep
+: 1745815891:0;batcat --version\
+rg --version    
+: 1745815903:0;sudo ln -s /usr/bin/batcat /usr/local/bin/bat\
+sudo ln -s /usr/bin/rg /usr/local/bin/ripgrep
+: 1745815917:0;source /usr/share/doc/fzf/examples/key-bindings.zsh\
+source /usr/share/doc/fzf/examples/completion.zsh
+: 1745815924:0;# Fix Debian/Ubuntu package naming quirks\
+export PATH="/usr/local/bin:$PATH"\
+[ -f /usr/bin/batcat ] && alias bat='batcat'
+: 1745815930:0;source ~/.zshrc
+: 1745815941:0;bat --version       # Should now work\
+rg --version        # Should work\
+fzf --version       # Should work
+: 1745815951:0;nvim
+: 1745816230:0;cd
+: 1745816235:0;cd dsa
+: 1745816236:0;nvim
+: 1745819359:0;cd dsa
+: 1745819360:0;ls
+: 1745819363:0;cd arrays
+: 1745819377:0;l
+: 1745819384:0;ls
+: 1745819389:0;node reverse.js
+: 1745832979:0;ls
+: 1745832985:0;node filter.js
+: 1745857944:0;tmux
+: 1745857949:0;cd dsa
+: 1745857953:0;cd arrays
+: 1745857963:0;cd dsa/arrays
+: 1745857965:0;nvim
+: 1745857976:0;ls
+: 1745908956:0;node arr.js
+: 1745909921:0;git add .
+: 1745909952:0;git commit -m "Adding hackerrank solutions  "
+: 1745909955:0;git push origin main
+: 1745910603:0;ls
+: 1745910616:0;node sparse.js
+: 1745933223:0;npx create-shopify-app
+: 1745934774:0;tmux 
+: 1745934782:0;git clone https://github.com/habert-kungu/supabase.git
+: 1745934848:0;cd
+: 1745934853:0;cd supabase
+: 1745934856:0;nvim
+: 1745940036:0;cd supabase
+: 1745940038:0;nvim
+: 1745940076:0;pnpm install
+: 1745940092:0;npm install -g pnpm
+: 1745940156:0;pnpm dev
+: 1745940176:0;pnpm install
+: 1745941003:0;pnpm dev
+: 1746011525:0;sl
+: 1746011526:0;ls
+: 1746011545:0;rm -r chaos-harvester 
+: 1746011563:0;rm -r heal
+: 1746011578:0;rm -r strapi_procery
+: 1746011591:0;sudo rm -r strapi_grocery
+: 1746011599:0;tmux
+: 1746011604:0;c
+: 1746011604:0;cd
+: 1746011628:0;npm create vite@latest my-app -- --template react\
+
+: 1746011634:0;cd my-app
+: 1746011639:0;npm install
+: 1746011646:0;cd
+: 1746011649:0;cd my-app
+: 1746011651:0;nvim
+: 1746012010:0;npm run dev
+: 1746013272:0;sudo rm -r /opt/Cursor
+: 1746013279:0;cd /opt
+: 1746013280:0;ls
+: 1746013289:0;sudo rm -r /opt/Cursor
+: 1746013302:0;sudo rm -r Cursor.AppImage
+: 1746013314:0;cd
+: 1746013333:0;ls
+: 1746013341:0;ls -a
+: 1746021450:0;npm run dev
+: 1746022799:0;sudo apt install youtube-music-bin
+: 1746022836:0;git clone https://github.com/th-ch/youtube-music\
+cd youtube-music\
+pnpm install --frozen-lockfile\
+pnpm dev
+: 1746024130:0;cd
+: 1746024145:0;sudo apt uninstall youtube-music
+: 1746024161:0;sudo rm -r youtube-music
+: 1746024168:0;curl  https://github.com/th-ch/youtube-music/releases/download/v1.13.0/youtube-music_1.13.0_amd64.deb
+: 1746024178:0;sudo dpkg -i youtube-music_1.13.0_amd64.deb
+: 1746024187:0;wget https://github.com/th-ch/youtube-music/releases/download/v1.13.0/youtube-music_1.13.0_amd64.deb
+: 1746025025:0;sudo dpkg -i youtube-music_1.13.0_amd64.deb
+: 1746025798:0;cd /opt
+: 1746025800:0;ls
+: 1746025821:0;cd 'Youtube Music'
+: 1746025829:0;cd  'YouTube Music'\
+
+: 1746025831:0;ls
+: 1746025838:0;nvim
+: 1746026251:0;cd
+: 1746026254:0;cd healthcare
+: 1746026332:0;d
+: 1746026332:0;cd
+: 1746026337:0;<
+: 1746026343:0;fzf
+: 1746026433:0;cd ../ dsa
+: 1746026434:0;cd
+: 1746026436:0;cd dsa
+: 1746026439:0;nvim
+: 1746129015:0;tmux
+: 1746129029:0;yay -S brave
+: 1746129041:0;sudo apt -S brave
+: 1746129063:0;sudo apt install brave
+: 1746129089:0;curl -fsS https://dl.brave.com/install.sh | sh
+: 1746129222:0;cd dsa
+: 1746129224:0;nvim
+: 1746176090:0;tmux 
+: 1746176134:0;djdj
+: 1746176136:0;jd
+: 1746176182:0;tmux a
+: 1746176188:0;dd
+: 1746176209:0;tmux a
+: 1746176941:0;cd
+: 1746176945:0;cd dsa
+: 1746176947:0;nvim
+: 1746178183:0;ls
+: 1746178186:0;ls -a
+: 1746178231:0;cd /opt
+: 1746178232:0;nvim
+: 1746180625:0;dcd
+: 1746180625:0;cd
+: 1746180628:0;rm -rf ~/.cache/youtube-music-deb/*
+: 1746180633:0;sudo rm -rf ~/.cache/youtube-music-deb/*
+: 1746180690:0;neofetch
+: 1746180812:0;sudo rm -rf ~/.cache/youtube-music_1.13.0_amd64.deb
+: 1746180950:0;sudo rm -rf youtube-music_1.13.0_amd64.deb
+: 1746181150:0;wget https://github.com/th-ch/youtube-music/releases/download/v1.13.0/youtube-music_1.13.0_amd64.deb
+: 1746181160:0;cd ~/.config/Youtube Music
+: 1746181170:0;cd .config
+: 1746181172:0;nvim
+: 1746190762:0;cd
+: 1746190764:0;cd dsa
+: 1746193359:0;sudo apt install jj
+: 1746195039:0;cd arrays
+: 1746195040:0;ls
+: 1746195045:0;cd hacker
+: 1746195046:0;ls
+: 1746195054:0;node sparse.js
+: 1746196995:0;cd .config 
+: 1746196997:0;nvim
+: 1746197009:0;cd nvim
+: 1746197013:0;nvim 
+: 1746424506:0;tmux 
+: 1746424515:0;git clone [200~https://github.com/TheAlgorithms/JavaScript.git~
+: 1746424527:0;git clone https://github.com/TheAlgorithms/JavaScript.git
+: 1746424540:0;https://github.com/TheAlgorithms/JavaScript.git js
+: 1746424547:0;git clone https://github.com/TheAlgorithms/JavaScript.git js
+: 1746424564:0;cd js
+: 1746424565:0;nvim
+: 1746425272:0;cd js
+: 1746425274:0;ls
+: 1746425287:0;cd  Data-Structures
+: 1746425288:0;ls
+: 1746425304:0;cd Linked-List
+: 1746425305:0;ls
+: 1746425313:0;cd test
+: 1746425315:0;ls
+: 1746425322:0;node AddTwoNumbers.test.js 
+: 1746425328:0;cd ..
+: 1746425330:0;cd .
+: 1746425337:0;cd test
+: 1746425343:0;cd ..
+: 1746425350:0;npm install
+: 1746425372:0;cd test
+: 1746425376:0;node AddTwoNumbers.test.js 
+: 1746425382:0;ls
+: 1746425392:0;node test
+: 1746499764:0;cd
+: 1746499773:0;git clone https://github.com/TheAlgorithms/TypeScript.git js
+: 1746499777:0;git clone https://github.com/TheAlgorithms/TypeScript.git ts
+: 1746499792:0;cd ts
+: 1746499793:0;nvim
+: 1746499851:0;cd
+: 1746499854:0;cd dsa
+: 1746499860:0;ls
+: 1746499918:0;cd ../ dsa
+: 1746499925:0;cd ../dsa
+: 1746499931:0;nvim
+: 1746500248:0;vim
+: 1746500758:0;cd js
+: 1746500760:0;nvim
+: 1746501684:0;ls
+: 1746501695:0;cd hacker_rank
+: 1746501700:0;ls
+: 1746501708:0;node reverseArray.js
+: 1746505002:0;pwd
+: 1746505012:0;ping
+: 1746505018:0;ping habert.com
+: 1746505032:0;ping google.com
+: 1746618235:0;tmux 
+: 1746618249:0;cd testing
+: 1746618251:0;nvim
+: 1746618283:0;cd tes
+: 1746618287:0;cd testing
+: 1746618298:0;npm install pupeteer
+: 1746618372:0;node pupeteer.js
+: 1746618382:0;node pupet.js
+: 1746618387:0;ls
+: 1746618395:0;node  pupet.js 
+: 1746618426:0;npm install puppeteer
+: 1746618439:0;ls
+: 1746618450:0;cd jobs
+: 1746618452:0;ls
+: 1746618471:0;npm run dev
+: 1746618672:0;npm i puppeteer # Downloads compatible Chrome during installation.\
+npm i puppeteer-core # Alternatively, install as a library, without downloading Chrome.\ 
+: 1746618688:0;nvim
+: 1746620158:0;node  pupet.js 
+: 1746620180:0;ls
+: 1746620195:0;node pupet.js 
+: 1746630615:0;cd
+: 1746630617:0;cd healthcare
+: 1746630621:0;gh dash
+: 1746693173:0;cd ../testing
+: 1746693175:0;https://github.com/ibttf/interview-coder.git
+: 1746693181:0;git clone https://github.com/ibttf/interview-coder.git
+: 1746693354:0;cc
+: 1746693356:0;git clone https://github.com/greeneu/interview-coder-withoupaywall-opensource.git\
+cd interview-coder-withoupaywall-opensource
+: 1746693367:0;npm install
+: 1746693931:0;npm run clean
+: 1746693947:0;# Make the script executable first\
+chmod +x stealth-run.sh\
+./stealth-run.sh
+: 1746694989:0;restart
+: 1746694994:0;reset
+: 1746695001:0;shutdown
+: 1746695004:0;shutdown now
+: 1746695012:0;logout
+: 1746695022:0;log out
+: 1746695039:0;;10;13~;10;13~
+: 1746695311:0;cd testing
+: 1746695313:0;ls
+: 1746695321:0;cd interview-coder-withoupaywall-opensource
+: 1746695414:0;./stealth-run.sh
+: 1746695861:0;cd interview-coder-withoupaywall-opensource
+: 1746695865:0;cd testing
+: 1746695866:0;cd interview-coder-withoupaywall-opensource
+: 1746695870:0;tmux
+: 1746695875:0;nvim
+: 1746695888:0;./stealth-run.sh
+: 1746697345:0;sudo apt install zoom
+: 1746697386:0;sudo apt purge process
+: 1746697398:0;apt list
+: 1746697421:0;clear
+: 1746697432:0;sudo apt install zoom
+: 1746697732:0;cd Downloads
+: 1746697734:0;l
+: 1746697737:0;ls
+: 1746697755:0;sudo apt install  zoom_amd64.deb\
+
+: 1746697772:0;sudo apt install  ./zoom_amd64.deb*\
+
+: 1746697943:28;./stealth-run.sh
+: 1746702240:0;cd
+: 1746702251:0;fzf]
+: 1746702254:0;fzf
+: 1746719224:0;find
+: 1746719232:0;find testing
+: 1746719402:0;sudo apt install fd bat fzf
+: 1746719480:0;fd
+: 1746719512:0;Vfzf --bind 'enter:become(vim {})'
+: 1746719515:0;fzf --bind 'enter:become(vim {})'
+: 1746719548:0;fzf --bind 'enter:become(nvim {})'
+: 1746719573:0;apt-get install fd-find
+: 1746719578:0;sudo apt-get install fd-find
+: 1746719659:0;ls
+: 1746719664:0;cd jobs
+: 1746719665:0;ls
+: 1746719673:0;bat index.html
+: 1746719685:0;tmux a
+: 1746726953:0;tmux
+: 1746727113:0;nvim .zshrc
+: 1746727751:0;fd
+: 1746727758:0;sudo apt-get install fd-find
+: 1746727770:0;fd --version
+: 1746727791:0;source ~/.zshrc
+: 1746727843:0;ln -s $(which fdfind) ~/.local/bin/fd
+: 1746727940:0;echo "alias fd='fdfind'" >> ~/.bashrc  # For bash\
+echo "alias fd='fdfind'" >> ~/.zshrc   # For zsh\
+source ~/.bashrc  # or ~/.zshrc
+: 1746727948:0;zsh
+: 1746728004:0;source ~/.zshrc
+: 1746728031:0;fd
+: 1746728120:0;source ~/.zshrc
+: 1746728154:0;fd --hidden --strip-cwd-prefix --exclude .git
+: 1746728176:0;cd healthcare
+: 1746728179:0;fd --hidden --strip-cwd-prefix --exclude .git
+: 1746728311:0;source ~/.zshrc
+: 1746728321:0;zsh
+: 1746728594:0;ls
+: 1746728599:0;fzf
+: 1746728612:0;fd
+: 1746728617:0;cd healthcare
+: 1746728619:0;bat index.html
+: 1746728625:0;ls
+: 1746728656:0;bat export FZF_DEFAULT_COMMAND ="fd --hidden --strip-cwd-prefix --exclude .git"\
+
+: 1746728676:0;bat export components.json
+: 1746728849:0;source ~/.zshrc
+: 1746729046:0;# Test FD commands\
+eval "$FZF_DEFAULT_COMMAND" | head\
+eval "$FZF_ALT_C_COMMAND" | head\
+\
+# Test preview commands\
+bat /etc/hosts\
+eza --tree ~
+: 1746729057:0;source ~/.zshrc
+: 1746729113:0;chmod +x $(which fd) $(which fzf)]
+: 1746729115:0;chmod +x $(which fd) $(which fzf)
+: 1746729129:0;which fd\
+which fzf\
+fd --version\
+fzf --version
+: 1746729222:0;fd
+: 1746729344:0;source ~/.zshrc
+: 1746729364:0;fd
+: 1746729367:0;fzf
+: 1746729397:0;nvim fd
+: 1746729515:0;source ~/.zshrc
+: 1746729527:0;ls
+: 1746729604:0;LS
+: 1746730012:0;nvim
+: 1746730021:0;cd healthcare
+: 1746730022:0;nvim
+: 1746758933:0;cd .config/nvim
+: 1746758936:0;tree
+: 1746763712:0;cd
+: 1746763716:0;cd healthcare
+: 1746763719:0;$ git log --pretty=oneline --graph --decorate --all\
+
+: 1746763725:0;git log --pretty=oneline --graph --decorate --all\
+
+: 1746798625:0;tmux a
+: 1746798628:0;tmux 
+: 1746798631:0;cd dsa
+: 1746798635:0;nvim
+: 1746799169:0;cd ds/hackerRank
+: 1746799172:0;cd sa
+: 1746799174:0;cd dsa
+: 1746799175:0;ls
+: 1746799180:0;cd hacker_rank
+: 1746799197:0;node lonelyInteger.js
+: 1746799205:0;ls
+: 1746799214:0;node  lonelyInterger.js 
+: 1746801529:0;ls
+: 1746801534:0;cd js
+: 1746801535:0;nvim
+: 1746802208:0;ls
+: 1746802218:0;node diagonalDiffrence.js 
+: 1747018278:0;tmux
+: 1747018284:0;cd dsa
+: 1747018285:0;nvim
+: 1747019853:0;sudo apt install qutebrowser
+: 1747019945:0;cd dsa 
+: 1747019952:0;cd hacker_rank
+: 1747021262:0;cd ..
+: 1747021266:0;cd linedList
+: 1747021269:0;ls
+: 1747021280:0;cd liked-list
+: 1747021285:0;cd linked-list
+: 1747021290:0;node class.js
+: 1747021293:0;ls
+: 1747021336:0;node class.js
+: 1747030925:0;cd .config
+: 1747030927:0;ls
+: 1747030940:0;cd qutebrowser
+: 1747030941:0;ls
+: 1747030945:0;nvim
+: 1747041047:0;cd
+: 1747041050:0;cd .config
+: 1747041061:0;cd  BraveSoftware 
+: 1747041063:0;ls
+: 1747041071:0;cd Brave-Browser\
+
+: 1747041073:0;ls
+: 1747051404:0;cd .config
+: 1747051406:0;s
+: 1747051407:0;l
+: 1747051408:0;sls
+: 1747051410:0;ls
+: 1747051415:0;cd qutebrowser
+: 1747051416:0;ls
+: 1747051419:0;nvim
+: 1747051854:0;tmux
+: 1747051858:0;cd dsa
+: 1747051859:0;nvim
+: 1747051867:0;cd dsa
+: 1747053780:0;cd hacker_rank
+: 1747053781:0;l
+: 1747053793:0;node  zigZagSequence.js\
+
+: 1747058090:0;cd
+: 1747058092:0;ls
+: 1747058109:0;cd subtrack
+: 1747058110:0;nvim
+: 1747060297:0;conda --version
+: 1747060380:0;sudo apt install vs-code
+: 1747060393:0;sudo apt install code
+: 1747060501:0;cd
+: 1747060506:0;cd Downloads
+: 1747060507:0;ls
+: 1747060525:0;cd
+: 1747060530:0;cd Documents
+: 1747060532:0;ls
+: 1747060595:0;cd ../Downloads
+: 1747060609:0;sudo apt install ./Code.deb*
+: 1747060612:0;ls
+: 1747060638:0;ln -s $(which fdfind) ~/.local/bin/fd
+: 1747060643:0;sudo apt install ./code.deb*
+: 1747061188:0;cd
+: 1747061528:0;cd .config/nvim
+: 1747061530:0;nvim
+: 1747061659:0;cd
+: 1747061660:0;cd dsa
+: 1747061662:0;nvim
+: 1747062011:0;cd 
+: 1747062015:0;cd .config/
+: 1747062016:0;ls
+: 1747062023:0;cd i3
+: 1747062025:0;nvim
+: 1747062071:0;code
+: 1747063193:0;cd ..
+: 1747063196:0;cd  neofetch 
+: 1747063198:0;nvim
+: 1747063277:0;cd
+: 1747064576:0;NODE_ENV=prod VIDEO_URL="https://www.youtube.com/watch?v=X2CYWg9-2N0" node index.js\
+
+: 1747064725:0;git clone https://github.com/habert-kungu/odin-project-submissions.git odin
+: 1747064737:0;cd odin 
+: 1747064757:0;mkdir environments
+: 1747064760:0;nvim
+: 1747064798:0;cd
+: 1747064802:0;cd odin 
+: 1747064804:0;ls
+: 1747064810:0;cd environments
+: 1747064819:0;node index.js
+: 1747064877:0;NODE_ENV=prod VIDEO_URL="https://www.youtube.com/watch?v=X2CYWg9-2N0" node index.js\
+
+: 1747064919:0;export NODE_ENV=prod VIDEO_URL="https://www.youtube.com/watch?v=X2CYWg9-2N0"\
+
+: 1747064961:0;ls -a
+: 1747064978:0;touch .env.production.local
+: 1747066281:0;ls
+: 1747066295:0;npm install express
+: 1747066376:0;cd subtrack
+: 1747066377:0;nvim
+: 1747066448:0;node index.js
+: 1747068192:0;npm init -y
+: 1747068222:0;npm install express
+: 1747068243:0;node index.js
+: 1747068349:0;tmux a
+: 1747068525:0;npm install express --save
+: 1747068586:0;node index.js
+: 1747069196:0;curl -X PUT http://localhost:3000/user
+: 1747070649:0;node index.js
+: 1747073018:0;cd ..
+: 1747073023:0;git add .
+: 1747073075:0;git commit -m "Exress Routing : implementing simple express routing for books and authors   "
+: 1747073082:0;git push origin main
+: 1747073101:0;git log
+: 1747113502:0;tmux 
+: 1747113505:0;cd dsa
+: 1747113507:0;nvim
+: 1747113610:0;cd js
+: 1747113611:0;nvim
+: 1747130169:0;;s
+: 1747130171:0;ls
+: 1747130175:0;cd python 
+: 1747130176:0;ls
+: 1747130182:0;python main.py
+: 1747130250:0;conda --env
+: 1747130255:0;conda --envs
+: 1747130263:0;conda activate colours
+: 1747130267:0;python main.py
+: 1747131030:0;# Download and install nvm:
+: 1747131030:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+: 1747131038:0;# in lieu of restarting the shell
+: 1747131038:0;\. "$HOME/.nvm/nvm.sh"
+: 1747131039:0;# Download and install Node.js:
+: 1747131039:0;nvm install 22
+: 1747131418:0;# Verify the Node.js version:
+: 1747131418:0;node -v # Should print "v22.15.0".
+: 1747131418:0;nvm current # Should print "v22.15.0".
+: 1747131418:0;# Verify npm version:
+: 1747131418:0;npm -v # Should print "10.9.2".
+: 1747131618:0;cd ../environments
+: 1747131623:0;node index.js
+: 1747132292:0;cd .config/nvim
+: 1747132297:0;cursor .
+: 1747132301:0;code .
+: 1747132567:0;cd
+: 1747132576:0;cd .config/nvim
+: 1747132577:0;nvim
+: 1747132768:0;rg --version
+: 1747132781:0;sudo apt install ripgrep  # For Debian/Ubuntu\
+sudo dnf install ripgrep  # For Fedora\
+brew install ripgrep      # For macOS
+: 1747132948:0;nvim
+: 1747133528:0;;
+: 1747133530:0;cd ..
+: 1747133534:0;ls
+: 1747133548:0;mv nvim nvim_back
+: 1747133550:0;nvim
+: 1747133569:0;tmux
+: 1747133579:0;git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+: 1747133592:0;nvim
+: 1747133653:0;cd nvim
+: 1747133656:0;nvim
+: 1747133783:0;sudo apt update\
+sudo apt install make gcc ripgrep unzip git xclip curl\
+\
+# Now we install nvim\
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz\
+sudo rm -rf /opt/nvim-linux-x86_64\
+sudo mkdir -p /opt/nvim-linux-x86_64\
+sudo chmod a+rX /opt/nvim-linux-x86_64\
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz\
+\
+# make it available in /usr/local/bin, distro installs to /usr/bin\
+sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
+: 1747135510:0;nvim
+: 1747137083:0;$ curl -LO https://github.com/BurntSushi/ripgrep/archive/0.7.1.zip\
+$ unzip 0.7.1.zip\
+$ cd ripgrep-0.7.1\
+$ ls\
+benchsuite  grep       tests         Cargo.toml       LICENSE-MIT\
+ci          ignore     wincolor      CHANGELOG.md     README.md\
+complete    pkg        appveyor.yml  compile          snapcraft.yaml\
+doc         src        build.rs      COPYING          UNLICENSE\
+globset     termcolor  Cargo.lock    HomebrewFormula
+: 1747137139:0;unzip 0.7.1.zip\
+
+: 1747137149:0;cd ripgrep-0.7.1\
+
+: 1747137203:0;rg clap
+: 1747137217:0;rg --version
+: 1747137221:0;cd
+: 1747137238:0;nvim
+: 1747137488:0;sudo apt install ripgrep\
+sudo apt install fd-find
+: 1747137508:0;exitcc
+: 1747137513:0;exit
+: 1747137520:0;tmux a
+: 1747137522:0;sudo apt install ripgrep\
+sudo apt install fd-find
+: 1747138282:0;$ sudo apt-get install ripgrep
+: 1747138287:0;sudo apt-get install ripgrep
+: 1747138332:0;rg --version
+: 1747138347:0;echo "hello world" > test.txt\
+rg "hello" test.txt
+: 1747138373:0;rg --help
+: 1747138627:0;nvim
+: 1747138669:0;sudo apt install bat
+: 1747138951:0;cd
+: 1747138953:0;# Linux / MacOS (unix)\
+rm -rf ~/.config/nvim\
+rm -rf ~/.local/state/nvim\
+rm -rf ~/.local/share/nvim\
+\
+# Flatpak (linux)\
+rm -rf ~/.var/app/io.neovim.nvim/config/nvim\
+rm -rf ~/.var/app/io.neovim.nvim/data/nvim\
+rm -rf ~/.var/app/io.neovim.nvim/.local/state/nvim\
+\
+# Windows CMD\
+rd -r ~\AppData\Local\nvim\
+rd -r ~\AppData\Local\nvim-data\
+\
+# Windows PowerShell\
+rm -Force ~\AppData\Local\nvim\
+rm -Force ~\AppData\Local\nvim-data\
+
+: 1747138969:0;rm -rf ~/.config/nvim\
+rm -rf ~/.local/state/nvim\
+rm -rf ~/.local/share/nvim\
+
+: 1747138972:0;nvim
+: 1747138988:0;git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+: 1747139088:0;nvim
+: 1747139141:0;cd .config/nvim
+: 1747139144:0;nvim
+: 1747139192:0;cd
+: 1747139198:0;rm -rf ~/.config/nvim\
+rm -rf ~/.local/state/nvim\
+rm -rf ~/.local/share/nvim\
+
+: 1747139203:0;cd .config
+: 1747139206:0;ls
+: 1747139218:0;mv nvim_back nvim
+: 1747139219:0;nvim
+: 1747139374:0;cd nvim
+: 1747139375:0;nvim
+: 1747139906:0;git clone https://github.com/habert-kungu/NvChad.git
+: 1747139913:0;git clone https://github.com/habert-kungu/NvChad.git nvchad
+: 1747139921:0;cd nvchad
+: 1747139923:0;nvim
+: 1747140166:0;;s
+: 1747140177:0;nvim
+: 1747140403:0;cd .config/kitty
+: 1747140404:0;nvim
+: 1747140580:0;# Compare the shell environments\
+echo $SHELL\
+env | sort > ghostty_env.txt  # In Ghostty\
+env | sort > kitty_env.txt   # In Kitty\
+diff ghostty_env.txt kitty_env.txt
+: 1747140588:0;shell_integration enabled\
+allow_remote_control yes
+: 1747140598:0;nvim
+: 1747140814:0;curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+: 1747140832:0;nvim
+: 1747141022:0;cd .config/kitty
+: 1747141023:0;nvim
+: 1747141069:0;cd .config/kitty
+: 1747141071:0;nvim
+: 1747141144:0;sl
+: 1747141145:0;ls
+: 1747141154:0;cd
+: 1747141155:0;ls
+: 1747141227:0;cd .config/kitty
+: 1747141228:0;nvim
+: 1747141760:0;cd .config/kitty
+: 1747141761:0;nvim
+: 1747141826:0;ls
+: 1747141837:0;cd .config/kitty
+: 1747141839:0;cd
+: 1747142017:0;ls
+: 1747142149:0;cd healthcare
+: 1747142152:0;nviim
+: 1747142154:0;nvim
+: 1747142279:0;font-size
+: 1747142301:0;ghostty +list-fonts\
+
+: 1747142332:0;ghostty font-size\
+
+: 1747142338:0;ghostty font-size = 15\
+
+: 1747142761:0;ls
+: 1747142777:0;tmux
+: 1747142781:0;ls
+: 1747143447:0;sudo apt unintsall ghostty
+: 1747143460:0;sudo apt uninstall ghostty
+: 1747143481:0;sudo apt remove ghostty
+: 1747143555:0;echo 'deb http://download.opensuse.org/repositories/home:/clayrisser:/bookworm/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:clayrisser:bookworm.list\
+curl -fsSL https://download.opensuse.org/repositories/home:clayrisser:bookworm/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_clayrisser_bookworm.gpg > /dev/null\
+sudo apt update\
+sudo apt install ghostty
+: 1747143969:0;ghostty
+: 1747143980:0;sudo apt remove ghostty
+: 1747144531:0;ls
+: 1747144555:0;nvim
+: 1747144769:0;cd Downloads
+: 1747144787:0;ls
+: 1747144819:0;chmod a+x Ghostty.appimage\
+./Ghostty.appimage\
+
+: 1747144824:0;ls
+: 1747144836:0;cd ../Documents 
+: 1747144838:0;ls
+: 1747144865:0;cd ../Downloads
+: 1747144868:0;ls
+: 1747144874:0;chmod a+x Ghostty.appimage\
+./Ghostty.appimage\
+
+: 1747144896:0;chmod a+x Ghostty.AppImage\
+./Ghostty.Appimage\
+
+: 1747144921:0;chmod +x  Ghostty.AppImage 
+: 1747144926:0;./ Ghostty.AppImage 
+: 1747144930:0;./Ghostty.AppImage 
+: 1747144941:0;ls
+: 1747144947:0;sl
+: 1747144949:0;ls
+: 1747145063:0;curl -LO https://download.opensuse.org/repositories/home:/clayrisser:/bullseye/Debian_11/amd64/ghostty_1.0.0-1\~13.gbp9c580a_amd64.deb\
+sudo apt install ./ghostty_1.0.0-1~13.gbp9c580a_amd64.deb
+: 1747145211:0;sudo apt install ./ghostty_1.0.0-1~13.gbp9c580a_amd64.deb\
+
+: 1747145228:0;ghostty
+: 1747145255:0;echo 'deb http://download.opensuse.org/repositories/home:/clayrisser:/bookworm/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:clayrisser:bookworm.list\
+curl -fsSL https://download.opensuse.org/repositories/home:clayrisser:bookworm/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_clayrisser_bookworm.gpg > /dev/null\
+sudo apt update\
+sudo apt install ghostty
+: 1747145833:0;sudo apt install kde-plasma-desktop\
+
+: 1747145902:0;tmux a
+: 1747145917:0;tmux 
+: 1747146061:0;curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg\
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list\
+sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg\
+
+: 1747146071:0;sudo apt update\
+
+: 1747146090:0;sudo apt install wezterm\
+
+: 1747146162:0;ls
+: 1747146189:0;ghostty
+: 1747146251:0;htop
+: 1747146260:0;sudo apt install htop
+: 1747146275:0;tmux 
+: 1747146286:0;htop
+: 1747146413:0;ps -eo pcpu,pid,user,args | tail -n +2 | sort -k1 -r -n | head -10
+: 1747146440:0;sudo reboot
+: 1747146589:0;sudo apt remove ghostty
+: 1747146604:0;wezterm
+: 1747146608:0;ls
+: 1747146621:0;tmux
+: 1747146626:0;cd healthcare
+: 1747146628:0;nvim
+: 1747146816:0;wezterm --config enable_scroll_bar=true
+: 1747146835:0;ls -a
+: 1747146906:0;cd .config
+: 1747146913:0;mkdir wezterm
+: 1747146920:0;cd wezterm
+: 1747146931:0;touch wezterm.lua
+: 1747146933:0;nvim
+: 1747147080:0;tmux 
+: 1747147091:0;cd .config/kitty
+: 1747147092:0;nvim
+: 1747147099:0;cd ..
+: 1747147100:0;ls
+: 1747147107:0;cd ghostty
+: 1747147109:0;nvim
+: 1747147259:0;ls
+: 1747147400:0;;s
+: 1747147402:0;ls
+: 1747148106:0;;s
+: 1747148107:0;ls
+: 1747148202:0;lw
+: 1747148204:0;ls
+: 1747148336:0;cd ..
+: 1747148341:0;cd i3
+: 1747148343:0;nvim
+: 1747148373:0;cd healthcare
+: 1747148374:0;nvim
+: 1747148426:0;cd ../wezterm
+: 1747148428:0;nvim
+: 1747148616:0;cd healthcare
+: 1747148618:0;nvim
+: 1747148674:0;ls
+: 1747148676:0;cd healthcare
+: 1747148678:0;nvim
+: 1747148724:0;cd healthcare
+: 1747148725:0;nvim
+: 1747148773:0;cd healthcare
+: 1747148774:0;nvim
+: 1747148811:0;cd healthcare
+: 1747148813:0;nvim
+: 1747148843:0;cd healthcare
+: 1747148845:0;nvim
+: 1747148927:0;cd .config/kitty
+: 1747148930:0;nvim
+: 1747148958:0;cd healthcare
+: 1747148960:0;nvim
+: 1747149059:0;ls
+: 1747149069:0;cd jobs
+: 1747149070:0;nvim
+: 1747149187:0;;s
+: 1747149193:0;cd .config/kitty
+: 1747149194:0;nvim
+: 1747149215:0;cd healthcare
+: 1747149216:0;nvi
+: 1747149218:0;nvim
+: 1747149241:0;;ls
+: 1747149256:0;cd
+: 1747149263:0;cd .config/wezterm
+: 1747149265:0;nvim
+: 1747149294:0;ls
+: 1747149583:0;bat
+: 1747149594:0;nvim
+: 1747149619:0;cd .config/nvim
+: 1747149621:0;nvim
+: 1747160605:0;cd
+: 1747160614:0;cd js
+: 1747160617:0;nvim
+: 1747160952:0;tmux 
+: 1747160970:0;la
+: 1747160971:0;ls
+: 1747160978:0;tmux a
+: 1747160981:0;tmux 
+: 1747160987:0;cd js
+: 1747160989:0;nvim
+: 1747161965:0;fzf
+: 1747161990:0;cd LinearSearch
+: 1747161999:0;cd Search/LinearSearch.js\
+
+: 1747162009:0;cd Search/
+: 1747162020:0;node LinearSearch.js\
+
+: 1747202262:0;:lcd
+: 1747202271:0;cd .config/
+: 1747202272:0;cd
+: 1747202275:0;cd .config/
+: 1747202286:0;cd picom
+: 1747202287:0;nvim
+: 1747202365:0;ls
+: 1747204778:0;cd healthcare
+: 1747204780:0;nvim
+: 1747204794:0;cd 
+: 1747204800:0;cd .config/wezterm
+: 1747204801:0;nvim
+: 1747244941:0;cd da
+: 1747244943:0;cd dsa
+: 1747244945:0;nvim
+: 1747248173:0;cd dsa
+: 1747248177:0;git add .
+: 1747248187:0;git commit -m "Exress Routing : implementing simple express routing for books    "
+: 1747248192:0;git push origin main
+: 1747248707:0;cd
+: 1747248711:0;cd portfolio
+: 1747248713:0;cd
+: 1747248728:0;sudo rm -r porfolio
+: 1747248741:0;sudo rm -r portfolio
+: 1747248763:0;git clone https://github.com/habert-kungu/quick-react-buddy.git    portfolio
+: 1747248785:0;cd portfolio
+: 1747248787:0;nvim
+: 1747249117:0;tmux
+: 1747249126:0;npm install
+: 1747249200:0;npm run dev
+: 1747249245:0;cd portfolio
+: 1747249246:0;nvim
+: 1747249720:0;git add .
+: 1747249749:0;git commit -m "Update : updating the logo color   "
+: 1747249755:0;git push origin main
+: 1747250236:0;git add .
+: 1747250248:0;git append 
+: 1747250254:0;git --help
+: 1747250368:0;git commit --ammend --no --edit
+: 1747250376:0;git commit --ammend --no-edit
+: 1747250411:0;git commit --amend --no-edit
+: 1747250434:0;npm run dev
+: 1747250449:0;git
+: 1747250470:0;git push origin main
+: 1747250510:0;git pull rebase
+: 1747250527:0;git push -f origin main
+: 1747250546:0;git pull origin main
+: 1747297903:0;sudo apt install rsync
+: 1747297927:0;rsync --help
+: 1747311352:0;tmux 
+: 1747311361:0;ls
+: 1747311366:0;cd odi
+: 1747311368:0;cd odin
+: 1747311370:0;nvim
+: 1747311385:0;cd odin
+: 1747311392:0;cd subtrack
+: 1747311395:0;nvim
+: 1747311554:0;cd .config/nvim
+: 1747311555:0;nvim
+: 1747317415:0;cd environments
+: 1747317421:0;ls
+: 1747317426:0;node index.js
+: 1747318012:0;npm i express-async-handler
+: 1747318650:0;cd subtrack
+: 1747318653:0;ls
+: 1747318659:0;cd server
+: 1747318660:0;ls
+: 1747318668:0;\
+npm install --save express-async-handler
+: 1747319636:0;# Clone the repository to get the example code\
+git clone -b @grpc/grpc-js@1.9.0 --depth 1 --shallow-submodules https://github.com/grpc/grpc-node\
+# Navigate to the node example\
+cd grpc-node/examples\
+# Install the example's dependencies\
+npm install\
+# Navigate to the dynamic codegen "hello, world" Node example:\
+cd helloworld/dynamic_codegen
+: 1747319659:0;nvim
+: 1747319743:0;node greeter_server.js
+: 1747319785:0;node greeter_client.js
+: 1747322538:0;npm install ejs
+: 1747323301:0;node index.js
+: 1747337665:0;cd odin
+: 1747337670:0;git add .
+: 1747337732:0;git commit -m"Adding  express router: Added route and ejs for templste generation"
+: 1747337742:0;git push  origin main
+: 1747337762:0;shutdown now
+: 1747337769:0;power off
+: 1747337780:0;off
+: 1747337787:0;--help
+: 1747337789:0;help
+: 1747337791:0;man
+: 1747337803:0;man turnoff
+: 1747337807:0;man man
+: 1747337855:0;man 1
+: 1747337860:0;mam man1
+: 1747337867:0;man man1
+: 1747337873:0;man man(1)
+: 1747337878:0;man(1)
+: 1747392354:0;tmux 
+: 1747392357:0;cd odin
+: 1747392358:0;nvim
+: 1747396664:0;cd odin
+: 1747396667:0;ls
+: 1747396674:0;cd message-board
+: 1747396682:0;npm install ejs express
+: 1747404530:0;cd .config/i3
+: 1747404531:0;nvim
+: 1747404642:0;cd ../picom
+: 1747404644:0;nvim
+: 1747659361:0;cd dsa
+: 1747659365:0;tmux 
+: 1747659368:0;nvim
+: 1747659376:0;cd dsa
+: 1747659666:0;cd hacker_rank
+: 1747659668:0;ls
+: 1747659681:0;node lonelyinteger.js
+: 1747659687:0;ls
+: 1747659696:0;node lonelyInterger.js
+: 1747661344:0;cd hacker_rank
+: 1747661346:0;ls
+: 1747661361:0;node  removingDuplicates.js
+: 1747663602:0;sudo apt install rkhunter
+: 1747663686:0;sudo rkhunter --check
+: 1747664486:0;sudo reboot
+: 1747664553:0;sudo apt update && upgrade
+: 1747665108:0;tldr
+: 1747665120:0;sudo apt install tldr
+: 1747665130:0;tmux
+: 1747665137:0;tldr tmux
+: 1747665167:0;man tmux
+: 1747665953:0;cd dsa/hacker_rank
+: 1747665959:0;cd ..
+: 1747665971:0;cd dsa/hacker_rank
+: 1747665975:0;nvim
+: 1747666179:0;ls
+: 1747666189:0;node secondLargest.js\
+
+: 1747672502:0;sudo apt install iotop
+: 1747672558:0;sudo oitop -o
+: 1747672578:0;sudo iotop -o
+: 1747672634:0;top
+: 1747672823:0;qq:Q
+: 1747672832:0;sudo apt install --reinstall xorg xserver-xorg-core xserver-xorg-video-all
+: 1747673188:0;pkill picom
+: 1747673262:0;cd .config/picom
+: 1747673263:0;nvim
+: 1747675694:0;cd
+: 1747675697:0;cd odin
+: 1747675699:0;nvim
+: 1747675986:0;sudo shutdown
+: 1747675995:0;sudo shutdown now
+: 1747684810:0;cd odin
+: 1747684813:0;git add .
+: 1747684819:0;git commit -m"Adding  express router: Added route and ejs for templste generation"
+: 1747684822:0;git push  origin main
+: 1747685276:0;sudo apt install ssh
+: 1747685311:0;ssh
+: 1747685406:0;ssh key-gwn
+: 1747685411:0;ssh key-gen
+: 1747685428:0;ssh-keygen
+: 1747712032:0;tmux
+: 1747712038:0;cd ../dsa
+: 1747712049:0;cd ../odin
+: 1747712051:0;vnim
+: 1747712052:0;nvim
+: 1747800996:0;ls
+: 1747801002:0;cd dsa
+: 1747801005:0;cd
+: 1747801007:0;cd jd
+: 1747801010:0;cd js
+: 1747801012:0;nvim
+: 1747804038:0;tmux a
+: 1747804050:0;cd ../dsa
+: 1747804052:0;nvim
+: 1747804125:0;cd dsa/structy
+: 1747804136:0;node fizzbuzz.js
+: 1747805685:0;ls
+: 1747805694:0;node numberPairs.js
+: 1747816003:0;ls
+: 1747816012:0;node anagrams.js
+: 1747819507:0;ls
+: 1747819520:0;node mostFrequentChar.js
+: 1747821954:0;cd ../odin
+: 1747821955:0;nvim
+: 1747828632:0;cd
+: 1747828637:0;cd su
+: 1747828667:0;cd subtrack
+: 1747828668:0;nvim
+: 1747828676:0;cdc
+: 1747828688:0;cd ../subtrack
+: 1747828691:0;cd
+: 1747828693:0;cd ../subtrack
+: 1747828697:0;cd subtrack
+: 1747828720:0;cd server
+: 1747828723:0;ls
+: 1747828748:0;mv . ../
+: 1747828756:0;mv . ../subtrack
+: 1747828910:0;git add .
+: 1747828915:0;cd -
+: 1747828918:0;git add .
+: 1747828984:0;git commit -m"Modifying Dir : modifying the existing file structure to make it easuer to navigate"
+: 1747828988:0;git push  origin main
+: 1747829044:0;1
+: 1747829046:0;ls
+: 1747829060:0;docker -v
+: 1747832277:0;cd
+: 1747832281:0;cd Downloads
+: 1747832284:0;https://docs.docker.com/engine/install/debian/\#install-using-the-repository
+: 1747832312:0;sudo apt-get update
+: 1747832349:0;ls
+: 1747832363:0;sudo apt-get ./docker-desktop-amd64.deb\
+
+: 1747832378:0;sudo apt-get install  ./docker-desktop-amd64.deb\
+
+: 1747832762:0;systemctl --user start docker-desktop 
+: 1747834682:0;docker-desktop
+: 1747834686:0;docker
+: 1747835893:0;cd .config/nvim
+: 1747835895:0;nvim
+: 1747836195:0;sudo rm -r /home/habert/.local/share/nvim/lazy/copilot.vim
+: 1747836407:0;cd .config/nvim
+: 1747836408:0;nvim
+: 1747837020:0;nvim leetcode.nvim
+: 1747837055:0;nvim 
+: 1747837196:0;nvim
+: 1747839012:0;top
+: 1747840258:0;sudo reboot
+: 1747840341:0;tmux
+: 1747840348:0;nvim
+: 1747841084:0;cd subtrack
+: 1747841086:0;nvim
+: 1747841810:0;cd subtrack
+: 1747841812:0;code .
+: 1747841978:0;ls -R
+: 1747843691:0;cd
+: 1747843702:0;git clone https://github.com/habert-kungu/subflow-dashboard-frontend.git client
+: 1747843721:0;mv clent subrack
+: 1747843728:0;mv client subrack
+: 1747843741:0;ls
+: 1747843753:0;mv  subrack client
+: 1747843766:0;mv client /substack
+: 1747843777:0;mv client /subtrack
+: 1747843787:0;mv client subtrack/
+: 1747843885:0;cd subtrack
+: 1747843887:0;cd lient 
+: 1747843891:0;cd client 
+: 1747843896:0;npm install
+: 1747844061:0;npmrun dev
+: 1747844064:0;npm run dev
+: 1747844069:0;cd ..
+: 1747844074:0;npm run dev
+: 1747844143:0;docker run -d \\
+  --name subtrack-mongo \\
+  -p 27017:27017 \\
+  -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \\
+  -e MONGO_INITDB_ROOT_PASSWORD=secret \\
+  mongo:latest
+: 1747844268:0;docker-compose up --build
+: 1747844285:0;docker -v
+: 1747844411:0;docker compose up --build
+: 1747844476:0;sudo systemctl start docker
+: 1747844501:0;docker compose up --build
+: 1747844569:3;sudo systemctl start docker
+: 1747844576:0;sudo systemctl status docker
+: 1747844586:0;docker compose up --build
+: 1747844594:0;sudo systemctl enable docker
+: 1747844600:0;docker compose up --build
+: 1747844617:0;npm run dev
+: 1747844977:0;cd /usr/share/applications/
+: 1747844980:0;ls
+: 1747844985:0;nvim
+: 1747845148:0;cd Downloads
+: 1747845167:0;sudo mv Cursor.AppImage  /opt/
+: 1747845182:0;cd /opt
+: 1747845184:0;ls
+: 1747845197:0;chmod +x  Cursor.AppImage 
+: 1747845304:0;tmux a
+: 1747845406:0;ls
+: 1747845412:0;ls -a
+: 1747845418:0;nvim .env.development.local
+: 1747845456:0;npm run dev
+: 1747845638:0;sudo systemctl status mongodb | cat
+: 1747845652:0;sudo apt-get update && sudo apt-get install -y mongodb
+: 1747845710:0;sudo systemctl start mongodb
+: 1747845721:0;wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add - && echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list && sudo apt-get update && sudo apt-get install -y mongodb-org
+: 1747845850:0;sudo systemctl start mongod
+: 1747845911:0;sudo systemctl status mongod
+: 1747845970:0;npm run dev
+: 1747846176:0;mongod --version | cat
+: 1747846181:0;sudo systemctl status mongod | cat
+: 1747846226:0;cd subtrack
+: 1747846227:0;ls -a
+: 1747846236:0;nvim .env.development.local
+: 1747846276:0;sudo systemctl restart mongod
+: 1747846284:0;mongosh --eval "db.runCommand({ ping: 1 })" | cat
+: 1747846292:0;npm run dev
+: 1747846360:0;sudo lsof -i :27017 | cat
+: 1747846365:0;sudo nano /etc/mongod.conf
+: 1747846396:0;sudo cat /etc/mongod.conf | cat
+: 1747846466:0;sudo systemctl stop mongod
+: 1747846476:0;sudo mongod --bind_ip 0.0.0.0 --port 27017 --dbpath /var/lib/mongodb --logpath /var/log/mongodb/mongod.log --fork
+: 1747846481:0;sudo lsof -i :27017 | cat
+: 1747846485:0;mongosh --eval "db.runCommand({ ping: 1 })" | cat
+: 1747846495:0;npm run dev
+: 1747848100:0;npm install
+: 1747848111:0;npm run dev
+: 1747850967:0;npm install
+: 1747850975:0;npm run dev
+: 1747850986:0;npm install
+: 1747851003:0;npm run dev
+: 1747851029:0;npm install date-fns
+: 1747851385:0;npm run dev
+: 1747851706:0;sudo shutdown now
+: 1748011993:0;tmux
+: 1748011995:0;ls
+: 1748012035:0;cd .config/
+: 1748012036:0;ls
+: 1748012046:0;cd qutebrowser
+: 1748012048:0;nvim
+: 1748019436:0;ymux a
+: 1748019438:0;tmux a
+: 1748019442:0;cd
+: 1748019444:0;cd dsa
+: 1748019453:0;cd structy
+: 1748019455:0;nvim
+: 1748020222:0;cd dsa/structy
+: 1748020231:0;node anagrams.js
+: 1748023033:0;ls
+: 1748023043:0;node pairProduct.js
+: 1748056701:0;tmux
+: 1748056706:0;cd dsa/structy
+: 1748056708:0;nvim
+: 1748056713:0;cd dsa/structy
+: 1748057301:0;ls
+: 1748057303:0;node pairProduct.js
+: 1748059098:0;ls
+: 1748059126:0;node intersection.js
+: 1748264967:0;tmux a
+: 1748264970:0;tmux
+: 1748264974:0;ls
+: 1748264979:0;cd dsa
+: 1748264983:0;cd structy
+: 1748264985:0;nvim
+: 1748265643:0;cd dsa/structy
+: 1748265645:0;ls
+: 1748265651:0;node pair.js
+: 1748266191:0;tmux a
+: 1748266200:0;code .
+: 1748276165:0;ls
+: 1748276170:0;cd recursion
+: 1748276172:0;ls
+: 1748276184:0;node recur.js
+: 1748276317:0;exir
+: 1748276319:0;exit
+: 1748276898:0;node recur.js
+: 1748278191:0;ls
+: 1748278216:0;node sumNumbersRecursive.js
+: 1748278258:0;node sumNumbers.js
+: 1748278596:0;tmux a
+: 1748278602:0;cd -
+: 1748278604:0;nvim
+: 1748278700:0;kj
+: 1748278706:0;node sumNumbers.js
+: 1748278884:0;exit
+: 1748278969:0;node sumNumbers.js
+: 1748278982:0;ls
+: 1748278985:0;cd recursion
+: 1748278986:0;node sumNumbers.js
+: 1748279524:0;jj
+: 1748279528:0;node sumNumbers.js
+: 1748317082:0;cd ../linkedlist
+: 1748318662:0;exit
+: 1748319082:0;xit
+: 1748319084:0;exit
+: 1748319526:0;tmux a
+: 1748319542:0;exit
+: 1748322202:0;ls
+: 1748322217:0;cd linkedlist
+: 1748322225:0;node class.js
+: 1748322334:0;kk
+: 1748322338:0;node class.js
+: 1748322364:0;copilot-debug node class.js
+: 1748322409:0;exit
+: 1748322416:0;e
+: 1748322419:0;ex
+: 1748322427:0;exit
+: 1748323200:0;bash
+: 1748324920:0;cd linkedlist
+: 1748324922:0;node class.js
+: 1748325395:0;node values.js
+: 1748325456:0;q
+: 1748325463:0;node values.js
+: 1748325732:0;node values.js\ 
+: 1748325736:0;node values.js
+: 1748326209:0;OA
+: 1748326210:0;node values.js
+: 1748326951:0;node sumList.js
+: 1748337902:0;ls
+: 1748337945:0;node const a = new Node("a");\
+const b = new Node("b");\
+const c = new Node("c");\
+const d = new Node("d");\
+\
+a.next = b;\
+b.next = c;\
+c.next = d;\
+\
+// a -> b -> c -> d\
+\
+linkedListFind(a, "c"); // true\
+
+: 1748337951:0;ls
+: 1748337999:0;node linkedListFind.js
+: 1748341747:0;j
+: 1748341763:0;node getNodeValue.js
+: 1748342432:0;ls
+: 1748342436:0;node getNodeValue.js
+: 1748343991:0;;
+: 1748343997:0;cd
+: 1748343999:0;ls
+: 1748344005:0;cd odin 
+: 1748344009:0;code .
+: 1748347562:0;cd react
+: 1748347563:0;ls
+: 1748347572:0;node main.jsx
+: 1748347598:0;cd
+: 1748347599:0;ls
+: 1748347829:0;npm create vite@latest ./\
+
+: 1748347852:0;npm install 
+: 1748348317:0;exit
+: 1748348326:0;cd ../odin
+: 1748348328:0;nvim
+: 1748349241:0;cd
+: 1748349244:0;sll
+: 1748349245:0;sl
+: 1748349245:0;sls
+: 1748349246:0;l
+: 1748349250:0;ls
+: 1748349255:0;cd subtrack
+: 1748349264:0;npm run dev
+: 1748349281:0;cd client 
+: 1748349283:0;npm run dev
+: 1748349360:0;docker compose up --build
+: 1748355052:0;cd
+: 1748355053:0;l
+: 1748355054:0;dls
+: 1748355243:0;sudo apt-get install chemzio
+: 1748355247:0;sudo apt-get install chemzoi
+: 1748355276:0;sh -c "$(curl -fsLS get.chezmoi.io)"\
+
+: 1748355369:0;sha256sum --check chezmoi_2.62.5_checksums.txt --ignore-missing\
+
+: 1748355388:0;chemzoi init
+: 1748355408:0;sh -c "$(curl -fsLS get.chezmoi.io)"\
+
+: 1748355421:0;chemzoi init
+: 1748355473:0;# Install the latest release:\
+curl -sfL https://git.io/chezmoi | sh\
+\
+# Make it executable and move to PATH:\
+sudo install -o root -g root -m 0755 ./bin/chezmoi /usr/local/bin/chezmoi\
+\
+# Verify installation:\
+chezmoi --version
+: 1748355521:0;chemzoi init
+: 1748355532:0;chemzoi --version
+: 1748355637:0;sudo install -o root -g root -m 0755 ./bin/chezmoi /usr/local/bin/chezmoi\
+
+: 1748355642:0;chemzoi --version
+: 1748355707:0;echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc\
+source ~/.zshrc
+: 1748355717:0;# Check where the binary is installed\
+which chezmoi || find / -name chezmoi 2>/dev/null
+: 1748355722:0;chemzoi --version
+: 1748355792:0;sudo apt install chemzoi --classic
+: 1748355801:0;sudo apt install chemzoi 
+: 1748355865:0;git clone https://github.com/twpayne/chezmoi.git\
+cd chezmoi\
+make install-from-git-working-copy
+: 1748355952:0;curl --location --remote-name-all \\
+       https://github.com/twpayne/chezmoi/releases/download/v2.62.5/chezmoi_2.62.5_checksums.txt \\
+       https://github.com/twpayne/chezmoi/releases/download/v2.62.5/chezmoi_2.62.5_checksums.txt.sig \\
+       https://github.com/twpayne/chezmoi/releases/download/v2.62.5/chezmoi_cosign.pub
+: 1748355967:0;cosign verify-blob --key=chezmoi_cosign.pub \\
+                     --signature=chezmoi_2.62.5_checksums.txt.sig \\
+                     chezmoi_2.62.5_checksums.txt
+: 1748355980:0;sha256sum --check chezmoi_2.62.5_checksums.txt --ignore-missing\
+
+: 1748355984:0;ls
+: 1748355985:0;sls
+: 1748355986:0;ls
+: 1748356003:0;sha256sum --check chezmoi_2.62.5_checksums.txt --ignore-missing\
+
+: 1748356011:0;chemzoi --version
+: 1748356091:0;nvim ~/.zshrc
+: 1748356132:0;sudo rm -r chemzoi
+: 1748356137:0;ls
+: 1748356157:0;chezmoi --version
+: 1748356190:0;chemzoi init
+: 1748356201:0;chezmoi init
+: 1748356204:0;cd
+: 1748356206:0;chezmoi init
+: 1748356228:0;chezmoi add ~/.bashrc\
+
+: 1748356234:0;chezmoi edit ~/.bashrc\
+
+: 1748356268:0;chezmoi add ~/.zshrc  \
+
+: 1748356275:0;ls - a
+: 1748356279:0;ls -a
+: 1748356292:0;nvim .tmux
+: 1748356318:0;chezmoi add ~/.tmux.cc\
+
+: 1748356337:0;chezmoi add ~/.tmux.conf ~/.tmux.reset.conf\
+
+: 1748356366:0;chezmoi add ~/.condarc\
+
+: 1748356393:0;chezmoi add ~/.shell.pre-oh-my-zsh\
+
+: 1748356404:0;cd .config
+: 1748356408:0;ls -a
+: 1748356448:0;cd ~/.config/Youtube Music
+: 1748356457:0;cd ~/.config/
+: 1748356467:0;chezmoi add ~/.config/nvim
+: 1748356479:0;chezmoi add ~/.config/i3
+: 1748356492:0;chezmoi add ~/.config/rofi
+: 1748356536:0;chezmoi add ~/.config/picom    ~/.config/polybar
+: 1748356581:0;chezmoi add ~/.config/gh    ~/.config/wezterm
+: 1748356595:0;chezmoi add  ~/.config/wezterm
+: 1748356604:0;chezmoi add  ~/.config/kitty
+: 1748356655:0;chezmoi help
+: 1748356746:0;chezmoi list
+: 1748356770:0;cd
+: 1748356775:0;ls -a
+: 1748356795:0;nvim .profile
+: 1748356815:0;chezmoi add .profile
+: 1748356853:0;chezmoi add .gitconfig
+: 1748356900:0;chezmoi add .zsh_history\
+

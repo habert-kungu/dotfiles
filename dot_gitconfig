@@ -1,0 +1,13 @@
+[user]
+	email = habert231@gmail.com
+	name = Habert Kungu
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
