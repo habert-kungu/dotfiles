@@ -6,11 +6,21 @@
 local M = {}
 
 M.base46 = {
-  theme = "chocolate",
-
+  theme = "gruvchad",
+  transparency = true,
+  theme_toggle = { "gruvchad", "gruvchad" },
   hl_override = {
-  	Comment = { italic = true },
-  	["@comment"] = { italic = true },
+    StatusLine = { bg = "#222222", fg = "#bbbbbb" },
+    StatusLineNC = { bg = "#222222", fg = "#888888" },
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
+}
+
+M.ui = {
+  statusline = {
+    theme = "vscode_colored",
+    separator_style = "block",
   },
 }
 
