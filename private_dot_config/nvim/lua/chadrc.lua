@@ -8,7 +8,7 @@ local M = {}
 M.base46 = {
   theme = "gruvchad",
   transparency = true,
-  theme_toggle = { "gruvchad", "gruvchad" },
+  theme_toggle = { "chocolate", "gruvchad" },
   hl_override = {
     StatusLine = { bg = "#222222", fg = "#bbbbbb" },
     StatusLineNC = { bg = "#222222", fg = "#888888" },
@@ -18,6 +18,7 @@ M.base46 = {
 }
 
 M.ui = {
+  -- theme = "gruvchad_custom",
   statusline = {
     theme = "vscode_colored",
     separator_style = "block",
