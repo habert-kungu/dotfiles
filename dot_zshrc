@@ -18,7 +18,13 @@ source $ZSH/oh-my-zsh.sh
 alias fd='fdfind'
 
 # Fuzzy file search - opens in nvim (ignores node_modules, .git, etc)
-alias ff='nvim $(fzf --exclude="node_modules" --exclude=".git" --exclude="__pycache__" --exclude="*.pyc" --exclude=".venv" --exclude="venv" --exclude="dist" --exclude="build" --exclude="target" --exclude=".cache" --exclude="Downloads" --exclude="anaconda3" --exclude=".cargo" --exclude="vendor" --exclude=".next" --exclude=".nuxt" --exclude="*.log")'
+alias ff='nvim $(fzf --preview="bat --color=always --line-range :500 {}" --exclude="node_modules" --exclude=".git" --exclude="__pycache__" --exclude="*.pyc" --exclude=".venv" --exclude="venv" --exclude="dist" --exclude="build" --exclude="target" --exclude=".cache" --exclude="Downloads" --exclude="anaconda3" --exclude="miniconda3" --exclude=".cargo" --exclude="vendor" --exclude=".next" --exclude=".nuxt" --exclude="*.log")'
+
+# FZF + Preview - search and open with preview
+alias fp='fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border'
+
+# FZF search then run command
+alias ffr='fzf --preview="bat --color=always --line-range :500 {}" | xargs nvim'
 
 # Compilation Aliases
 function _makec() {
@@ -43,6 +49,16 @@ function _makec() {
       fi
     }
     alias make='_make'
+
+# Fuzzy find C++ file and compile+run
+function fzfcpp() {
+  local file=$(fzf --height=60% --border --preview="bat --color=always --line-range :100 {}" --query="$1" --bind="enter:execute(echo {} | xargs g++ -Wall -Wextra -std=c++17 -O2 -o /tmp/fzfcpp_run) && /tmp/fzfcpp_run")
+  if [ -n "$file" ]; then
+    echo "Compiling and running: $file"
+    g++ -Wall -Wextra -std=c++17 -O2 "$file" -o /tmp/fzfcpp_run && /tmp/fzfcpp_run
+  fi
+}
+alias fcpp='fzfcpp'
 
 
 
@@ -102,17 +118,20 @@ bindkey -r '^[c' 2>/dev/null # Remove any existing Alt-C binding
 # Tool Initializations
 # ======================
 
-# Conda
-conda_setup="$('/home/habert/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$conda_setup"
-else
-  if [ -f "/home/habert/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/home/habert/anaconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="/home/habert/anaconda3/bin:$PATH"
+# Conda (supports both anaconda3 and miniconda3)
+for conda_path in "$HOME/anaconda3" "$HOME/miniconda3"; do
+  if [ -d "$conda_path" ]; then
+    conda_setup="$('$conda_path/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+      eval "$conda_setup"
+    elif [ -f "$conda_path/etc/profile.d/conda.sh" ]; then
+      . "$conda_path/etc/profile.d/conda.sh"
+    else
+      export PATH="$conda_path/bin:$PATH"
+    fi
+    break
   fi
-fi
+done
 unset conda_setup
 
 # NVM

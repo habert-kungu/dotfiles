@@ -46,10 +46,19 @@ sudo apt install -y \
     libxcb-keysyms1 \
     libxcb-randr0 \
     libxcb-render-util0 \
-    libxcb-shape0
+    libxcb-shape0 \
+    cmake \
+    pkg-config \
+    libssl-dev \
+    libwebkit2gtk-4.1-dev \
+    libayatana-appindicator3-dev \
+    librsvg2-dev \
+    libxcb-ewmh-dev \
+    libxcb-composite0 \
+    libxcb-xfixes0
 
 # Install Neovim (latest stable)
-echo "=== Installing Neovid"
+echo "=== Installing Neovim ==="
 sudo apt install -y software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
@@ -74,15 +83,36 @@ sudo apt install -y \
     kitty \
     alacritty
 
+# Install Wezterm
+echo "=== Installing Wezterm ==="
+if ! command -v wezterm &> /dev/null; then
+    wget -O /tmp/wezterm.deb https://github.com/wez/wezterm/releases/download/20240203-114724-70cd1be3/wezterm-20240203-114724-70cd1be3-Ubuntu22.04.deb
+    sudo dpkg -i /tmp/wezterm.deb
+    sudo apt install -f -y
+    rm /tmp/wezterm.deb
+fi
+
 # Install programming tools
 echo "=== Installing programming tools ==="
 sudo apt install -y \
     python3 \
     python3-pip \
     python3-venv \
+    python3-dev \
+    python3-setuptools \
     nodejs \
     npm \
     golang-go
+
+# Install Miniconda (Python data science)
+echo "=== Installing Miniconda ==="
+if [ ! -d "$HOME/miniconda3" ] && [ ! -d "$HOME/anaconda3" ]; then
+    wget -O /tmp/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash /tmp/miniconda.sh -b -p "$HOME/miniconda3"
+    rm /tmp/miniconda.sh
+    # Initialize conda for zsh
+    "$HOME/miniconda3/bin/conda" init zsh
+fi
 
 # Install Oh My Zsh
 echo "=== Installing Oh My Zsh ==="
@@ -93,7 +123,7 @@ fi
 # Install Zsh plugins
 echo "=== Installing Zsh plugins ==="
 # zsh-autosuggestions
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zash-autosuggestions" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 fi
 
