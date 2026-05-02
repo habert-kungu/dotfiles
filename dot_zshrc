@@ -18,9 +18,7 @@ alias fd='fdfind'
 alias menu='~/bin/menu'
 alias fa='~/bin/fa'
 alias fp='~/bin/fp'
-
-# Alt+P to open menu
-bindkey '^[p' menu
+alias ff='~/bin/ff'
 
 # Compilation Aliases
 function _makec() {
