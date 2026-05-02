@@ -1,55 +1,225 @@
-# dotfiles
+# Dotfiles
 
-just my configs
+Personal configuration for Debian-based Linux systems with i3, polybar, Neovim, and Zsh.
 
-## Getting Started on a New Machine
+## Quick Install (One Command)
 
-This repository contains my personal dotfiles and configuration for tools like Zsh, Neovim (NvChad), Kitty, i3, tmux, and more. It uses [chezmoi](https://www.chezmoi.io/) for dotfile management.
-
-### 1. Install chezmoi
-
-```sh
-sh -c "$(curl -fsLS get.chezmoi.io)"
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/habert-kungu/dotfiles/main/install.sh)
 ```
 
-### 2. Initialize chezmoi with this repo
+Or manually:
 
-```sh
+```bash
+git clone https://github.com/habert-kungu/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+---
+
+## What's Included
+
+### Terminal & Shell
+- **Zsh** with Oh My Zsh
+- **fzf** - Fuzzy finder for files/commands
+- **fd** (fdfind) - Fast file finder
+- **bat** - Cat clone with syntax highlighting
+- **ripgrep** - Fast grep alternative
+
+### Editor & Development
+- **Neovim** (NvChad-based configuration)
+- **tmux** - Terminal multiplexer
+- **Python** (via Miniconda/Anaconda)
+- **Node.js** with npm/pnpm/bun
+
+### Desktop Environment
+- **i3** - Tiling window manager
+- **polybar** - Status bar
+- **picom** - Compositor (transparency/blur)
+- **rofi** - App launcher
+- **Kitty/Alacritty/Wezterm** - Terminal emulators
+
+---
+
+## Commands
+
+### Fuzzy File Search (Main Feature)
+
+| Command | Description |
+|---------|-------------|
+| `ff` | Fuzzy search files (filtered) → opens in Neovim |
+| `fp` | Fuzzy search files → just show (no open) |
+| `ffr` | Fuzzy search → open in Neovim |
+
+**Filters applied** (ignored in search):
+- `.git`, `node_modules`, `__pycache__`
+- `venv`, `.venv`, `dist`, `build`
+- `target`, `.cache`, `Downloads`
+- `anaconda3`, `miniconda3`, `.cargo`
+- `vendor`, `.next`, `.nuxt`, `*.log`
+
+### Compilation
+
+| Command | Description |
+|---------|-------------|
+| `makec <file>` | Compile C file with gcc |
+| `makecpp <file>` | Compile C++ file with g++ |
+| `make <file>` | Auto-detect and compile |
+| `fcpp` | Fuzzy find .cpp file → compile → run |
+
+### Other Aliases
+
+| Command | Description |
+|---------|-------------|
+| `fd` | fdfind (fast file search) |
+| `lzd` | lazydocker |
+| `ff` | Fuzzy file search → nvim |
+
+---
+
+## Keybindings
+
+### In Terminal (fzf default)
+- `Ctrl+T` - Fuzzy find files
+- `Ctrl+R` - Fuzzy search command history
+- `Alt+C` - Fuzzy change directory
+
+### In Neovim (Space as leader)
+- `Space + ff` - Telescope file picker
+- `Ctrl+P` - Quick open files (nvim-cmp)
+- `Ctrl+Shift+P` - Command palette
+
+---
+
+## File Structure
+
+```
+dotfiles/
+├── install.sh              # One-command install script
+├── README.md               # This file
+├── dot_zshrc               # Zsh configuration
+├── dot_bashrc              # Bash configuration
+├── dot_tmux.conf           # Tmux configuration
+├── dot_gitconfig           # Git configuration
+├── dot_condarc             # Conda configuration
+├── dot_vscode-extensions    # VS Code extensions list
+└── private_dot_config/      # User configs (nvim, i3, polybar, etc.)
+    ├── nvim/               # Neovim config
+    ├── i3/                 # i3 window manager
+    ├── polybar/            # Polybar config
+    ├── rofi/               # Rofi config
+    ├── kitty/              # Kitty terminal
+    ├── wezterm/            # Wezterm terminal
+    └── picom/              # Picom compositor
+```
+
+---
+
+## Dependencies Installed by `install.sh`
+
+### Core
+- zsh, curl, git, wget, stow
+- fzf, fd-find (fd), ripgrep, bat, tmux
+
+### Build Tools
+- build-essential, cmake, pkg-config
+- libssl-dev, libwebkit2gtk-4.1-dev
+
+### Desktop
+- i3-wm, i3status, i3lock, polybar, picom
+- rofi, libnotify-bin, xdotool, x11-utils
+
+### Terminals
+- kitty, alacritty
+
+### Programming
+- python3, python3-pip, python3-venv, python3-dev
+- nodejs, npm
+- golang-go
+- Miniconda3 (optional)
+
+### Plugins
+- Oh My Zsh
+- zsh-autosuggestions
+- zsh-syntax-highlighting
+
+---
+
+## Usage Tips
+
+### First Time Setup
+```bash
+# Run the install script
+bash install.sh
+
+# Restart terminal or source
+source ~/.zshrc
+
+# In Neovim, sync plugins
+:LazySync
+```
+
+### Updating Dotfiles
+```bash
+# Make changes, then
+cd dotfiles
+git add .
+git commit -m "description"
+git push
+```
+
+### Applying Changes to Other Machines
+```bash
 chezmoi init https://github.com/habert-kungu/dotfiles.git
 chezmoi apply
 ```
 
-### 3. Install dependencies
+---
 
-- **Zsh**: `sudo apt install zsh`
-- **Oh My Zsh**: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-- **Neovim**: Follow instructions at https://github.com/neovim/neovim/wiki/Installing-Neovim
-- **Kitty**: `sudo apt install kitty`
-- **i3**: `sudo apt install i3`
-- **picom**: `sudo apt install picom`
-- **tmux**: `sudo apt install tmux`
-- **fd, ripgrep, bat, fzf**:
-  ```sh
-  sudo apt install fd-find ripgrep bat fzf
-  ```
+## Troubleshooting
 
-### 4. Additional steps
+### fzf not working
+```bash
+# Install fzf if missing
+sudo apt install fzf
 
-- Restart your shell or source your `.zshrc`:
-  ```sh
-  source ~/.zshrc
-  ```
-- For Neovim, plugins will install automatically on first launch.
-- Review and update secrets or machine-specific configs in `.local` or `private_dot_*` files as needed.
+# Or manually
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
 
-### 5. Customization
+### Neovim plugins not loading
+```bash
+# Open nvim and run
+:LazySync
+# or
+:Lazy! sync
+```
 
-- Edit configs in `~/.config/` or via chezmoi and re-apply:
-  ```sh
-  chezmoi edit <file>
-  chezmoi apply
-  ```
+### Conda not initializing
+```bash
+# For anaconda3
+source ~/anaconda3/etc/profile.d/conda.sh
+conda init zsh
+
+# For miniconda3
+source ~/miniconda3/etc/profile.d/conda.sh
+conda init zsh
+```
 
 ---
 
-For more details, see [chezmoi documentation](https://www.chezmoi.io/user-guide/).
+## Customization
+
+Edit these files to customize:
+- `dot_zshrc` - Shell aliases and functions
+- `private_dot_config/nvim/lua/` - Neovim config
+- `private_dot_config/i3/` - i3 config
+- `private_dot_config/polybar/` - Polybar config
+
+After editing, commit and push to sync across machines.
+
+---
+
+For more info, see [chezmoi docs](https://www.chezmoi.io/user-guide/).
