@@ -16,6 +16,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias fd='fdfind'
 alias menu='~/bin/menu'
+alias fa='~/bin/fa'
+alias fp='~/bin/fp'
 
 # Compilation Aliases
 function _makec() {

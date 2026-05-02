@@ -3,15 +3,15 @@
 # Like Omarchy's SUPER+P menu
 
 options=(
-  "ff: Fuzzy file search → open in nvim"
-  "fp: Fuzzy file search → preview only"
-  "fcpp: Fuzzy find C++ file → compile & run"
+  "ff: Fuzzy file search (no hidden) → nvim"
+  "fa: Fuzzy search ALL files (including hidden)"
+  "fp: Fuzzy search → preview only"
+  "fcpp: Fuzzy find C++ → compile & run"
   "makec <file>: Compile C file"
   "makecpp <file>: Compile C++ file"
   "lzd: Open lazydocker"
   "nvim: Open neovim"
-  "htop: System monitor"
-  "btop: Modern system monitor"
+  "btop: System monitor"
   "lazygit: Git TUI"
 )
 
@@ -32,7 +32,7 @@ cmd=$(echo "$choice" | cut -d: -f1)
 
 # Run the command
 case "$cmd" in
-  ff|fp)
+  ff|fa|fp)
     "$cmd"
     ;;
   fcpp)
