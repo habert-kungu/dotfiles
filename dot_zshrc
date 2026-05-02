@@ -17,8 +17,8 @@ source $ZSH/oh-my-zsh.sh
 # ======================
 alias fd='fdfind'
 
-# Fuzzy file search - opens in nvim
-alias ff='nvim $(fzf)'
+# Fuzzy file search - opens in nvim (ignores node_modules, .git, etc)
+alias ff='nvim $(fzf --exclude="node_modules" --exclude=".git" --exclude="__pycache__" --exclude="*.pyc" --exclude=".venv" --exclude="venv" --exclude="dist" --exclude="build" --exclude="target" --exclude=".cache" --exclude="Downloads" --exclude="anaconda3" --exclude=".cargo" --exclude="vendor" --exclude=".next" --exclude=".nuxt" --exclude="*.log")'
 
 # Compilation Aliases
 function _makec() {
@@ -50,10 +50,27 @@ function _makec() {
 # FZF Configuration (Fixed Key Bindings)
 # ======================
 
-# FD commands (using fdfind for Debian compatibility)
-export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --strip-cwd-prefix --exclude '.git'"
+# FD commands with common exclusions
+export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --strip-cwd-prefix \
+  --exclude '.git' \
+  --exclude 'node_modules' \
+  --exclude '__pycache__' \
+  --exclude '*.pyc' \
+  --exclude '.venv' \
+  --exclude 'venv' \
+  --exclude 'dist' \
+  --exclude 'build' \
+  --exclude 'target' \
+  --exclude '.cache' \
+  --exclude 'Downloads' \
+  --exclude 'anaconda3' \
+  --exclude '.cargo' \
+  --exclude 'vendor' \
+  --exclude '.next' \
+  --exclude '.nuxt' \
+  --exclude '*.log'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fdfind --type d --hidden --strip-cwd-prefix --exclude '.git'"
+export FZF_ALT_C_COMMAND="fdfind --type d --hidden --strip-cwd-prefix --exclude '.git' --exclude 'node_modules'"
 
 # FZF display options
 export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
