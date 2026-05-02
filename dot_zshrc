@@ -19,6 +19,9 @@ alias menu='~/bin/menu'
 alias fa='~/bin/fa'
 alias fp='~/bin/fp'
 
+# Alt+P to open menu
+bindkey '^[p' menu
+
 # Compilation Aliases
 function _makec() {
   gcc -Wall -Wextra -std=c11 -O2 "$1" -o "${1%.*}" && 
