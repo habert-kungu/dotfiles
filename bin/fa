@@ -1,22 +1,35 @@
 #!/bin/bash
 # fa: Fuzzy file search - ALL files including hidden (dotfiles)
 
-selected=$(fdfind --type f --hidden --strip-cwd-prefix \
-  --exclude 'node_modules' \
-  --exclude '__pycache__' \
-  --exclude '*.pyc' \
-  --exclude 'venv' \
-  --exclude 'dist' \
-  --exclude 'build' \
-  --exclude 'target' \
-  --exclude '*.log' | \
-  fzf --preview="bat --color=always --line-range :500 {}" \
+if [ -n "$TMUX" ]; then
+  selected=$(fdfind --type f --hidden --strip-cwd-prefix \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '*.log' | \
+    fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}" \
+      --prompt="All Files: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+else
+  selected=$(fdfind --type f --hidden --strip-cwd-prefix \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '*.log' | \
+    fzf --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
       --border \
       --prompt="All Files: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --bind="enter:execute-silent(nvim {})+abort" \
-      --bind="esc:abort")
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+fi
 
 if [ -n "$selected" ]; then
   nvim "$selected"

@@ -11,17 +11,25 @@ options=(
   "makecpp <file>: Compile C++ file"
   "lzd: Open lazydocker"
   "nvim: Open neovim"
-  "btop: System monitor"
   "lazygit: Git TUI"
 )
 
-choice=$(printf '%s\n' "${options[@]}" | \
-  fzf --height=50% \
+if [ -n "$TMUX" ]; then
+  choice=$(printf '%s\n' "${options[@]}" | \
+    fzf-tmux -p50% \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --prompt="Run: " \
+      --header="Quick Commands (j/k to navigate)" \
+      --header-first)
+else
+  choice=$(printf '%s\n' "${options[@]}" | \
+    fzf --height=50% \
       --border \
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
       --prompt="Run: " \
       --header="Quick Commands (j/k to navigate, enter to run)" \
       --header-first)
+fi
 
 if [ -z "$choice" ]; then
   exit 0
@@ -33,7 +41,7 @@ cmd=$(echo "$choice" | cut -d: -f1)
 # Run the command
 case "$cmd" in
   ff|fa|fp)
-    "$cmd"
+    ~/bin/"$cmd"
     ;;
   fcpp)
     fcpp
@@ -46,12 +54,6 @@ case "$cmd" in
     ;;
   nvim)
     nvim
-    ;;
-  htop)
-    htop
-    ;;
-  btop)
-    btop
     ;;
   lazygit)
     lazygit

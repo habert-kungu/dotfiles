@@ -1,23 +1,46 @@
 #!/bin/bash
-# Fuzzy file search with preview - just show, don't open
+# fp: Fuzzy file search with preview - just show, don't open
 
-fdfind --type f --hidden --strip-cwd-prefix \
-  --exclude '.git' \
-  --exclude 'node_modules' \
-  --exclude '__pycache__' \
-  --exclude '*.pyc' \
-  --exclude '.venv' \
-  --exclude 'venv' \
-  --exclude 'dist' \
-  --exclude 'build' \
-  --exclude 'target' \
-  --exclude '.cache' \
-  --exclude 'Downloads' \
-  --exclude 'anaconda3' \
-  --exclude 'miniconda3' \
-  --exclude '.cargo' \
-  --exclude 'vendor' \
-  --exclude '.next' \
-  --exclude '.nuxt' \
-  --exclude '*.log' | \
-  fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border
+if [ -n "$TMUX" ]; then
+  fdfind --type f --hidden --strip-cwd-prefix \
+    --exclude '.git' \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    --exclude '.venv' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '.cache' \
+    --exclude 'Downloads' \
+    --exclude 'anaconda3' \
+    --exclude 'miniconda3' \
+    --exclude '.cargo' \
+    --exclude 'vendor' \
+    --exclude '.next' \
+    --exclude '.nuxt' \
+    --exclude '*.log' | \
+    fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}"
+else
+  fdfind --type f --hidden --strip-cwd-prefix \
+    --exclude '.git' \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '*.pyc' \
+    --exclude '.venv' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '.cache' \
+    --exclude 'Downloads' \
+    --exclude 'anaconda3' \
+    --exclude 'miniconda3' \
+    --exclude '.cargo' \
+    --exclude 'vendor' \
+    --exclude '.next' \
+    --exclude '.nuxt' \
+    --exclude '*.log' | \
+    fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border
+fi
