@@ -1,0 +1,62 @@
+#!/bin/bash
+# Quick launcher - shows all available commands
+# Like Omarchy's SUPER+P menu
+
+options=(
+  "ff: Fuzzy file search → open in nvim"
+  "fp: Fuzzy file search → preview only"
+  "fcpp: Fuzzy find C++ file → compile & run"
+  "makec <file>: Compile C file"
+  "makecpp <file>: Compile C++ file"
+  "lzd: Open lazydocker"
+  "nvim: Open neovim"
+  "htop: System monitor"
+  "btop: Modern system monitor"
+  "lazygit: Git TUI"
+)
+
+choice=$(printf '%s\n' "${options[@]}" | \
+  fzf --height=50% \
+      --border \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --prompt="Run: " \
+      --header="Quick Commands (j/k to navigate, enter to run)" \
+      --header-first)
+
+if [ -z "$choice" ]; then
+  exit 0
+fi
+
+# Extract the command from the choice
+cmd=$(echo "$choice" | cut -d: -f1)
+
+# Run the command
+case "$cmd" in
+  ff|fp)
+    "$cmd"
+    ;;
+  fcpp)
+    fcpp
+    ;;
+  makec|makecpp)
+    echo "Usage: $cmd <filename>"
+    ;;
+  lzd)
+    lazydocker
+    ;;
+  nvim)
+    nvim
+    ;;
+  htop)
+    htop
+    ;;
+  btop)
+    btop
+    ;;
+  lazygit)
+    lazygit
+    ;;
+  *)
+    echo "Unknown command: $cmd"
+    ;;
+esac

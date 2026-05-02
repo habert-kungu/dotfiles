@@ -1,5 +1,6 @@
 #!/bin/bash
 # Fuzzy file search with preview - opens in nvim
+# Uses vim-style j/k keybindings in fzf
 
 selected=$(fdfind --type f --hidden --strip-cwd-prefix \
   --exclude '.git' \
@@ -20,7 +21,12 @@ selected=$(fdfind --type f --hidden --strip-cwd-prefix \
   --exclude '.next' \
   --exclude '.nuxt' \
   --exclude '*.log' | \
-  fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border)
+  fzf --preview="bat --color=always --line-range :500 {}" \
+      --height=60% \
+      --border \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --bind="enter:execute-silent(nvim {})+abort" \
+      --bind="esc:abort")
 
 if [ -n "$selected" ]; then
   nvim "$selected"
