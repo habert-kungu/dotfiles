@@ -14,7 +14,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ======================
 # Aliases
-alias fd='fdfind'
+alias fdf='fdfind'
+alias fd='~/bin/fd'
 alias menu='~/bin/menu'
 alias fa='~/bin/fa'
 alias fp='~/bin/fp'

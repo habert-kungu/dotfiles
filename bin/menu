@@ -5,6 +5,7 @@
 options=(
   "ff: Fuzzy file search (no hidden) → nvim"
   "fa: Fuzzy search ALL files (including hidden)"
+  "fd: Fuzzy directory search → cd into dir"
   "fp: Fuzzy search → preview only"
   "fcpp: Fuzzy find C++ → compile & run"
   "makec <file>: Compile C file"

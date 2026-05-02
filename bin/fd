@@ -1,0 +1,55 @@
+#!/bin/bash
+# fd: Fuzzy directory search - cd into selected directory
+
+if [ -n "$TMUX" ]; then
+  selected=$(fdfind --type d --hidden --strip-cwd-prefix \
+    --exclude '.git' \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '.venv' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '.cache' \
+    --exclude 'Downloads' \
+    --exclude 'anaconda3' \
+    --exclude 'miniconda3' \
+    --exclude '.cargo' \
+    --exclude 'vendor' \
+    --exclude '.next' \
+    --exclude '.nuxt' \
+    --exclude '.*' | \
+    fzf-tmux -p60% --preview="eza --icons=always --tree --color=always {} 2>/dev/null | head -50" \
+      --prompt="Dirs: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+else
+  selected=$(fdfind --type d --hidden --strip-cwd-prefix \
+    --exclude '.git' \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '.venv' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '.cache' \
+    --exclude 'Downloads' \
+    --exclude 'anaconda3' \
+    --exclude 'miniconda3' \
+    --exclude '.cargo' \
+    --exclude 'vendor' \
+    --exclude '.next' \
+    --exclude '.nuxt' \
+    --exclude '.*' | \
+    fzf --preview="eza --icons=always --tree --color=always {} 2>/dev/null | head -50" \
+      --height=60% \
+      --border \
+      --prompt="Dirs: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+fi
+
+if [ -n "$selected" ]; then
+  cd "$selected"
+  echo "Changed to: $(pwd)"
+fi
