@@ -17,6 +17,9 @@ source $ZSH/oh-my-zsh.sh
 # ======================
 alias fd='fdfind'
 
+# Fuzzy file search - opens in nvim
+alias ff='nvim $(fzf)'
+
 # Compilation Aliases
 function _makec() {
   gcc -Wall -Wextra -std=c11 -O2 "$1" -o "${1%.*}" && 
