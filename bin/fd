@@ -1,5 +1,5 @@
 #!/bin/bash
-# fd: Fuzzy directory search - cd into selected directory
+# fd: Fuzzy directory search - cd into dir then open nvim
 
 if [ -n "$TMUX" ]; then
   selected=$(fdfind --type d --hidden --strip-cwd-prefix \
@@ -50,6 +50,5 @@ else
 fi
 
 if [ -n "$selected" ]; then
-  cd "$selected"
-  echo "Changed to: $(pwd)"
+  cd "$selected" && nvim .
 fi
