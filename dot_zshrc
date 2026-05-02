@@ -16,83 +16,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias fd='fdfind'
 
-# Fuzzy file search - opens in nvim (uses fd for filtering)
-function ff() {
-  local selected=$(fdfind --type f --hidden --strip-cwd-prefix \
-    --exclude '.git' \
-    --exclude 'node_modules' \
-    --exclude '__pycache__' \
-    --exclude '*.pyc' \
-    --exclude '.venv' \
-    --exclude 'venv' \
-    --exclude 'dist' \
-    --exclude 'build' \
-    --exclude 'target' \
-    --exclude '.cache' \
-    --exclude 'Downloads' \
-    --exclude 'anaconda3' \
-    --exclude 'miniconda3' \
-    --exclude '.cargo' \
-    --exclude 'vendor' \
-    --exclude '.next' \
-    --exclude '.nuxt' \
-    --exclude '*.log' | \
-    fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border)
-  if [ -n "$selected" ]; then
-    nvim "$selected"
-  fi
-}
-
-# FZF + Preview - just fuzzy search with preview
-function fp() {
-  fdfind --type f --hidden --strip-cwd-prefix \
-    --exclude '.git' \
-    --exclude 'node_modules' \
-    --exclude '__pycache__' \
-    --exclude '*.pyc' \
-    --exclude '.venv' \
-    --exclude 'venv' \
-    --exclude 'dist' \
-    --exclude 'build' \
-    --exclude 'target' \
-    --exclude '.cache' \
-    --exclude 'Downloads' \
-    --exclude 'anaconda3' \
-    --exclude 'miniconda3' \
-    --exclude '.cargo' \
-    --exclude 'vendor' \
-    --exclude '.next' \
-    --exclude '.nuxt' \
-    --exclude '*.log' | \
-    fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border
-}
-
-# FZF search then open in nvim
-function ffr() {
-  local selected=$(fdfind --type f --hidden --strip-cwd-prefix \
-    --exclude '.git' \
-    --exclude 'node_modules' \
-    --exclude '__pycache__' \
-    --exclude '*.pyc' \
-    --exclude '.venv' \
-    --exclude 'venv' \
-    --exclude 'dist' \
-    --exclude 'build' \
-    --exclude 'target' \
-    --exclude '.cache' \
-    --exclude 'Downloads' \
-    --exclude 'anaconda3' \
-    --exclude 'miniconda3' \
-    --exclude '.cargo' \
-    --exclude 'vendor' \
-    --exclude '.next' \
-    --exclude '.nuxt' \
-    --exclude '*.log' | \
-    fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border)
-  if [ -n "$selected" ]; then
-    nvim "$selected"
-  fi
-}
+# Fuzzy file search - now using ~/bin scripts
+# ff, fp, ffr are in ~/bin/ directory
 
 # Compilation Aliases
 function _makec() {
