@@ -2,7 +2,7 @@
 # fp: Fuzzy file search with preview - just show, don't open
 
 if [ -n "$TMUX" ]; then
-  fdfind --type f --hidden --strip-cwd-prefix \
+  fdfind --type f --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -20,10 +20,11 @@ if [ -n "$TMUX" ]; then
     --exclude 'vendor' \
     --exclude '.next' \
     --exclude '.nuxt' \
-    --exclude '*.log' | \
+    --exclude '*.log' \
+    --exclude '.*' | \
     fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}"
 else
-  fdfind --type f --hidden --strip-cwd-prefix \
+  fdfind --type f --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -41,6 +42,7 @@ else
     --exclude 'vendor' \
     --exclude '.next' \
     --exclude '.nuxt' \
-    --exclude '*.log' | \
+    --exclude '*.log' \
+    --exclude '.*' | \
     fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border
 fi

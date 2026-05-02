@@ -2,8 +2,8 @@
 # ff: Fuzzy file search - EXCLUDES hidden files (doesn't start with .)
 
 if [ -n "$TMUX" ]; then
-  # Use fzf-tmux for tmux compatibility
-  selected=$(fdfind --type f --hidden --strip-cwd-prefix \
+  # Use fzf-tmux - NOT hidden, excludes dotfiles
+  selected=$(fdfind --type f --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -21,12 +21,13 @@ if [ -n "$TMUX" ]; then
     --exclude 'vendor' \
     --exclude '.next' \
     --exclude '.nuxt' \
-    --exclude '*.log' | \
+    --exclude '*.log' \
+    --exclude '.*' | \
     fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}" \
       --prompt="Files: " \
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
 else
-  selected=$(fdfind --type f --hidden --strip-cwd-prefix \
+  selected=$(fdfind --type f --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -44,7 +45,8 @@ else
     --exclude 'vendor' \
     --exclude '.next' \
     --exclude '.nuxt' \
-    --exclude '*.log' | \
+    --exclude '*.log' \
+    --exclude '.*' | \
     fzf --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
       --border \
