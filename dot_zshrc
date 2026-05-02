@@ -15,9 +15,7 @@ source $ZSH/oh-my-zsh.sh
 # ======================
 # Aliases
 alias fd='fdfind'
-
-# Fuzzy file search - now using ~/bin scripts
-# ff, fp, ffr are in ~/bin/ directory
+alias menu='~/bin/menu'
 
 # Compilation Aliases
 function _makec() {
