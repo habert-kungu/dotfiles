@@ -1,0 +1,27 @@
+#!/bin/bash
+# Easy WiFi connect script
+
+# Get list of available networks
+networks=$(nmcli -t -f SSID,SIGNAL dev wifi list | grep -v '^--$' | sort -t: -k2 -rn | cut -d: -f1)
+
+if [ -z "$networks" ]; then
+    echo "No WiFi networks found"
+    exit 1
+fi
+
+# Show rofi menu
+selected=$(echo "$networks" | rofi -dmenu -i -p "Select WiFi Network:")
+
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+# Check if already connected
+current=$(nmcli -t -f SSID dev wifi | head -1)
+if [ "$current" = "$selected" ]; then
+    echo "Already connected to $selected"
+    exit 0
+fi
+
+# Try to connect (will prompt for password if needed)
+nmcli dev wifi connect "$selected"

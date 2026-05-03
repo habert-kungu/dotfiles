@@ -7,11 +7,14 @@ options=(
   "fd: Fuzzy directory search → cd into dir"
   "fp: Fuzzy search → preview only"
   "fcpp: Fuzzy find C++ → compile & run"
+  "wifi: Connect to WiFi network"
+  "bt: Connect to Bluetooth device"
   "makec <file>: Compile C file"
   "makecpp <file>: Compile C++ file"
   "lzd: Open lazydocker"
   "nvim: Open neovim"
   "lazygit: Git TUI"
+  "menu: Show this menu"
 )
 
 if [ -n "$TMUX" ]; then
@@ -41,6 +44,12 @@ case "$cmd" in
   ff|fa|fp|fd)
     ~/bin/"$cmd"
     ;;
+  wifi)
+    ~/bin/wifi-connect
+    ;;
+  bt)
+    ~/bin/bluetooth-connect
+    ;;
   fcpp)
     fcpp
     ;;
@@ -55,6 +64,9 @@ case "$cmd" in
     ;;
   lazygit)
     lazygit
+    ;;
+  menu)
+    ~/bin/menu
     ;;
   *)
     echo "Unknown command: $cmd"

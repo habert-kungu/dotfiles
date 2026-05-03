@@ -1,0 +1,32 @@
+#!/bin/bash
+# Easy Bluetooth connect script
+
+# Get paired devices
+devices=$(bluetoothctl --paired-devices | grep -E "Device" | cut -d' ' -f3-)
+
+if [ -z "$devices" ]; then
+    echo "No paired Bluetooth devices"
+    echo "Searching for available devices..."
+    bluetoothctl --scan on &
+    sleep 3
+    bluetoothctl --scan off
+    devices=$(bluetoothctl --paired-devices | grep -E "Device" | cut -d' ' -f3-)
+fi
+
+if [ -z "$devices" ]; then
+    echo "No Bluetooth devices found. Pair a device first."
+    exit 1
+fi
+
+# Show rofi menu
+selected=$(echo "$devices" | rofi -dmenu -i -p "Select Bluetooth Device:")
+
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+# Get MAC address
+mac=$(bluetoothctl --paired-devices | grep "$selected" | cut -d' ' -f2)
+
+# Connect
+bluetoothctl connect "$mac"

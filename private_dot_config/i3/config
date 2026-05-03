@@ -30,7 +30,7 @@ exec --no-startup-id export GTK_THEME=Catppuccin-Mocha-Blue-Dark
 exec_always --no-startup-id polybar main
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/map.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # Compositor
 exec_always --no-startup-id picom -b
