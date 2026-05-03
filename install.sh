@@ -147,6 +147,16 @@ chezmoi apply
 echo "=== Setting Zsh as default shell ==="
 chsh -s $(which zsh)
 
+# Setup wallpapers
+echo "=== Setting up wallpapers ==="
+mkdir -p "$HOME/Pictures"
+if [ -d "$HOME/.local/share/chezmoi/wallpapers" ]; then
+    cp -n "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/" 2>/dev/null || true
+fi
+if [ -d "$HOME/dotfiles/wallpapers" ]; then
+    cp -n "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/" 2>/dev/null || true
+fi
+
 echo ""
 echo "=== Installation Complete! ==="
 echo "Please restart your terminal or log out and back in."
