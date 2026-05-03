@@ -48,8 +48,8 @@ exec --no-startup-id nm-applet
 # Open terminal
 bindsym $mod+Return exec $terminal
 
-# Open menu
-bindsym $mod+Space exec $menu
+# Open menu (Super+P instead of Space to avoid conflict)
+bindsym $mod+p exec $menu
 
 # Close window
 bindsym $mod+q kill
@@ -93,7 +93,6 @@ bindsym $mod+f fullscreen toggle
 
 # Floating mode
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
 
 # Scratchpad
 bindsym $mod+minus move scratchpad
