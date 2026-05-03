@@ -1,45 +1,10 @@
 #!/bin/bash
-# fd: Fuzzy directory search - search by NAME, cd into dir, open nvim
-# Shows just directory names, not full paths
-
-dirs=$(fdfind --type d . --strip-cwd-prefix \
-  --exclude '.git' \
-  --exclude 'node_modules' \
-  --exclude '__pycache__' \
-  --exclude '.venv' \
-  --exclude 'venv' \
-  --exclude 'dist' \
-  --exclude 'build' \
-  --exclude 'target' \
-  --exclude '.cache' \
-  --exclude 'anaconda3' \
-  --exclude 'miniconda3' \
-  --exclude '.cargo' \
-  --exclude 'vendor' \
-  --exclude '.next' \
-  --exclude '.nuxt' \
-  --exclude '.*' | \
-  xargs -I{} basename {} | sort -u)
+# fd: Fuzzy directory search - cd into selected dir then open nvim
+# Search by directory name only
 
 if [ -n "$TMUX" ]; then
-  selected=$(echo "$dirs" | \
-    fzf-tmux -p60% \
-      --preview="eza --icons=always --tree -L 2 2>/dev/null" \
-      --prompt="Dir: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by name")
-else
-  selected=$(echo "$dirs" | \
-    fzf --preview="eza --icons=always --tree -L 2 2>/dev/null" \
-      --height=60% \
-      --border \
-      --prompt="Dir: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by name")
-fi
-
-if [ -n "$selected" ]; then
-  actual_dir=$(fdfind --type d . --strip-cwd-prefix \
+  selected=$(fdfind --type d . --strip-cwd-prefix \
+    --max-depth 3 \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -56,11 +21,40 @@ if [ -n "$selected" ]; then
     --exclude '.next' \
     --exclude '.nuxt' \
     --exclude '.*' | \
-    grep "/$selected$" | head -1)
-  
-  if [ -n "$actual_dir" ] && [ -d "$actual_dir" ]; then
-    cd "$actual_dir" && nvim .
-  else
-    echo "Directory not found: $selected"
-  fi
+    fzf-tmux -p60% \
+      --with-nth=1 \
+      --preview="eza --icons=always --tree -L 2 {} 2>/dev/null" \
+      --prompt="Dir: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --header="Type to search by directory name")
+else
+  selected=$(fdfind --type d . --strip-cwd-prefix \
+    --max-depth 3 \
+    --exclude '.git' \
+    --exclude 'node_modules' \
+    --exclude '__pycache__' \
+    --exclude '.venv' \
+    --exclude 'venv' \
+    --exclude 'dist' \
+    --exclude 'build' \
+    --exclude 'target' \
+    --exclude '.cache' \
+    --exclude 'anaconda3' \
+    --exclude 'miniconda3' \
+    --exclude '.cargo' \
+    --exclude 'vendor' \
+    --exclude '.next' \
+    --exclude '.nuxt' \
+    --exclude '.*' | \
+    fzf --with-nth=1 \
+      --preview="eza --icons=always --tree -L 2 {} 2>/dev/null" \
+      --height=60% \
+      --border \
+      --prompt="Dir: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --header="Type to search by directory name")
+fi
+
+if [ -n "$selected" ]; then
+  cd "$selected" && nvim .
 fi
