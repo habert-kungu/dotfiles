@@ -27,7 +27,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id export GTK_THEME=Catppuccin-Mocha-Blue-Dark
 
 # Polybar
-exec_always --no-startup-id polybar main
+exec_always --no-startup-id polybar bar
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
