@@ -48,8 +48,8 @@ exec --no-startup-id nm-applet
 # Open terminal
 bindsym $mod+Return exec $terminal
 
-# Open menu (Super+P instead of Space to avoid conflict)
-bindsym $mod+p exec $menu
+# Open menu with Super+D
+bindsym $mod+d exec $menu
 
 # Close window
 bindsym $mod+q kill
