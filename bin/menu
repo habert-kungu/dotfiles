@@ -19,16 +19,24 @@ if [ -n "$TMUX" ]; then
   choice=$(printf '%s\n' "${options[@]}" | \
     fzf-tmux -p50% \
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --bind="enter:accept" \
+      --bind="esc:abort" \
+      --bind="gg:top" \
+      --bind="G:bottom" \
       --prompt="Run: " \
-      --header="Quick Commands (j/k to navigate)" \
+      --header="j/k or arrows to navigate, enter to run, esc to cancel" \
       --header-first)
 else
   choice=$(printf '%s\n' "${options[@]}" | \
     fzf --height=50% \
       --border \
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --bind="enter:accept" \
+      --bind="esc:abort" \
+      --bind="gg:top" \
+      --bind="G:bottom" \
       --prompt="Run: " \
-      --header="Quick Commands (j/k to navigate, enter to run)" \
+      --header="j/k to navigate, enter to run, esc to cancel, gg/G for top/bottom" \
       --header-first)
 fi
 
@@ -41,7 +49,7 @@ cmd=$(echo "$choice" | cut -d: -f1)
 
 # Run the command
 case "$cmd" in
-  ff|fa|fp)
+  ff|fa|fp|fd)
     ~/bin/"$cmd"
     ;;
   fcpp)
