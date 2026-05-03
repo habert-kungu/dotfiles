@@ -1,5 +1,5 @@
 #!/bin/bash
-# ff: Fuzzy file search - search by NAME, open in nvim
+# ff: Fuzzy file search - Telescope-style (type immediately)
 
 if [ -n "$TMUX" ]; then
   selected=$(fdfind --type f . --strip-cwd-prefix \
@@ -22,11 +22,12 @@ if [ -n "$TMUX" ]; then
     --exclude '*.log' \
     --exclude '.*' | \
     fzf-tmux -p60% \
+      --layout=reverse-list \
       --with-nth=1 \
       --preview="bat --color=always --line-range :500 {}" \
-      --prompt="File: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by filename")
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 else
   selected=$(fdfind --type f . --strip-cwd-prefix \
     --exclude '.git' \
@@ -47,13 +48,14 @@ else
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf --with-nth=1 \
+    fzf --layout=reverse-list \
+      --with-nth=1 \
       --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
       --border \
-      --prompt="File: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by filename")
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 fi
 
 if [ -n "$selected" ]; then

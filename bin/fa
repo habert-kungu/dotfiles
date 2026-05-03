@@ -1,6 +1,6 @@
 #!/bin/bash
 # fa: Fuzzy file search - ALL files including hidden (dotfiles)
-# Search by FILENAME only, show filename not full path
+# Telescope-style (type immediately)
 
 if [ -n "$TMUX" ]; then
   selected=$(fdfind --type f --hidden . --strip-cwd-prefix \
@@ -13,11 +13,12 @@ if [ -n "$TMUX" ]; then
     --exclude 'target' \
     --exclude '*.log' | \
     fzf-tmux -p60% \
+      --layout=reverse-list \
       --with-nth=1 \
       --preview="bat --color=always --line-range :500 {}" \
-      --prompt="All Files: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by filename (includes hidden)")
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 else
   selected=$(fdfind --type f --hidden . --strip-cwd-prefix \
     --exclude 'node_modules' \
@@ -28,13 +29,14 @@ else
     --exclude 'build' \
     --exclude 'target' \
     --exclude '*.log' | \
-    fzf --with-nth=1 \
+    fzf --layout=reverse-list \
+      --with-nth=1 \
       --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
       --border \
-      --prompt="All Files: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by filename (includes hidden)")
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 fi
 
 if [ -n "$selected" ]; then

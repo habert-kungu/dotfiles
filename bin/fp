@@ -1,5 +1,5 @@
 #!/bin/bash
-# fp: Fuzzy file search with preview - just show, don't open
+# fp: Fuzzy file search with preview - Telescope-style (type immediately)
 
 if [ -n "$TMUX" ]; then
   fdfind --type f . --strip-cwd-prefix \
@@ -22,8 +22,12 @@ if [ -n "$TMUX" ]; then
     --exclude '*.log' \
     --exclude '.*' | \
     fzf-tmux -p60% \
+      --layout=reverse-list \
       --with-nth=1 \
-      --preview="bat --color=always --line-range :500 {}"
+      --preview="bat --color=always --line-range :500 {}" \
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: copy path | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom"
 else
   fdfind --type f . --strip-cwd-prefix \
     --exclude '.git' \
@@ -44,8 +48,12 @@ else
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf --with-nth=1 \
+    fzf --layout=reverse-list \
+      --with-nth=1 \
       --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
-      --border
+      --border \
+      --prompt="🔍 " \
+      --header="j/k: navigate | enter: copy path | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom"
 fi

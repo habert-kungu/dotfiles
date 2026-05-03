@@ -1,6 +1,5 @@
 #!/bin/bash
-# fd: Fuzzy directory search - cd into selected dir then open nvim
-# Search by directory name only
+# fd: Fuzzy directory search - Telescope-style (type immediately)
 
 if [ -n "$TMUX" ]; then
   selected=$(fdfind --type d . --strip-cwd-prefix \
@@ -22,11 +21,12 @@ if [ -n "$TMUX" ]; then
     --exclude '.nuxt' \
     --exclude '.*' | \
     fzf-tmux -p60% \
+      --layout=reverse-list \
       --with-nth=1 \
       --preview="eza --icons=always --tree -L 2 {} 2>/dev/null" \
-      --prompt="Dir: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by directory name")
+      --prompt="📁 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 else
   selected=$(fdfind --type d . --strip-cwd-prefix \
     --max-depth 3 \
@@ -46,13 +46,14 @@ else
     --exclude '.next' \
     --exclude '.nuxt' \
     --exclude '.*' | \
-    fzf --with-nth=1 \
+    fzf --layout=reverse-list \
+      --with-nth=1 \
       --preview="eza --icons=always --tree -L 2 {} 2>/dev/null" \
       --height=60% \
       --border \
-      --prompt="Dir: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
-      --header="Type to search by directory name")
+      --prompt="📁 " \
+      --header="j/k: navigate | enter: open | esc: cancel" \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
 fi
 
 if [ -n "$selected" ]; then
