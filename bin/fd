@@ -2,7 +2,7 @@
 # fd: Fuzzy directory search - search by NAME, cd into dir, open nvim
 # Shows just directory names, not full paths
 
-dirs=$(fdfind --type d . ~ --strip-cwd-prefix \
+dirs=$(fdfind --type d . --strip-cwd-prefix \
   --exclude '.git' \
   --exclude 'node_modules' \
   --exclude '__pycache__' \
@@ -39,7 +39,7 @@ else
 fi
 
 if [ -n "$selected" ]; then
-  actual_dir=$(fdfind --type d . ~ --strip-cwd-prefix \
+  actual_dir=$(fdfind --type d . --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \

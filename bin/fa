@@ -3,7 +3,7 @@
 # Search by FILENAME only, show filename not full path
 
 if [ -n "$TMUX" ]; then
-  selected=$(fdfind --type f --hidden . ~ --strip-cwd-prefix \
+  selected=$(fdfind --type f --hidden . --strip-cwd-prefix \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
     --exclude '*.pyc' \
@@ -19,7 +19,7 @@ if [ -n "$TMUX" ]; then
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
       --header="Type to search by filename (includes hidden)")
 else
-  selected=$(fdfind --type f --hidden . ~ --strip-cwd-prefix \
+  selected=$(fdfind --type f --hidden . --strip-cwd-prefix \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
     --exclude '*.pyc' \

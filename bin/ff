@@ -2,7 +2,7 @@
 # ff: Fuzzy file search - search by NAME, open in nvim
 
 if [ -n "$TMUX" ]; then
-  selected=$(fdfind --type f . ~ --strip-cwd-prefix \
+  selected=$(fdfind --type f . --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -28,7 +28,7 @@ if [ -n "$TMUX" ]; then
       --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
       --header="Type to search by filename")
 else
-  selected=$(fdfind --type f . ~ --strip-cwd-prefix \
+  selected=$(fdfind --type f . --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
