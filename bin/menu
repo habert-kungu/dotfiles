@@ -20,7 +20,7 @@ if [ -n "$TMUX" ]; then
       --layout=reverse-list \
       --prompt="⚡ " \
       --header="j/k: navigate | enter: run | esc: cancel" \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort")
 else
   choice=$(printf '%s\n' "${options[@]}" | \
     fzf --height=50% \
@@ -28,7 +28,7 @@ else
       --layout=reverse-list \
       --prompt="⚡ " \
       --header="j/k: navigate | enter: run | esc: cancel" \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom")
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort")
 fi
 
 if [ -z "$choice" ]; then

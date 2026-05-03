@@ -27,7 +27,7 @@ if [ -n "$TMUX" ]; then
       --preview="bat --color=always --line-range :500 {}" \
       --prompt="🔍 " \
       --header="j/k: navigate | enter: copy path | esc: cancel" \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom"
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort"
 else
   fdfind --type f . --strip-cwd-prefix \
     --exclude '.git' \
@@ -55,5 +55,5 @@ else
       --border \
       --prompt="🔍 " \
       --header="j/k: navigate | enter: copy path | esc: cancel" \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort,gg:top,G:bottom"
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up,enter:accept,esc:abort"
 fi
