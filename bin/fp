@@ -2,7 +2,7 @@
 # fp: Fuzzy file search with preview - just show, don't open
 
 if [ -n "$TMUX" ]; then
-  fdfind --type f --strip-cwd-prefix \
+  fdfind --type f . ~ --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -13,7 +13,6 @@ if [ -n "$TMUX" ]; then
     --exclude 'build' \
     --exclude 'target' \
     --exclude '.cache' \
-    --exclude 'Downloads' \
     --exclude 'anaconda3' \
     --exclude 'miniconda3' \
     --exclude '.cargo' \
@@ -22,9 +21,11 @@ if [ -n "$TMUX" ]; then
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}"
+    fzf-tmux -p60% \
+      --with-nth=1 \
+      --preview="bat --color=always --line-range :500 {}"
 else
-  fdfind --type f --strip-cwd-prefix \
+  fdfind --type f . ~ --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -35,7 +36,6 @@ else
     --exclude 'build' \
     --exclude 'target' \
     --exclude '.cache' \
-    --exclude 'Downloads' \
     --exclude 'anaconda3' \
     --exclude 'miniconda3' \
     --exclude '.cargo' \
@@ -44,5 +44,8 @@ else
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf --preview="bat --color=always --line-range :500 {}" --height=60% --border
+    fzf --with-nth=1 \
+      --preview="bat --color=always --line-range :500 {}" \
+      --height=60% \
+      --border
 fi

@@ -1,9 +1,8 @@
 #!/bin/bash
-# ff: Fuzzy file search - EXCLUDES hidden files (doesn't start with .)
+# ff: Fuzzy file search - search by NAME, open in nvim
 
 if [ -n "$TMUX" ]; then
-  # Use fzf-tmux - NOT hidden, excludes dotfiles
-  selected=$(fdfind --type f --strip-cwd-prefix \
+  selected=$(fdfind --type f . ~ --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -14,7 +13,6 @@ if [ -n "$TMUX" ]; then
     --exclude 'build' \
     --exclude 'target' \
     --exclude '.cache' \
-    --exclude 'Downloads' \
     --exclude 'anaconda3' \
     --exclude 'miniconda3' \
     --exclude '.cargo' \
@@ -23,11 +21,14 @@ if [ -n "$TMUX" ]; then
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf-tmux -p60% --preview="bat --color=always --line-range :500 {}" \
-      --prompt="Files: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+    fzf-tmux -p60% \
+      --with-nth=1 \
+      --preview="bat --color=always --line-range :500 {}" \
+      --prompt="File: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --header="Type to search by filename")
 else
-  selected=$(fdfind --type f --strip-cwd-prefix \
+  selected=$(fdfind --type f . ~ --strip-cwd-prefix \
     --exclude '.git' \
     --exclude 'node_modules' \
     --exclude '__pycache__' \
@@ -38,7 +39,6 @@ else
     --exclude 'build' \
     --exclude 'target' \
     --exclude '.cache' \
-    --exclude 'Downloads' \
     --exclude 'anaconda3' \
     --exclude 'miniconda3' \
     --exclude '.cargo' \
@@ -47,11 +47,13 @@ else
     --exclude '.nuxt' \
     --exclude '*.log' \
     --exclude '.*' | \
-    fzf --preview="bat --color=always --line-range :500 {}" \
+    fzf --with-nth=1 \
+      --preview="bat --color=always --line-range :500 {}" \
       --height=60% \
       --border \
-      --prompt="Files: " \
-      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up")
+      --prompt="File: " \
+      --bind="j:down,k:up,ctrl-j:down,ctrl-k:up" \
+      --header="Type to search by filename")
 fi
 
 if [ -n "$selected" ]; then
