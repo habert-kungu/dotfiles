@@ -39,6 +39,41 @@ cd ~/dotfiles
 - **picom** - Compositor (transparency/blur)
 - **rofi** - App launcher
 - **Kitty/Alacritty/Wezterm** - Terminal emulators
+- **autorandr** - Automatic display switching
+
+---
+
+## Display Switching
+
+Uses **autorandr** for automatic monitor detection.
+
+### Profiles
+- `docked` - External monitor connected (DP-1-3 at 1920x1080)
+- `mobile` - Laptop only (eDP-1 at 1366x768)
+
+### How it works
+- Automatically detects display changes via udev rules
+- Runs `autorandr --change` on i3 startup
+- Works when plugging/unplugging cables
+
+### Manual switch
+```bash
+Super+Shift+D  # Manual display switch keybinding
+```
+
+### Creating new profiles
+```bash
+# Set up your displays manually, then save:
+autorandr --save profile-name
+
+# Or save with current resolution:
+autorandr --save my-setup --force
+```
+
+### List profiles
+```bash
+autorandr --list
+```
 
 ---
 
@@ -129,6 +164,7 @@ dotfiles/
 ### Desktop
 - i3-wm, i3status, i3lock, polybar, picom
 - rofi, libnotify-bin, xdotool, x11-utils
+- autorandr (display switching)
 
 ### Terminals
 - kitty, alacritty

@@ -55,7 +55,8 @@ sudo apt install -y \
     librsvg2-dev \
     libxcb-ewmh-dev \
     libxcb-composite0 \
-    libxcb-xfixes0
+    libxcb-xfixes0 \
+    autorandr
 
 # Install Neovim (latest stable)
 echo "=== Installing Neovim ==="
@@ -155,6 +156,13 @@ if [ -d "$HOME/.local/share/chezmoi/wallpapers" ]; then
 fi
 if [ -d "$HOME/dotfiles/wallpapers" ]; then
     cp -n "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/" 2>/dev/null || true
+fi
+
+# Setup autorandr display profiles
+echo "=== Setting up display profiles ==="
+mkdir -p "$HOME/.config/autorandr"
+if [ -d "$HOME/dotfiles/autorandr" ]; then
+    cp -r "$HOME/dotfiles/autorandr/"* "$HOME/.config/autorandr/" 2>/dev/null || true
 fi
 
 echo ""
