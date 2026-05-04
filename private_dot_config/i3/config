@@ -42,11 +42,8 @@ exec --no-startup-id export GTK_THEME=Adwaita:dark
 # Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
-# Auto display switching with autorandr (startup)
+# Auto display switching with autorandr (startup; hotplug handled by udev rule)
 exec_always --no-startup-id autorandr --change
-
-# Watch for display changes in background
-exec --no-startup-id ~/bin/display-watch
 
 # Background
 exec_always feh --bg-fill ~/Pictures/wallpaper.jpg

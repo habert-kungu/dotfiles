@@ -1,7 +1,0 @@
-#!/bin/bash
-# Watch for display changes and run autorandr
-
-while true; do
-    sleep 2
-    autorandr --change 2>/dev/null
-done
