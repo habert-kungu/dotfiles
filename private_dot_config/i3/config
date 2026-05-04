@@ -42,8 +42,11 @@ exec --no-startup-id export GTK_THEME=Adwaita:dark
 # Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
-# Auto display switching with autorandr
+# Auto display switching with autorandr (startup)
 exec_always --no-startup-id autorandr --change
+
+# Watch for display changes in background
+exec --no-startup-id ~/bin/display-watch
 
 # Background
 exec_always feh --bg-fill ~/Pictures/wallpaper.jpg
@@ -60,6 +63,9 @@ exec --no-startup-id nm-applet
 # Screenshots
 bindsym Print exec maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym $mod+Print exec maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+
+# Display switch
+bindsym $mod+Shift+d exec autorandr --change
 
 # Audio controls
 bindsym F1 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
