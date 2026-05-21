@@ -1,0 +1,16 @@
+# Files that live in the repo but should not be applied to $HOME.
+# chezmoi reads this with shell-style globs (gitignore-like syntax).
+
+# Installer + repo meta
+install.sh
+README.md
+Dockerfile
+.gitignore
+
+# Top-level autorandr/ and wallpapers/ are sources for install.sh, not
+# managed dotfiles. The real autorandr config is under
+# private_dot_config/autorandr/ which chezmoi applies to ~/.config/autorandr/.
+autorandr
+autorandr/**
+wallpapers
+wallpapers/**

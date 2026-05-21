@@ -238,10 +238,11 @@ setup_wallpapers() {
 }
 
 setup_autorandr() {
+    # autorandr profiles are managed by chezmoi under
+    # private_dot_config/autorandr/ -> ~/.config/autorandr/, so nothing to
+    # copy here. Just make sure the target dir exists for autorandr's
+    # systemd unit.
     mkdir -p "$HOME/.config/autorandr"
-    if [ -d "$HOME/dotfiles/autorandr" ]; then
-        cp -r "$HOME/dotfiles/autorandr/"* "$HOME/.config/autorandr/" 2>/dev/null || true
-    fi
 }
 
 # ---------- Summary ----------
