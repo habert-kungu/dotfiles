@@ -136,12 +136,34 @@ install_wezterm() {
         ok "wezterm already installed"
         return 0
     fi
-    local deb=/tmp/wezterm.deb
-    wget -O "$deb" \
-        https://github.com/wez/wezterm/releases/download/20240203-114724-70cd1be3/wezterm-20240203-114724-70cd1be3-Ubuntu22.04.deb \
-        || return 1
-    $SUDO dpkg -i "$deb" || $SUDO apt-get install -f -y || return 1
-    rm -f "$deb"
+
+    # Preferred path: official wezterm apt repo (works on Debian + Ubuntu).
+    local keyring=/usr/share/keyrings/wezterm-fury.gpg
+    local listfile=/etc/apt/sources.list.d/wezterm.list
+    if curl -fsSL https://apt.fury.io/wez/gpg.key \
+        | $SUDO gpg --yes --dearmor -o "$keyring"; then
+        echo "deb [signed-by=$keyring] https://apt.fury.io/wez/ * *" \
+            | $SUDO tee "$listfile" >/dev/null
+        if $SUDO apt-get update -y && apt_install wezterm; then
+            return 0
+        fi
+        warn "wezterm apt repo install failed; falling back to AppImage"
+        $SUDO rm -f "$listfile" "$keyring"
+    fi
+
+    # Fallback: AppImage from latest release.
+    local appimage_url
+    appimage_url=$(curl -fsSL https://api.github.com/repos/wez/wezterm/releases/latest \
+        | grep -oE '"browser_download_url": *"[^"]*Ubuntu22.04\.AppImage"' \
+        | head -n1 | sed -E 's/.*"(https[^"]+)"/\1/') || true
+    if [ -n "${appimage_url:-}" ]; then
+        $SUDO curl -fsSL -o /usr/local/bin/wezterm "$appimage_url" || return 1
+        $SUDO chmod +x /usr/local/bin/wezterm
+        return 0
+    fi
+
+    err "Could not resolve any wezterm install method"
+    return 1
 }
 
 install_programming_tools() {
@@ -197,8 +219,14 @@ apply_dotfiles() {
         export PATH="$HOME/bin:$PATH"
     fi
     command -v chezmoi >/dev/null 2>&1 || return 1
+
+    # `chezmoi init` is idempotent if the source dir already exists.
     chezmoi init https://github.com/habert-kungu/dotfiles.git || return 1
-    chezmoi apply
+
+    # Verbose so failing files are visible in the install log.
+    # `--keep-going` keeps applying remaining entries when one fails, so
+    # a single broken file doesn't black-hole the whole apply.
+    chezmoi apply --verbose --keep-going
 }
 
 set_default_shell() {
