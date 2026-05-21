@@ -60,10 +60,24 @@ sudo apt install -y \
 
 # Install Neovim (latest stable)
 echo "=== Installing Neovim ==="
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt update
-sudo apt install -y neovim
+NVIM_INSTALLED=0
+if [[ "$OS" == "ubuntu" ]]; then
+    sudo apt install -y software-properties-common
+    if sudo add-apt-repository ppa:neovim-ppa/unstable -y; then
+        sudo apt update
+        sudo apt install -y neovim && NVIM_INSTALLED=1
+    fi
+fi
+if [[ "$NVIM_INSTALLED" -eq 0 ]]; then
+    # Fallback: install latest stable from GitHub release (Debian/other distros)
+    NVIM_TARBALL=/tmp/nvim-linux-x86_64.tar.gz
+    curl -fsSL -o "$NVIM_TARBALL" \
+        https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+    sudo rm -rf /opt/nvim-linux-x86_64
+    sudo tar -C /opt -xzf "$NVIM_TARBALL"
+    sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+    rm -f "$NVIM_TARBALL"
+fi
 
 # Install i3 and related
 echo "=== Installing i3 and desktop tools ==="
@@ -124,7 +138,7 @@ fi
 # Install Zsh plugins
 echo "=== Installing Zsh plugins ==="
 # zsh-autosuggestions
-if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zash-autosuggestions" ]; then
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 fi
 
