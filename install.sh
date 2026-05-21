@@ -133,44 +133,25 @@ install_terminals() {
 
 install_wezterm() {
     if command -v wezterm >/dev/null 2>&1; then
-        ok "wezterm already installed"
+        ok "wezterm already installed: $(wezterm --version 2>/dev/null | head -n1)"
         return 0
     fi
 
-    # Preferred path: official wezterm apt repo (works on Debian + Ubuntu).
+    # Official wezterm apt repo (Debian + Ubuntu).
     # https://wezfurlong.org/wezterm/install/linux.html
     local keyring=/usr/share/keyrings/wezterm-fury.gpg
     local listfile=/etc/apt/sources.list.d/wezterm.list
-    local keyfile=/tmp/wezterm-fury.key
-    if curl -fsSL -o "$keyfile" https://apt.fury.io/wez/gpg.key \
-        && $SUDO gpg --yes --dearmor -o "$keyring" "$keyfile"; then
-        rm -f "$keyfile"
-        # gpg --dearmor writes 600 by default; apt's _apt user needs read access.
-        $SUDO chmod 644 "$keyring"
-        echo "deb [signed-by=$keyring] https://apt.fury.io/wez/ * *" \
-            | $SUDO tee "$listfile" >/dev/null
-        $SUDO chmod 644 "$listfile"
-        if $SUDO apt-get update -y && apt_install wezterm; then
-            return 0
-        fi
-        warn "wezterm apt repo install failed; falling back to AppImage"
-        $SUDO rm -f "$listfile" "$keyring"
-    fi
-    rm -f "$keyfile"
 
-    # Fallback: AppImage from latest release.
-    local appimage_url
-    appimage_url=$(curl -fsSL https://api.github.com/repos/wez/wezterm/releases/latest \
-        | grep -oE '"browser_download_url": *"[^"]*Ubuntu22.04\.AppImage"' \
-        | head -n1 | sed -E 's/.*"(https[^"]+)"/\1/') || true
-    if [ -n "${appimage_url:-}" ]; then
-        $SUDO curl -fsSL -o /usr/local/bin/wezterm "$appimage_url" || return 1
-        $SUDO chmod +x /usr/local/bin/wezterm
-        return 0
-    fi
+    curl -fsSL https://apt.fury.io/wez/gpg.key \
+        | $SUDO gpg --yes --dearmor -o "$keyring" || return 1
+    $SUDO chmod 644 "$keyring"
 
-    err "Could not resolve any wezterm install method"
-    return 1
+    echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' \
+        | $SUDO tee "$listfile" >/dev/null
+    $SUDO chmod 644 "$listfile"
+
+    $SUDO apt-get update -y || return 1
+    apt_install wezterm
 }
 
 install_programming_tools() {
