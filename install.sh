@@ -218,13 +218,34 @@ apply_dotfiles() {
 }
 
 set_default_shell() {
-    local zsh_path
+    local zsh_path target_user current_shell
     zsh_path="$(command -v zsh)" || return 1
-    if [ "${SHELL:-}" = "$zsh_path" ]; then
-        ok "zsh already default shell"
+
+    # If invoked via `sudo`, target the invoking user, not root.
+    target_user="${SUDO_USER:-$USER}"
+
+    # zsh must be listed in /etc/shells for chsh to accept it.
+    if ! grep -qxF "$zsh_path" /etc/shells 2>/dev/null; then
+        echo "$zsh_path" | $SUDO tee -a /etc/shells >/dev/null
+    fi
+
+    current_shell="$(getent passwd "$target_user" | cut -d: -f7)"
+    if [ "$current_shell" = "$zsh_path" ]; then
+        ok "zsh already default shell for $target_user"
         return 0
     fi
-    chsh -s "$zsh_path" || return 1
+
+    # As root: chsh/usermod do not need a password and can target a user
+    # explicitly. As an unprivileged user: chsh prompts for the user's
+    # password and only changes the invoking user's shell.
+    if [ "$(id -u)" = "0" ]; then
+        chsh -s "$zsh_path" "$target_user" \
+            || usermod -s "$zsh_path" "$target_user" \
+            || return 1
+    else
+        chsh -s "$zsh_path" || return 1
+    fi
+    ok "Default shell for $target_user set to $zsh_path (effective on next login)"
 }
 
 setup_wallpapers() {
