@@ -138,18 +138,25 @@ install_wezterm() {
     fi
 
     # Preferred path: official wezterm apt repo (works on Debian + Ubuntu).
+    # https://wezfurlong.org/wezterm/install/linux.html
     local keyring=/usr/share/keyrings/wezterm-fury.gpg
     local listfile=/etc/apt/sources.list.d/wezterm.list
-    if curl -fsSL https://apt.fury.io/wez/gpg.key \
-        | $SUDO gpg --yes --dearmor -o "$keyring"; then
+    local keyfile=/tmp/wezterm-fury.key
+    if curl -fsSL -o "$keyfile" https://apt.fury.io/wez/gpg.key \
+        && $SUDO gpg --yes --dearmor -o "$keyring" "$keyfile"; then
+        rm -f "$keyfile"
+        # gpg --dearmor writes 600 by default; apt's _apt user needs read access.
+        $SUDO chmod 644 "$keyring"
         echo "deb [signed-by=$keyring] https://apt.fury.io/wez/ * *" \
             | $SUDO tee "$listfile" >/dev/null
+        $SUDO chmod 644 "$listfile"
         if $SUDO apt-get update -y && apt_install wezterm; then
             return 0
         fi
         warn "wezterm apt repo install failed; falling back to AppImage"
         $SUDO rm -f "$listfile" "$keyring"
     fi
+    rm -f "$keyfile"
 
     # Fallback: AppImage from latest release.
     local appimage_url
