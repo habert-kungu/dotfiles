@@ -127,6 +127,29 @@ install_i3_stack() {
         libnotify-bin xdotool x11-utils
 }
 
+install_audio_stack() {
+    # pipewire is already default on Debian 13; pulseaudio-utils gives us
+    # `pactl` (used by polybar's pulseaudio module) and pavucontrol is the
+    # mixer GUI bound to polybar's volume click-right.
+    apt_install \
+        pipewire pipewire-pulse wireplumber \
+        pulseaudio-utils pavucontrol
+}
+
+install_network_tools() {
+    # NetworkManager + GUI editor (bound to polybar wlan click-right) and
+    # the rofi-based picker invoked from polybar wlan click-left.
+    apt_install \
+        network-manager network-manager-gnome
+}
+
+install_bluetooth_stack() {
+    # blueman provides blueman-manager (polybar bluetooth click-right);
+    # the click-left picker uses bluetoothctl from bluez.
+    apt_install \
+        bluez blueman
+}
+
 install_terminals() {
     apt_install kitty alacritty
 }
@@ -301,6 +324,9 @@ run_step "apt update"               apt_update                || true
 run_step "core dependencies"        install_core_deps         || true
 run_step "Neovim"                   install_neovim            || true
 run_step "i3 + desktop tools"       install_i3_stack          || true
+run_step "audio stack (pipewire + pavucontrol)" install_audio_stack || true
+run_step "NetworkManager + GUI"     install_network_tools     || true
+run_step "Bluetooth stack"          install_bluetooth_stack   || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true
 run_step "programming tools"        install_programming_tools || true
