@@ -1,0 +1,35 @@
+#!/bin/bash
+# Open a floating kitty window running a TUI for the requested control.
+# Invoked by polybar single-click on volume / wifi / bluetooth icons.
+# i3 floats any window with class=floating-control (see ~/.config/i3/config).
+
+domain="${1:?usage: launch-control <audio|wifi|bluetooth>}"
+
+case "$domain" in
+  audio)     cmd=(pulsemixer) ;;
+  wifi)      rfkill unblock wifi 2>/dev/null; cmd=(impala) ;;
+  bluetooth) rfkill unblock bluetooth 2>/dev/null; cmd=(bluetui) ;;
+  *) echo "unknown domain: $domain" >&2; exit 2 ;;
+esac
+
+if ! command -v "${cmd[0]}" >/dev/null 2>&1; then
+  notify-send "launch-control" "${cmd[0]} is not installed" 2>/dev/null
+  echo "${cmd[0]} not installed" >&2
+  exit 1
+fi
+
+# If a launcher window for this domain is already open, focus it via i3
+# instead of opening a duplicate.
+mark="ctl-$domain"
+if command -v i3-msg >/dev/null 2>&1 && i3-msg -t get_tree \
+    | grep -q "\"mark\":\"$mark\""; then
+  i3-msg "[con_mark=\"$mark\"] focus" >/dev/null
+  exit 0
+fi
+
+exec kitty \
+  --class=floating-control \
+  --title="control:$domain" \
+  -o initial_window_width=90c \
+  -o initial_window_height=24c \
+  zsh -c "i3-msg \"mark --add $mark\" >/dev/null 2>&1; ${cmd[*]}"

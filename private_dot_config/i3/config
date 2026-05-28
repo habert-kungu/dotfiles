@@ -16,6 +16,9 @@ set $mod Mod4
 for_window [all] border pixel 0
 for_window [class="^.*"] border pixel 0
 
+# Floating control TUIs spawned by ~/.local/bin/launch-control (polybar icons)
+for_window [class="floating-control"] floating enable, resize set 720 480, move position center
+
 # Gaps
 gaps inner 2
 gaps outer 2
@@ -25,13 +28,6 @@ gaps outer 2
 # font pango: Fira Code 14
 
 # # Bluetooth status
-# order += "bluetooth"
-# bluetooth {
-#     format = "BT: %s"
-#     device = "hci0"
-#     color_connected = "#00FF00"
-#     color_disconnected = "#FF0000"
-# }
 
 # Start XDG autostart .desktop files using dex
 exec --no-startup-id dex --autostart --environment i3
@@ -75,7 +71,7 @@ tiling_drag modifier titlebar
 
 # Application shortcuts
 bindsym $mod+Return exec wezterm
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec firefox
 bindsym $mod+t exec thunar
 bindsym $mod+c exec code
 bindsym $mod+d exec rofi -show drun

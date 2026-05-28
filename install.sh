@@ -129,25 +129,49 @@ install_i3_stack() {
 
 install_audio_stack() {
     # pipewire is already default on Debian 13; pulseaudio-utils gives us
-    # `pactl` (used by polybar's pulseaudio module) and pavucontrol is the
-    # mixer GUI bound to polybar's volume click-right.
+    # `pactl` (used by polybar's pulseaudio module). pulsemixer is the TUI
+    # mixer launched by polybar's volume icon (via ~/.local/bin/launch-control).
     apt_install \
         pipewire pipewire-pulse wireplumber \
-        pulseaudio-utils pavucontrol
+        pulseaudio-utils pulsemixer
+}
+
+# Download a release binary from a GitHub repo and install to /usr/local/bin.
+# Args: <repo>  <asset-substring>  <install-name>
+install_github_binary() {
+    local repo="$1" asset_match="$2" install_name="$3"
+    local url tmp
+    if command -v "$install_name" >/dev/null 2>&1; then
+        ok "$install_name already installed"
+        return 0
+    fi
+    url=$(curl -fsSL "https://api.github.com/repos/$repo/releases/latest" \
+        | grep -oE "https://[^\" ]+$asset_match[^\" ]*" | head -n1) || return 1
+    [ -n "$url" ] || { err "no asset matching '$asset_match' in $repo"; return 1; }
+    tmp=$(mktemp) || return 1
+    curl -fsSL -o "$tmp" "$url" || { rm -f "$tmp"; return 1; }
+    $SUDO install -m 0755 "$tmp" "/usr/local/bin/$install_name" || { rm -f "$tmp"; return 1; }
+    rm -f "$tmp"
+}
+
+install_wifi_tui() {
+    install_github_binary pythops/impala x86_64-unknown-linux-musl impala
+}
+
+install_bluetooth_tui() {
+    install_github_binary pythops/bluetui x86_64-linux-musl bluetui
 }
 
 install_network_tools() {
-    # NetworkManager + GUI editor (bound to polybar wlan click-right) and
-    # the rofi-based picker invoked from polybar wlan click-left.
-    apt_install \
-        network-manager network-manager-gnome
+    # NetworkManager is required by impala (the TUI launched from polybar's
+    # wifi icon) and by anything else that wants to manage wifi.
+    apt_install network-manager
 }
 
 install_bluetooth_stack() {
-    # blueman provides blueman-manager (polybar bluetooth click-right);
-    # the click-left picker uses bluetoothctl from bluez.
-    apt_install \
-        bluez blueman
+    # bluez provides bluetoothctl, which bluetui (the TUI launched from
+    # polybar's bluetooth icon) talks to under the hood.
+    apt_install bluez
 }
 
 install_terminals() {
@@ -324,9 +348,11 @@ run_step "apt update"               apt_update                || true
 run_step "core dependencies"        install_core_deps         || true
 run_step "Neovim"                   install_neovim            || true
 run_step "i3 + desktop tools"       install_i3_stack          || true
-run_step "audio stack (pipewire + pavucontrol)" install_audio_stack || true
-run_step "NetworkManager + GUI"     install_network_tools     || true
+run_step "audio stack (pipewire + pulsemixer)" install_audio_stack || true
+run_step "NetworkManager"           install_network_tools     || true
 run_step "Bluetooth stack"          install_bluetooth_stack   || true
+run_step "WiFi TUI (impala)"        install_wifi_tui          || true
+run_step "Bluetooth TUI (bluetui)"  install_bluetooth_tui     || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true
 run_step "programming tools"        install_programming_tools || true
