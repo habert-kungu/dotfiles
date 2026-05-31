@@ -2,29 +2,42 @@
 # Triggered by udev on display change events
 # Runs as root, switches to user for autorandr
 
+LOCKFILE="/tmp/autorandr_switch.lock"
+COOLDOWN_FILE="/tmp/autorandr_switch.cooldown"
+COOLDOWN_SECS=10
+
+exec 9>"$LOCKFILE"
+flock -n 9 || exit 1
+
+if [ -f "$COOLDOWN_FILE" ]; then
+  last_run=$(cat "$COOLDOWN_FILE")
+  now=$(date +%s)
+  if [ $((now - last_run)) -lt "$COOLDOWN_SECS" ]; then
+    exit 0
+  fi
+fi
+
 LOG="/tmp/autorandr_udev.log"
 echo "[$(date)] udev triggered" >> "$LOG"
 
 USER="master"
-DISPLAY=":1"
+DISPLAY=":0"
 XAUTHORITY="/run/user/1000/gdm/Xauthority"
 
-# Fallback Xauthority paths
 if [ ! -f "$XAUTHORITY" ]; then
   for f in /home/master/.Xauthority /tmp/.Xauthority; do
     [ -f "$f" ] && { XAUTHORITY="$f"; break; }
   done
 fi
 
-export DISPLAY XAUTHORITY
-echo "[$(date)] DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY" >> "$LOG"
+sleep 3
 
-sleep 2
+date +%s > "$COOLDOWN_FILE"
 
-# Run autorandr as the user
-su -c "autorandr --change" "$USER" >> "$LOG" 2>&1
+CMD="export DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY;"
+CMD+="profile=\$(xrandr --current 2>/dev/null | grep -q '^DP-1-3 connected' && echo docked || echo mobile);"
+CMD+="autorandr --load \"\$profile\""
 
-# Restart i3 to apply layout
-su -c "i3-msg restart" "$USER" >> "$LOG" 2>&1
+su -c "$CMD" "$USER" >> "$LOG" 2>&1
 
 echo "[$(date)] done" >> "$LOG"
