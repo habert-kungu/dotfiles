@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=OpenRGB Profile
+Comment=Load OpenRGB profile without the GUI
+Exec=/usr/bin/openrgb --server --profile "habert"
+NoDisplay=true

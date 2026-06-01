@@ -287,6 +287,13 @@ setup_autorandr() {
     mkdir -p "$HOME/.config/autorandr"
 }
 
+install_openrgb() {
+    # OpenRGB controls RGB lighting. Installed via apt on Debian/Ubuntu.
+    # The profile-loading script (~/.local/bin/openrgb-load-profile.sh) is
+    # managed by chezmoi under private_dot_local/bin/.
+    apt_install openrgb
+}
+
 # ---------- Summary ----------
 print_summary() {
     echo ""
@@ -336,5 +343,6 @@ run_step "apply dotfiles"           apply_dotfiles            || true
 run_step "set zsh as default shell" set_default_shell         || true
 run_step "wallpapers"               setup_wallpapers          || true
 run_step "autorandr profiles"       setup_autorandr           || true
+run_step "OpenRGB"                  install_openrgb           || true
 
 print_summary

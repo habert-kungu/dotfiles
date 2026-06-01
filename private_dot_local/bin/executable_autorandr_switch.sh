@@ -9,6 +9,7 @@ COOLDOWN_SECS=10
 exec 9>"$LOCKFILE"
 flock -n 9 || exit 1
 
+# Cooldown: skip if we just ran recently (breaks udev event storms)
 if [ -f "$COOLDOWN_FILE" ]; then
   last_run=$(cat "$COOLDOWN_FILE")
   now=$(date +%s)
@@ -30,14 +31,19 @@ if [ ! -f "$XAUTHORITY" ]; then
   done
 fi
 
+# Wait for udev events to settle before probing
 sleep 3
 
 date +%s > "$COOLDOWN_FILE"
 
-CMD="export DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY;"
-CMD+="profile=\$(xrandr --current 2>/dev/null | grep -q '^DP-1-3 connected' && echo docked || echo mobile);"
-CMD+="autorandr --load \"\$profile\""
+# Detect which outputs are connected via xrandr (more reliable than autorandr matching)
+detect_profile() {
+  su -c "xrandr --current" "$USER" 2>/dev/null | grep -q "^DP-1-3 connected" && echo "docked" || echo "mobile"
+}
 
-su -c "$CMD" "$USER" >> "$LOG" 2>&1
+current_profile=$(detect_profile)
+echo "[$(date)] detected profile: $current_profile" >> "$LOG"
+
+su -c "autorandr --load $current_profile" "$USER" >> "$LOG" 2>&1
 
 echo "[$(date)] done" >> "$LOG"
