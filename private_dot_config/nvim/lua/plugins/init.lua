@@ -10,13 +10,12 @@ return {
     },
   },
 
-  -- mason-lspconfig: ensure LSP servers installed + auto-enable on file open
+  -- mason-lspconfig: auto-enable installed LSP servers (loads at startup, tiny cost)
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
+    lazy = false,
+    dependencies = { "williamboman/mason.nvim" },
     config = function()
-      require("lspconfig")
-      require("nvchad.configs.lspconfig").defaults()
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua-language-server", "pyright", "ruff", "gopls",
@@ -25,22 +24,31 @@ return {
           "dockerls", "marksman", "tailwindcss-language-server",
         },
       })
+    end,
+  },
+
+  -- Extend NvChad's lspconfig (load on opening a file)
+  {
+    "neovim/nvim-lspconfig",
+    event = "BufReadPre",
+    config = function()
+      require("lspconfig")
+      require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
     end,
   },
 
-  -- Treesitter: syntax highlighting
+  -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      indent = { enable = true },
-      highlight = { enable = true },
+      indent = { enable = true }, highlight = { enable = true },
       auto_install = true,
     },
   },
 
-  -- Tmux navigator: seamless pane switching
+  -- Tmux navigator
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
