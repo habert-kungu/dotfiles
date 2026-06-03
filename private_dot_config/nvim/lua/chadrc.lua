@@ -22,6 +22,20 @@ M.ui = {
   statusline = {
     theme = "vscode_colored",
     separator_style = "block",
+    modules = {
+      lsp = function()
+        local clients = vim.lsp.get_clients()
+        local names = {}
+        for _, c in ipairs(clients) do
+          local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
+          if c.attached_buffers[bufnr] then
+            table.insert(names, c.name)
+          end
+        end
+        if #names == 0 then return "" end
+        return "%#St_Lsp#  " .. table.concat(names, " ")
+      end,
+    },
   },
 }
 

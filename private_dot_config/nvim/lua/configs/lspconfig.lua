@@ -53,6 +53,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     local clients = vim.lsp.get_clients { bufnr = args.buf }
     if #clients > 0 then
       vim.lsp.buf.format { bufnr = args.buf, timeout_ms = 1000 }
+      vim.notify("Formatted on save", vim.log.levels.INFO, { title = "LSP" })
     end
   end,
 })
