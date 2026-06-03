@@ -230,7 +230,7 @@ apply_dotfiles() {
     command -v chezmoi >/dev/null 2>&1 || return 1
 
     # `chezmoi init` is idempotent if the source dir already exists.
-    chezmoi init https://github.com/habert-kungu/dotfiles.git || return 1
+    chezmoi init https://github.com/habert-kungu/dotfiles.git || true
 
     # Verbose so failing files are visible in the install log.
     # `--keep-going` keeps applying remaining entries when one fails, so
