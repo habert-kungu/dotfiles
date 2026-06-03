@@ -232,10 +232,22 @@ apply_dotfiles() {
     # `chezmoi init` is idempotent if the source dir already exists.
     chezmoi init https://github.com/habert-kungu/dotfiles.git || true
 
+    # Back up any existing configs before overwriting
+    local backup_dir="$HOME/.dotfiles-backup-$(date +%Y%m%d-%H%M%S)"
+    mkdir -p "$backup_dir"
+    while IFS= read -r f; do
+        if [ -f "$HOME/$f" ]; then
+            mkdir -p "$(dirname "$backup_dir/$f")"
+            cp -a "$HOME/$f" "$backup_dir/$f"
+        fi
+    done < <(chezmoi managed --include=files 2>/dev/null)
+    info "Old configs backed up to $backup_dir"
+
     # Verbose so failing files are visible in the install log.
     # `--keep-going` keeps applying remaining entries when one fails, so
     # a single broken file doesn't black-hole the whole apply.
-    chezmoi apply --verbose --keep-going
+    # `--force` skips the interactive TTY prompt so the script is non-blocking.
+    chezmoi apply --verbose --keep-going --force
 }
 
 set_default_shell() {
