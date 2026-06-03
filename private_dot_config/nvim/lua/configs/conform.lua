@@ -28,7 +28,9 @@ local options = {
 
   -- Format on save; fall back to the LSP formatter when no formatter is configured
   format_on_save = {
-    timeout_ms = 1000,
+    -- generous timeout so a cold formatter (e.g. prettierd daemon spin-up,
+    -- first black/isort run) still completes on the first save
+    timeout_ms = 3000,
     lsp_format = "fallback",
   },
 }

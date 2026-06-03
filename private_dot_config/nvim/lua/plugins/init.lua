@@ -2,7 +2,11 @@ return {
   -- Conform: run standalone formatters (stylua, black, isort, prettier, ...)
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre",
+    -- Load on file open (not BufWritePre) so the format-on-save autocmd is
+    -- registered before the first :w — otherwise the first save writes the
+    -- file unformatted and you have to save twice.
+    event = { "BufReadPre", "BufNewFile" },
+    cmd = "ConformInfo",
     opts = function()
       return require "configs.conform"
     end,
