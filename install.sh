@@ -286,10 +286,10 @@ setup_wallpapers() {
     # ~/Pictures/wallpapers/, so copy the repo's wallpapers there.
     mkdir -p "$HOME/Pictures/wallpapers"
     if [ -d "$HOME/.local/share/chezmoi/wallpapers" ]; then
-        cp -n "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
+        cp "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
     fi
     if [ -d "$HOME/dotfiles/wallpapers" ]; then
-        cp -n "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
+        cp "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
     fi
 }
 
