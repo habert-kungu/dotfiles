@@ -1,9 +1,13 @@
 return {
-  -- Mason: installs LSP servers, formatters, linters
+  -- Mason: formatters & linters
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    opts = {},
+    opts = {
+      ensure_installed = {
+        "stylua", "prettierd", "black", "isort", "clang-format", "gofumpt",
+      },
+    },
   },
 
   -- mason-lspconfig: ensure LSP servers installed + auto-enable on file open
@@ -16,6 +20,8 @@ return {
         ensure_installed = {
           "lua-language-server", "pyright", "ruff", "gopls",
           "clangd", "ts_ls", "html-lsp", "css-lsp", "eslint-lsp",
+          "svelte-ls", "jdtls", "json-lsp", "yaml-lsp", "bashls",
+          "dockerls", "marksman", "tailwindcss-language-server",
         },
       })
       require("configs.lspconfig")
