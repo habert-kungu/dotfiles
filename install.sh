@@ -290,10 +290,34 @@ setup_autorandr() {
 }
 
 install_openrgb() {
-    # OpenRGB controls RGB lighting. Installed via apt on Debian/Ubuntu.
+    # OpenRGB controls RGB lighting.
     # The profile-loading script (~/.local/bin/openrgb-load-profile.sh) is
     # managed by chezmoi under private_dot_local/bin/.
-    apt_install openrgb
+    if command -v openrgb >/dev/null 2>&1; then
+        ok "openrgb already installed: $(openrgb --version 2>/dev/null | head -n1)"
+        return 0
+    fi
+
+    local ver="1.0rc2"
+    local commit="0fca93e"
+    local codename
+    codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
+    local deb="openrgb_${ver}_amd64_${codename}_${commit}.deb"
+    local url="https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_candidate_${ver}/${deb}"
+
+    info "Downloading OpenRGB ${ver} (${codename}) ..."
+    curl -sSL -o "/tmp/${deb}" "$url" || {
+        fail "Failed to download OpenRGB from $url"
+        return 1
+    }
+
+    info "Installing ${deb} ..."
+    sudo dpkg -i "/tmp/${deb}" || {
+        info "Installing missing dependencies ..."
+        sudo apt-get install -fyq
+        sudo dpkg -i "/tmp/${deb}"
+    }
+    rm -f "/tmp/${deb}"
 }
 
 install_claude() {
