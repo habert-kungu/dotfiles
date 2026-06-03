@@ -1,15 +1,6 @@
 local lsp_utils = require "nvchad.configs.lspconfig"
 
 local on_attach = lsp_utils.on_attach
-local on_init = lsp_utils.on_init
-local capabilities = lsp_utils.capabilities
-
--- Servers that need no custom config
-local default_servers = { "html", "cssls", "ruff", "ts_ls", "eslint" }
-
-for _, lsp in ipairs(default_servers) do
-  vim.lsp.enable(lsp)
-end
 
 -- gopls
 vim.lsp.config.gopls = {
@@ -24,7 +15,6 @@ vim.lsp.config.gopls = {
     },
   },
 }
-vim.lsp.enable("gopls")
 
 -- pyright
 vim.lsp.config.pyright = {
@@ -39,13 +29,11 @@ vim.lsp.config.pyright = {
     },
   },
 }
-vim.lsp.enable("pyright")
 
 -- html with custom filetypes
 vim.lsp.config.html = {
   filetypes = { "html", "htmldjango" },
 }
-vim.lsp.enable("html")
 
 -- clangd with custom on_attach
 vim.lsp.config.clangd = {
@@ -57,7 +45,6 @@ vim.lsp.config.clangd = {
     on_attach(client, bufnr)
   end,
 }
-vim.lsp.enable("clangd")
 
 -- Format on save via LSP
 vim.api.nvim_create_autocmd("BufWritePre", {

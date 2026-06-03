@@ -3,20 +3,21 @@ return {
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    opts = {
-      ensure_installed = {
-        "stylua", "prettierd", "black", "isort", "clang-format",
-      },
-    },
+    opts = {},
   },
 
-  -- mason-lspconfig: auto-install + integrate with nvim-lspconfig
+  -- mason-lspconfig: ensure LSP servers installed + auto-enable on file open
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
-      require("mason-lspconfig").setup({ automatic_installation = true })
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua-language-server", "pyright", "ruff", "gopls",
+          "clangd", "ts_ls", "html-lsp", "css-lsp", "eslint-lsp",
+        },
+      })
       require("configs.lspconfig")
     end,
   },
