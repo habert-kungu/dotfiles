@@ -285,12 +285,20 @@ setup_wallpapers() {
     # nitrogen (and the i3 $mod+Shift+w cycle keybind) read from
     # ~/Pictures/wallpapers/, so copy the repo's wallpapers there.
     mkdir -p "$HOME/Pictures/wallpapers"
-    if [ -d "$HOME/.local/share/chezmoi/wallpapers" ]; then
-        cp "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
-    fi
-    if [ -d "$HOME/dotfiles/wallpapers" ]; then
-        cp "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
-    fi
+
+    local src
+    for src in "$HOME/.local/share/chezmoi/wallpapers" "$HOME/dotfiles/wallpapers"; do
+        if [ -d "$src" ]; then
+            local count=0
+            for f in "$src"/*; do
+                if [ -f "$f" ]; then
+                    cp "$f" "$HOME/Pictures/wallpapers/"
+                    count=$((count + 1))
+                fi
+            done
+            info "Copied $count wallpapers from $src"
+        fi
+    done
 }
 
 setup_autorandr() {
