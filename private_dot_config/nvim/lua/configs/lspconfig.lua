@@ -9,8 +9,8 @@ vim.lsp.config.gopls = {
     gopls = {
       completeUnimported = true,
       usePlaceholders = true,
-      analysis = {
-        unusedParams = true,
+      analyses = {
+        unusedparams = true,
       },
     },
   },
@@ -30,30 +30,36 @@ vim.lsp.config.pyright = {
   },
 }
 
+-- ruff: let pyright own hover, ruff owns lint/fix
+vim.lsp.config.ruff = {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.hoverProvider = false
+    on_attach(client, bufnr)
+  end,
+}
+
 -- html with custom filetypes
 vim.lsp.config.html = {
   filetypes = { "html", "htmldjango" },
 }
 
--- clangd with custom on_attach
+-- clangd
 vim.lsp.config.clangd = {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
-    if client.name == "ruff" then
-      client.server_capabilities.hoverProvider = false
-    end
     on_attach(client, bufnr)
   end,
 }
 
--- Format on save via LSP
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    local clients = vim.lsp.get_clients { bufnr = args.buf }
-    if #clients > 0 then
-      vim.lsp.buf.format { bufnr = args.buf, timeout_ms = 1000 }
-      vim.notify("Formatted on save", vim.log.levels.INFO, { title = "LSP" })
-    end
+-- Nicer bordered floating windows for hover & signature help
+vim.lsp.config("*", {
+  on_attach = function(_, bufnr)
+    vim.keymap.set("n", "K", function()
+      vim.lsp.buf.hover { border = "rounded" }
+    end, { buffer = bufnr, desc = "LSP hover (definition/docs)" })
+
+    vim.keymap.set("n", "<leader>k", function()
+      vim.lsp.buf.signature_help { border = "rounded" }
+    end, { buffer = bufnr, desc = "LSP signature help" })
   end,
 })

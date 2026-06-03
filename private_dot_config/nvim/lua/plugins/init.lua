@@ -1,28 +1,44 @@
 return {
-  -- Mason: formatters & linters
+  -- Conform: run standalone formatters (stylua, black, isort, prettier, ...)
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    opts = function()
+      return require "configs.conform"
+    end,
+  },
+
+  -- Mason: install formatters & linters (mason PACKAGE names)
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
     opts = {
       ensure_installed = {
-        "stylua", "prettierd", "black", "isort", "clang-format", "gofumpt",
+        "stylua", "prettierd", "prettier", "black", "isort",
+        "clang-format", "gofumpt", "goimports", "shfmt",
+        "google-java-format",
       },
     },
   },
 
-  -- mason-lspconfig: auto-enable installed LSP servers (loads at startup, tiny cost)
+  -- mason-lspconfig: auto-install & auto-enable installed LSP servers
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     dependencies = { "williamboman/mason.nvim" },
     config = function()
+      -- NOTE: ensure_installed here uses LSPCONFIG SERVER NAMES (not mason
+      -- package names) — required by mason-lspconfig v2.
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua-language-server", "pyright", "ruff", "gopls",
-          "clangd", "ts_ls", "html-lsp", "css-lsp", "eslint-lsp",
-          "svelte-ls", "jdtls", "json-lsp", "yaml-lsp", "bashls",
-          "dockerls", "marksman", "tailwindcss-language-server",
+          "lua_ls", "pyright", "ruff", "gopls", "rust_analyzer",
+          "clangd", "ts_ls", "html", "cssls", "eslint",
+          "jdtls", "jsonls", "yamlls", "bashls",
+          "dockerls", "marksman",
         },
+        -- auto-enable every installed server EXCEPT stylua, which ships a niche
+        -- `stylua --lsp` server we don't want (stylua is used via conform only).
+        automatic_enable = { exclude = { "stylua" } },
       })
     end,
   },
@@ -38,13 +54,19 @@ return {
     end,
   },
 
-  -- Treesitter
+  -- Treesitter (main branch — required by NvChad v2.5 & Neovim 0.12; parsers
+  -- are compiled with the `tree-sitter` CLI. Highlighting is enabled by
+  -- NvChad's FileType autocmd via vim.treesitter.start()).
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    branch = "main",
     opts = {
-      indent = { enable = true }, highlight = { enable = true },
-      auto_install = true,
+      ensure_installed = {
+        "lua", "luadoc", "vim", "vimdoc", "query", "printf",
+        "python", "go", "gomod", "gosum", "javascript", "typescript",
+        "tsx", "rust", "c", "cpp", "java", "json", "jsonc", "yaml",
+        "bash", "markdown", "markdown_inline", "html", "css",
+      },
     },
   },
 
