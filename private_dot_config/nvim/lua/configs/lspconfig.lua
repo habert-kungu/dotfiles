@@ -58,3 +58,14 @@ vim.lsp.config.clangd = {
   end,
 }
 vim.lsp.enable("clangd")
+
+-- Format on save via LSP
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    local clients = vim.lsp.get_clients { bufnr = args.buf }
+    if #clients > 0 then
+      vim.lsp.buf.format { bufnr = args.buf, timeout_ms = 1000 }
+    end
+  end,
+})

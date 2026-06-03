@@ -294,6 +294,33 @@ install_openrgb() {
     apt_install openrgb
 }
 
+install_claude() {
+    if command -v claude >/dev/null 2>&1; then
+        ok "claude already installed: $(claude --version 2>/dev/null | head -n1)"
+        return 0
+    fi
+    curl -sSL https://cli.anthropic.com/install.sh | sh
+}
+
+install_opencode() {
+    if [ -f "$HOME/.opencode/bin/opencode" ]; then
+        ok "opencode already installed"
+        return 0
+    fi
+    curl -fsSL https://opencode.ai/install.sh | sh
+    # Ensure it's in PATH for future sessions
+    mkdir -p "$HOME/.local/bin"
+    ln -sf "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+}
+
+install_deno() {
+    if command -v deno >/dev/null 2>&1; then
+        ok "deno already installed: $(deno --version 2>/dev/null | head -n1)"
+        return 0
+    fi
+    curl -fsSL https://deno.land/install.sh | sh
+}
+
 # ---------- Summary ----------
 print_summary() {
     echo ""
@@ -344,5 +371,8 @@ run_step "set zsh as default shell" set_default_shell         || true
 run_step "wallpapers"               setup_wallpapers          || true
 run_step "autorandr profiles"       setup_autorandr           || true
 run_step "OpenRGB"                  install_openrgb           || true
+run_step "Claude CLI"               install_claude            || true
+run_step "OpenCode"                 install_opencode          || true
+run_step "Deno"                     install_deno              || true
 
 print_summary
