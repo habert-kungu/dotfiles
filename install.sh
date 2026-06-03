@@ -123,7 +123,7 @@ install_neovim() {
 
 install_i3_stack() {
     apt_install \
-        i3-wm i3status i3lock polybar picom rofi \
+        i3-wm i3status i3lock polybar picom rofi nitrogen \
         libnotify-bin xdotool x11-utils
 }
 
@@ -270,12 +270,14 @@ set_default_shell() {
 }
 
 setup_wallpapers() {
-    mkdir -p "$HOME/Pictures"
+    # nitrogen (and the i3 $mod+Shift+w cycle keybind) read from
+    # ~/Pictures/wallpapers/, so copy the repo's wallpapers there.
+    mkdir -p "$HOME/Pictures/wallpapers"
     if [ -d "$HOME/.local/share/chezmoi/wallpapers" ]; then
-        cp -n "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/" 2>/dev/null || true
+        cp -n "$HOME/.local/share/chezmoi/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
     fi
     if [ -d "$HOME/dotfiles/wallpapers" ]; then
-        cp -n "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/" 2>/dev/null || true
+        cp -n "$HOME/dotfiles/wallpapers/"* "$HOME/Pictures/wallpapers/" 2>/dev/null || true
     fi
 }
 
