@@ -1,10 +1,16 @@
 #!/bin/bash
-# Triggered by udev on display change events
-# Runs as root, switches to user for autorandr
+# Triggered by udev on display change events.
+# Runs as root; switches to the desktop user and lets autorandr pick the
+# matching profile by EDID (robust to port renumbering, e.g. DP-1-2 vs DP-1-3).
 
 LOCKFILE="/tmp/autorandr_switch.lock"
 COOLDOWN_FILE="/tmp/autorandr_switch.cooldown"
 COOLDOWN_SECS=10
+LOG="/tmp/autorandr_udev.log"
+
+USER="master"
+UID_NUM=1000
+DISPLAY=":0"
 
 exec 9>"$LOCKFILE"
 flock -n 9 || exit 1
@@ -18,32 +24,25 @@ if [ -f "$COOLDOWN_FILE" ]; then
   fi
 fi
 
-LOG="/tmp/autorandr_udev.log"
 echo "[$(date)] udev triggered" >> "$LOG"
 
-USER="master"
-DISPLAY=":0"
-XAUTHORITY="/run/user/1000/gdm/Xauthority"
-
+# Locate the user's X authority file.
+XAUTHORITY="/run/user/${UID_NUM}/gdm/Xauthority"
 if [ ! -f "$XAUTHORITY" ]; then
-  for f in /home/master/.Xauthority /tmp/.Xauthority; do
+  for f in "/home/${USER}/.Xauthority" "/tmp/.Xauthority"; do
     [ -f "$f" ] && { XAUTHORITY="$f"; break; }
   done
 fi
 
-# Wait for udev events to settle before probing
+# Wait for udev events to settle before probing.
 sleep 3
-
 date +%s > "$COOLDOWN_FILE"
 
-# Detect which outputs are connected via xrandr (more reliable than autorandr matching)
-detect_profile() {
-  su -c "xrandr --current" "$USER" 2>/dev/null | grep -q "^DP-1-3 connected" && echo "docked" || echo "mobile"
-}
-
-current_profile=$(detect_profile)
-echo "[$(date)] detected profile: $current_profile" >> "$LOG"
-
-su -c "autorandr --load $current_profile" "$USER" >> "$LOG" 2>&1
+# Let autorandr choose the matching profile by EDID; fall back to mobile.
+# Env must be set *inside* the su shell -- su does not inherit the caller's
+# unexported variables, which is why the previous version logged "Can't open
+# display" and never actually applied a profile.
+su "$USER" -c "DISPLAY='$DISPLAY' XAUTHORITY='$XAUTHORITY' autorandr --change --default mobile" >> "$LOG" 2>&1
+echo "[$(date)] change applied (exit $?)" >> "$LOG"
 
 echo "[$(date)] done" >> "$LOG"
