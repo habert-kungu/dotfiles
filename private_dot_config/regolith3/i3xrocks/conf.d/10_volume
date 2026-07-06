@@ -2,5 +2,3 @@
 [volume]
 interval=once
 signal=1
-min_width=volume
-label= 

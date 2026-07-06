@@ -1,5 +1,3 @@
 # Wi-Fi network name
 [wifi]
 interval=5
-min_width=wifi
-label=󰖩 

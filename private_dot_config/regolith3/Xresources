@@ -1,2 +1,4 @@
-! Regolith Xresources overrides
-! Custom bar colors and fonts are handled in ~/.config/regolith3/i3/config
+! Regolith Xresources — i3xrocks styling
+i3xrocks.value.color: #cdd6f4
+i3xrocks.label.color: #585b70
+i3xrocks.value.font: JetBrainsMono Nerd Font 12
