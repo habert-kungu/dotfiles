@@ -80,7 +80,7 @@ apt_install() {
 
 install_core_deps() {
     apt_install \
-        zsh curl git wget stow fzf fd-find ripgrep bat tmux \
+        zsh curl git wget stow fzf fd-find ripgrep bat tmux unzip fontconfig \
         build-essential cmake pkg-config libssl-dev \
         libxcb1 libxcb-xkb1 libxkbcommon-x11-0 libx11-xcb1 \
         libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 \
@@ -124,6 +124,45 @@ install_regolith() {
         polybar
 
     ok "Regolith installed — reboot and select Regolith from the display manager"
+}
+
+# Apps the Polybar bar + i3 config depend on at runtime.
+# Bar modules/clicks: pavucontrol, gnome-calendar, gnome-system-monitor,
+#   gnome-control-center (regolith-control-center wraps it).
+# Audio: pipewire stack provides wpctl (WirePlumber) + the pulse shim the
+#   polybar volume module reads. Screenshots: flameshot. Launcher: rofi.
+# i3 autostart helpers: unclutter, blueman (bluetooth), playerctl (media keys).
+install_desktop_apps() {
+    apt_install \
+        polybar flameshot rofi \
+        pavucontrol pipewire pipewire-pulse wireplumber \
+        gnome-calendar gnome-system-monitor gnome-control-center \
+        blueman unclutter playerctl
+}
+
+# JetBrainsMono Nerd Font + Symbols Nerd Font — REQUIRED for the bar's icons and
+# the workspace square glyph; without them the bar renders empty boxes.
+install_fonts() {
+    local fdir="$HOME/.local/share/fonts"
+    mkdir -p "$fdir"
+    if fc-list 2>/dev/null | grep -qi "JetBrainsMono Nerd Font" \
+       && fc-list 2>/dev/null | grep -qi "Symbols Nerd Font"; then
+        ok "Nerd Fonts already installed"
+        return 0
+    fi
+    local base="https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
+    local pkg tmp rc=0
+    for pkg in JetBrainsMono NerdFontsSymbolsOnly; do
+        tmp="/tmp/${pkg}.zip"
+        if curl -fsSL -o "$tmp" "$base/${pkg}.zip"; then
+            unzip -oq "$tmp" -d "$fdir/${pkg}" || { warn "unzip $pkg failed"; rc=1; }
+            rm -f "$tmp"
+        else
+            warn "download of $pkg Nerd Font failed"; rc=1
+        fi
+    done
+    fc-cache -f >/dev/null 2>&1 || true
+    return $rc
 }
 
 install_neovim() {
@@ -376,6 +415,8 @@ prime_sudo
 run_step "apt update"               apt_update                || true
 run_step "core dependencies"        install_core_deps         || true
 run_step "Regolith desktop"         install_regolith          || true
+run_step "desktop apps (bar/screenshot/audio)" install_desktop_apps || true
+run_step "Nerd Fonts"               install_fonts             || true
 run_step "Neovim"                   install_neovim            || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true

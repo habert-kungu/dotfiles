@@ -1,4 +1,0 @@
-# Volume indicator
-[volume]
-interval=once
-signal=1

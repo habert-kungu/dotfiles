@@ -158,4 +158,9 @@ cd ~/dotfiles
 ./install.sh
 # Reboot, select Regolith from login screen
 ```
-Install script handles: Regolith PPA, desktop packages, i3xrocks modules (via polybar dep), Neovim, WezTerm, terminals, programming tools, miniconda, oh-my-zsh, chezmoi, wallpapers, OpenRGB, Claude CLI, OpenCode, Deno.
+Install script handles: Regolith PPA, desktop packages, **bar/desktop apps**
+(polybar, flameshot, rofi, pavucontrol, pipewire+wireplumber, gnome-calendar,
+gnome-system-monitor, gnome-control-center, blueman, unclutter, playerctl),
+**Nerd Fonts** (JetBrainsMono + Symbols — required for the bar glyphs), Neovim,
+WezTerm, terminals, programming tools, miniconda, oh-my-zsh, chezmoi, wallpapers,
+OpenRGB, Claude CLI, OpenCode, Deno.

@@ -1,7 +1,0 @@
-# i3xrocks global setup
-command=/usr/share/i3xrocks/scripts/$BLOCK_NAME
-separator_block_width=25
-markup=pango
-color=#cdd6f4
-label_color=#585b70
-font=JetBrainsMono Nerd Font 12
