@@ -35,9 +35,6 @@ exec --no-startup-id export GTK_THEME=Adwaita:dark
 # Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
-# Auto display switching with autorandr (startup; hotplug handled by udev rule)
-exec_always --no-startup-id autorandr --change
-
 # Background — feh restores the last-set wallpaper (falls back to a default)
 exec_always --no-startup-id sh -c '~/.fehbg 2>/dev/null || feh --bg-fill ~/Pictures/wallpapers/bento.png'
 
@@ -47,20 +44,17 @@ exec_always picom --config ~/.config/picom/picom.conf
 # Screen locking
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Network manager
-exec --no-startup-id nm-applet
-
 # Screenshots
 bindsym Print exec maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym $mod+Print exec maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
-# Display switch
-bindsym $mod+Shift+d exec autorandr --change
+# Display settings — managed by GNOME (gnome-control-center display)
+bindsym $mod+Shift+d exec gnome-control-center display
 
 # Cycle to a random wallpaper from ~/Pictures/wallpapers (feh saves it to ~/.fehbg for restore)
 bindsym $mod+Shift+w exec --no-startup-id ~/.local/bin/random-wallpaper.sh
 
-# Audio controls — wpctl ships with wireplumber, no extra install needed.
+# Audio controls — managed by GNOME/Regolith, wpctl ships with wireplumber.
 bindsym F1 exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
 bindsym F2 exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym F3 exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
@@ -104,9 +98,13 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# Stacking/tabbed disabled to avoid accidental window-on-window layouts.
+# Re-enable by uncommenting; reset a stuck workspace with $mod+e (toggle split).
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+# Force the focused container back to normal tiling (clears stuck tabbed/stacked bars)
+bindsym $mod+n layout default
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
@@ -175,5 +173,3 @@ bindsym $mod+r mode "resize"
 # client.urgent           #b8bb26 #282828  #fb4934  #b8bb26   #282828
 # client.placeholder      #b8bb26 #282828  #a89984  #b8bb26   #282828
 # client.background     #030C11
-
-

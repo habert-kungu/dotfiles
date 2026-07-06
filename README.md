@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal configuration for Debian-based Linux systems with i3, polybar, Neovim, and Zsh.
+Personal configuration for Debian-based Linux systems with Regolith (i3 + GNOME), polybar, Neovim, and Zsh.
 
 ## Quick Install (One Command)
 
@@ -34,46 +34,22 @@ cd ~/dotfiles
 - **Node.js** with npm/pnpm/bun
 
 ### Desktop Environment
-- **i3** - Tiling window manager
+- **Regolith** - i3 + GNOME session (displays, sound, bluetooth, network handled by GNOME)
 - **polybar** - Status bar
 - **picom** - Compositor (transparency/blur)
 - **rofi** - App launcher
 - **Kitty/Alacritty/Wezterm** - Terminal emulators
-- **autorandr** - Automatic display switching
 
 ---
 
-## Display Switching
+## Hardware Management
 
-Uses **autorandr** for automatic monitor detection.
+Regolith handles all hardware via GNOME services — no per-machine config needed:
 
-### Profiles
-- `docked` - External monitor connected (DP-1-3 at 1920x1080)
-- `mobile` - Laptop only (eDP-1 at 1366x768)
-
-### How it works
-- Automatically detects display changes via udev rules
-- Runs `autorandr --change` on i3 startup
-- Works when plugging/unplugging cables
-
-### Manual switch
-```bash
-Super+Shift+D  # Manual display switch keybinding
-```
-
-### Creating new profiles
-```bash
-# Set up your displays manually, then save:
-autorandr --save profile-name
-
-# Or save with current resolution:
-autorandr --save my-setup --force
-```
-
-### List profiles
-```bash
-autorandr --list
-```
+- **Displays** — `gnome-control-center display` or hotplug detection
+- **Sound** — PulseAudio/PipeWire, managed by GNOME
+- **Bluetooth** — `gnome-control-center bluetooth`
+- **Wi-Fi** — `gnome-control-center wifi` or `nm-connection-editor`
 
 ---
 
@@ -83,9 +59,9 @@ autorandr --list
 
 | Command | Description |
 |---------|-------------|
-| `ff` | Fuzzy search files (filtered) → opens in Neovim |
-| `fp` | Fuzzy search files → just show (no open) |
-| `ffr` | Fuzzy search → open in Neovim |
+| `ff` | Fuzzy search files (filtered) -> opens in Neovim |
+| `fp` | Fuzzy search files -> just show (no open) |
+| `ffr` | Fuzzy search -> open in Neovim |
 
 **Filters applied** (ignored in search):
 - `.git`, `node_modules`, `__pycache__`
@@ -101,7 +77,7 @@ autorandr --list
 | `makec <file>` | Compile C file with gcc |
 | `makecpp <file>` | Compile C++ file with g++ |
 | `make <file>` | Auto-detect and compile |
-| `fcpp` | Fuzzy find .cpp file → compile → run |
+| `fcpp` | Fuzzy find .cpp file -> compile -> run |
 
 ### Other Aliases
 
@@ -109,7 +85,7 @@ autorandr --list
 |---------|-------------|
 | `fd` | fdfind (fast file search) |
 | `lzd` | lazydocker |
-| `ff` | Fuzzy file search → nvim |
+| `ff` | Fuzzy file search -> nvim |
 
 ---
 
@@ -119,6 +95,29 @@ autorandr --list
 - `Ctrl+T` - Fuzzy find files
 - `Ctrl+R` - Fuzzy search command history
 - `Alt+C` - Fuzzy change directory
+
+### i3 / Regolith
+See `~/.config/i3/config` for all keybindings (Mod4 = Super key).
+
+| Key | Action |
+|-----|--------|
+| `$mod+Return` | Terminal (WezTerm) |
+| `$mod+b` | Firefox |
+| `$mod+d` | Rofi app launcher |
+| `$mod+q` | Close window |
+| `$mod+j/k/l/;` | Focus left/down/up/right |
+| `$mod+Shift+j/k/l/;` | Move window |
+| `$mod+1-0` | Switch to workspace |
+| `$mod+Shift+1-0` | Move window to workspace |
+| `$mod+r` | Resize mode |
+| `$mod+f` | Fullscreen toggle |
+| `$mod+Shift+c` | Reload i3 config |
+| `$mod+Shift+r` | Restart i3 |
+
+### Audio
+- `F1` / `XF86AudioMute` — Mute toggle
+- `F2` / `XF86AudioLowerVolume` — Volume down
+- `F3` / `XF86AudioRaiseVolume` — Volume up
 
 ### In Neovim (Space as leader)
 - `Space + ff` - Telescope file picker
@@ -131,22 +130,22 @@ autorandr --list
 
 ```
 dotfiles/
-├── install.sh              # One-command install script
-├── README.md               # This file
-├── dot_zshrc               # Zsh configuration
-├── dot_bashrc              # Bash configuration
-├── dot_tmux.conf           # Tmux configuration
-├── dot_gitconfig           # Git configuration
-├── dot_condarc             # Conda configuration
-├── dot_vscode-extensions    # VS Code extensions list
-└── private_dot_config/      # User configs (nvim, i3, polybar, etc.)
-    ├── nvim/               # Neovim config
-    ├── i3/                 # i3 window manager
-    ├── polybar/            # Polybar config
-    ├── rofi/               # Rofi config
-    ├── kitty/              # Kitty terminal
-    ├── wezterm/            # Wezterm terminal
-    └── picom/              # Picom compositor
+├── install.sh                  # One-command install script
+├── README.md                   # This file
+├── dot_zshrc                   # Zsh configuration
+├── dot_bashrc                  # Bash configuration
+├── dot_tmux.conf               # Tmux configuration
+├── dot_gitconfig               # Git configuration
+├── dot_condarc                 # Conda configuration
+├── dot_vscode-extensions        # VS Code extensions list
+└── private_dot_config/          # User configs (nvim, i3, polybar, etc.)
+    ├── nvim/                   # Neovim config
+    ├── i3/                     # i3 config (keybindings, workspaces)
+    ├── polybar/                # Polybar config
+    ├── rofi/                   # Rofi config
+    ├── kitty/                  # Kitty terminal
+    ├── wezterm/                # WezTerm terminal
+    └── picom/                  # Picom compositor (blur/opacity)
 ```
 
 ---
@@ -162,12 +161,11 @@ dotfiles/
 - libssl-dev, libwebkit2gtk-4.1-dev
 
 ### Desktop
-- i3-wm, i3status, i3lock, polybar, picom
-- rofi, libnotify-bin, xdotool, x11-utils
-- autorandr (display switching)
+- Regolith desktop (i3 + GNOME session, compositor, rofi, notifications)
+- polybar
 
 ### Terminals
-- kitty, alacritty
+- kitty, alacritty, wezterm
 
 ### Programming
 - python3, python3-pip, python3-venv, python3-dev
@@ -189,6 +187,7 @@ dotfiles/
 # Run the install script
 bash install.sh
 
+# Reboot and select Regolith from your display manager
 # Restart terminal or source
 source ~/.zshrc
 
@@ -217,9 +216,7 @@ chezmoi apply
 
 ### fzf not working
 ```bash
-# Install fzf if missing
 sudo apt install fzf
-
 # Or manually
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -229,19 +226,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ```bash
 # Open nvim and run
 :LazySync
-# or
-:Lazy! sync
 ```
 
 ### Conda not initializing
 ```bash
-# For anaconda3
 source ~/anaconda3/etc/profile.d/conda.sh
 conda init zsh
-
-# For miniconda3
+# Or for miniconda3
 source ~/miniconda3/etc/profile.d/conda.sh
 conda init zsh
+```
+
+### Regolith not showing up after install
+```bash
+# Reboot and select Regolith from your display manager (GDM/LightDM)
+# The session uses Regolith's i3 with GNOME services underneath
 ```
 
 ---
@@ -251,11 +250,13 @@ conda init zsh
 Edit these files to customize:
 - `dot_zshrc` - Shell aliases and functions
 - `private_dot_config/nvim/lua/` - Neovim config
-- `private_dot_config/i3/` - i3 config
-- `private_dot_config/polybar/` - Polybar config
+- `private_dot_config/i3/config` - i3 keybindings and workspaces
+- `private_dot_config/polybar/config.ini` - Status bar
+- `private_dot_config/picom/picom.conf` - Compositor (blur/opacity)
+- `private_dot_config/wezterm/wezterm.lua` - WezTerm theme
 
 After editing, commit and push to sync across machines.
 
 ---
 
-For more info, see [chezmoi docs](https://www.chezmoi.io/user-guide/).
+For more info, see [chezmoi docs](https://www.chezmoi.io/user-guide/) and [Regolith docs](https://regolith-desktop.com/).

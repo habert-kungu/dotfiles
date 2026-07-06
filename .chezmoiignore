@@ -7,11 +7,7 @@ README.md
 Dockerfile
 .gitignore
 
-# Top-level autorandr/ and wallpapers/ are sources for install.sh, not
-# managed dotfiles. The real autorandr config is under
-# private_dot_config/autorandr/ which chezmoi applies to ~/.config/autorandr/.
-autorandr
-autorandr/**
+# wallpapers/ is a source for install.sh, not a managed dotfile.
 wallpapers
 wallpapers/**
 

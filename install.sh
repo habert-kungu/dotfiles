@@ -1,12 +1,10 @@
 #!/bin/bash
-# Dotfiles Installation Script
+# Dotfiles Installation Script for Regolith + Debian
 # Run: bash install.sh
 #
 # Step-by-step, fail-resilient. A failing step is logged and the script
 # continues. A summary is printed at the end. Re-running is safe (idempotent).
 
-# Note: intentionally NOT using `set -e` — we want every step to attempt,
-# and report failures collectively at the end.
 set -u
 set -o pipefail
 
@@ -18,9 +16,9 @@ log()    { printf '\n\033[1;34m==>\033[0m %s\n' "$*"; }
 warn()   { printf '\033[1;33m[warn]\033[0m %s\n' "$*" >&2; }
 err()    { printf '\033[1;31m[error]\033[0m %s\n' "$*" >&2; }
 ok()     { printf '\033[1;32m[ok]\033[0m %s\n' "$*"; }
+info()   { printf '\033[1;36m[info]\033[0m %s\n' "$*"; }
+fail()   { printf '\033[1;31m[fail]\033[0m %s\n' "$*" >&2; }
 
-# run_step <name> <command...>
-# Runs the command, captures pass/fail, records into the summary.
 run_step() {
     local name="$1"; shift
     log "Step: $name"
@@ -45,11 +43,12 @@ skip_step() {
 
 # ---------- OS detection ----------
 detect_os() {
+    local codename=""
     if [[ -f /etc/os-release ]]; then
-        # shellcheck disable=SC1091
         . /etc/os-release
         OS="${ID:-unknown}"
-        echo "Detected OS: $OS"
+        codename="${VERSION_CODENAME:-}"
+        echo "Detected OS: $OS $codename"
         return 0
     fi
     err "Cannot detect OS from /etc/os-release"
@@ -58,13 +57,11 @@ detect_os() {
 }
 
 # ---------- Sudo helper ----------
-# Non-interactive sudo when possible; otherwise prompt once up-front.
 prime_sudo() {
     if [[ $EUID -eq 0 ]]; then
         SUDO=""
     elif command -v sudo >/dev/null 2>&1; then
         SUDO="sudo"
-        # Trigger one prompt now so later steps don't stall mid-run.
         sudo -v || warn "sudo authentication failed; some steps may fail"
     else
         warn "sudo not available and not running as root — privileged steps will fail"
@@ -78,7 +75,6 @@ apt_update() {
 }
 
 apt_install() {
-    # Args: package list
     $SUDO apt-get install -y --no-install-recommends "$@"
 }
 
@@ -91,7 +87,43 @@ install_core_deps() {
         libxcb-render-util0 libxcb-shape0 \
         libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev \
         libxcb-ewmh-dev libxcb-composite0 libxcb-xfixes0 \
-        autorandr
+        feh
+}
+
+install_regolith() {
+    if dpkg -l regolith-desktop >/dev/null 2>&1; then
+        ok "regolith already installed"
+        return 0
+    fi
+
+    local codename=""
+    if [[ -f /etc/os-release ]]; then
+        . /etc/os-release
+        codename="${VERSION_CODENAME:-}"
+    fi
+    if [[ -z "$codename" ]]; then
+        codename="trixie"
+        warn "could not detect Debian codename, defaulting to $codename"
+    fi
+
+    wget -qO - https://archive.regolith-desktop.com/regolith.key \
+        | gpg --yes --dearmor \
+        | $SUDO tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null \
+        || return 1
+
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://archive.regolith-desktop.com/debian/stable $codename v3.4" \
+        | $SUDO tee /etc/apt/sources.list.d/regolith.list > /dev/null \
+        || return 1
+
+    $SUDO apt-get update -y || return 1
+
+    apt_install regolith-desktop \
+        regolith-session-flashback \
+        regolith-look-lascaille \
+        xdg-desktop-portal-regolith \
+        polybar
+
+    ok "Regolith installed — reboot and select Regolith from the display manager"
 }
 
 install_neovim() {
@@ -100,8 +132,7 @@ install_neovim() {
         return 0
     fi
 
-    # On Ubuntu, try the PPA first; fall back to tarball on any failure.
-    if [[ "$OS" == "ubuntu" ]]; then
+    if [[ "${OS:-}" == "ubuntu" ]]; then
         if apt_install software-properties-common \
             && $SUDO add-apt-repository ppa:neovim-ppa/unstable -y \
             && $SUDO apt-get update -y \
@@ -111,7 +142,6 @@ install_neovim() {
         warn "Ubuntu PPA path failed; falling back to GitHub tarball"
     fi
 
-    # Generic fallback: official GitHub release tarball.
     local tarball=/tmp/nvim-linux-x86_64.tar.gz
     curl -fsSL -o "$tarball" \
         https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz || return 1
@@ -119,33 +149,6 @@ install_neovim() {
     $SUDO tar -C /opt -xzf "$tarball" || return 1
     $SUDO ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
     rm -f "$tarball"
-}
-
-install_i3_stack() {
-    apt_install \
-        i3-wm i3status i3lock polybar picom rofi feh \
-        libnotify-bin xdotool x11-utils
-}
-
-install_audio_stack() {
-    # pipewire is already default on Debian 13. wireplumber provides wpctl,
-    # which the i3 audio keybindings (F1/F2/F3) use to mute and adjust
-    # volume. pulseaudio-utils stays for legacy `pactl` consumers.
-    apt_install \
-        pipewire pipewire-pulse wireplumber \
-        pulseaudio-utils
-}
-
-install_network_tools() {
-    # NetworkManager core + the GTK editor (nm-connection-editor) that
-    # polybar's wifi icon opens on click.
-    apt_install network-manager network-manager-gnome
-}
-
-install_bluetooth_stack() {
-    # bluez (bluetoothctl backend) + blueman (blueman-manager GUI launched
-    # by polybar's bluetooth icon on click).
-    apt_install bluez blueman
 }
 
 install_terminals() {
@@ -158,8 +161,6 @@ install_wezterm() {
         return 0
     fi
 
-    # Official wezterm apt repo (Debian + Ubuntu).
-    # https://wezfurlong.org/wezterm/install/linux.html
     local keyring=/usr/share/keyrings/wezterm-fury.gpg
     local listfile=/etc/apt/sources.list.d/wezterm.list
 
@@ -224,15 +225,12 @@ install_chezmoi() {
 
 apply_dotfiles() {
     if ! command -v chezmoi >/dev/null 2>&1; then
-        # chezmoi installs to $HOME/bin by default — make sure it's reachable.
         export PATH="$HOME/bin:$PATH"
     fi
     command -v chezmoi >/dev/null 2>&1 || return 1
 
-    # `chezmoi init` is idempotent if the source dir already exists.
     chezmoi init https://github.com/habert-kungu/dotfiles.git || true
 
-    # Back up any existing configs before overwriting
     local backup_dir="$HOME/.dotfiles-backup-$(date +%Y%m%d-%H%M%S)"
     mkdir -p "$backup_dir"
     while IFS= read -r f; do
@@ -243,10 +241,6 @@ apply_dotfiles() {
     done < <(chezmoi managed --include=files 2>/dev/null)
     info "Old configs backed up to $backup_dir"
 
-    # Verbose so failing files are visible in the install log.
-    # `--keep-going` keeps applying remaining entries when one fails, so
-    # a single broken file doesn't black-hole the whole apply.
-    # `--force` skips the interactive TTY prompt so the script is non-blocking.
     chezmoi apply --verbose --keep-going --force
 }
 
@@ -254,10 +248,8 @@ set_default_shell() {
     local zsh_path target_user current_shell
     zsh_path="$(command -v zsh)" || return 1
 
-    # If invoked via `sudo`, target the invoking user, not root.
     target_user="${SUDO_USER:-$USER}"
 
-    # zsh must be listed in /etc/shells for chsh to accept it.
     if ! grep -qxF "$zsh_path" /etc/shells 2>/dev/null; then
         echo "$zsh_path" | $SUDO tee -a /etc/shells >/dev/null
     fi
@@ -268,9 +260,6 @@ set_default_shell() {
         return 0
     fi
 
-    # As root: chsh/usermod do not need a password and can target a user
-    # explicitly. As an unprivileged user: chsh prompts for the user's
-    # password and only changes the invoking user's shell.
     if [ "$(id -u)" = "0" ]; then
         chsh -s "$zsh_path" "$target_user" \
             || usermod -s "$zsh_path" "$target_user" \
@@ -282,8 +271,6 @@ set_default_shell() {
 }
 
 setup_wallpapers() {
-    # feh (and the i3 $mod+Shift+w cycle keybind) read from
-    # ~/Pictures/wallpapers/, so copy the repo's wallpapers there.
     mkdir -p "$HOME/Pictures/wallpapers"
 
     local src
@@ -301,18 +288,7 @@ setup_wallpapers() {
     done
 }
 
-setup_autorandr() {
-    # autorandr profiles are managed by chezmoi under
-    # private_dot_config/autorandr/ -> ~/.config/autorandr/, so nothing to
-    # copy here. Just make sure the target dir exists for autorandr's
-    # systemd unit.
-    mkdir -p "$HOME/.config/autorandr"
-}
-
 install_openrgb() {
-    # OpenRGB controls RGB lighting.
-    # The profile-loading script (~/.local/bin/openrgb-load-profile.sh) is
-    # managed by chezmoi under private_dot_local/bin/.
     if command -v openrgb >/dev/null 2>&1; then
         ok "openrgb already installed: $(openrgb --version 2>/dev/null | head -n1)"
         return 0
@@ -354,7 +330,6 @@ install_opencode() {
         return 0
     fi
     curl -fsSL https://opencode.ai/install.sh | sh
-    # Ensure it's in PATH for future sessions
     mkdir -p "$HOME/.local/bin"
     ln -sf "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
 }
@@ -387,24 +362,21 @@ print_summary() {
         return 1
     fi
     echo ""
-    echo "All steps completed. Restart your terminal or log out and back in."
+    echo "All steps completed. Reboot and select Regolith from your display manager."
     echo "On first launch of Neovim, run ':Lazy sync' to install plugins."
     return 0
 }
 
 # ---------- Main ----------
-echo "=== Dotfiles Installation Script ==="
+echo "=== Dotfiles Installation Script (Regolith) ==="
 
 detect_os
 prime_sudo
 
 run_step "apt update"               apt_update                || true
 run_step "core dependencies"        install_core_deps         || true
+run_step "Regolith desktop"         install_regolith          || true
 run_step "Neovim"                   install_neovim            || true
-run_step "i3 + desktop tools"       install_i3_stack          || true
-run_step "audio stack (pipewire + wpctl)" install_audio_stack || true
-run_step "NetworkManager + nm-connection-editor" install_network_tools || true
-run_step "Bluetooth stack (bluez + blueman)" install_bluetooth_stack || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true
 run_step "programming tools"        install_programming_tools || true
@@ -415,7 +387,6 @@ run_step "chezmoi"                  install_chezmoi           || true
 run_step "apply dotfiles"           apply_dotfiles            || true
 run_step "set zsh as default shell" set_default_shell         || true
 run_step "wallpapers"               setup_wallpapers          || true
-run_step "autorandr profiles"       setup_autorandr           || true
 run_step "OpenRGB"                  install_openrgb           || true
 run_step "Claude CLI"               install_claude            || true
 run_step "OpenCode"                 install_opencode          || true
