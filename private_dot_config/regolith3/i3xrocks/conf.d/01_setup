@@ -1,0 +1,4 @@
+# i3xrocks global setup
+command=/usr/share/i3xrocks/scripts/$BLOCK_NAME
+separator_block_width=25
+markup=pango

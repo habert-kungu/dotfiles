@@ -1,0 +1,5 @@
+# Memory usage
+[memory]
+interval=3
+min_width=memory
+label=󰍛 

@@ -7,6 +7,31 @@
 
 set $mod Mod4
 
+# ─── Bar ───
+bar {
+  position top
+  height 30
+
+  font pango:JetBrainsMono Nerd Font 12, Symbols Nerd Font 14
+
+  colors {
+    background #1c1c1c
+    statusline #cdd6f4
+    separator  #585b70
+
+#                       border  background text
+    focused_workspace   #89b4fa #1c1c1c    #cdd6f4
+    active_workspace    #89b4fa #1c1c1c    #cdd6f4
+    inactive_workspace  #585b70 #1c1c1c    #585b70
+    urgent_workspace    #f38ba8 #1c1c1c    #f38ba8
+  }
+
+  status_command i3xrocks -u ~/.config/regolith3/i3xrocks/conf.d -d /usr/share/i3xrocks/conf.d
+  tray_output primary
+  strip_workspace_numbers yes
+  workspace_min_width 30
+}
+
 # ─── Window borders ───
 for_window [all] border pixel 0
 for_window [class="^.*"] border pixel 0
@@ -16,9 +41,9 @@ hide_edge_borders smart
 focus_follows_mouse no
 
 # ─── Gaps ───
-gaps inner 2
-gaps outer 2
-smart_gaps off
+gaps inner 6
+gaps outer 3
+smart_gaps on
 popup_during_fullscreen smart
 
 # ─── DBus activation (GNOME session integration) ───
@@ -36,7 +61,6 @@ exec --no-startup-id i3-swap-focus
 # ─── Autostart ───
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id export GTK_THEME=Adwaita:dark
-exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id sh -c '~/.fehbg 2>/dev/null || feh --bg-fill ~/Pictures/wallpapers/bento.png'
 exec_always picom --config ~/.config/picom/picom.conf
 

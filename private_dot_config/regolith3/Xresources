@@ -1,13 +1,2 @@
-! Override Regolith keybindings that conflict with custom i3 bindings
-! These keys are freed for the custom shortcuts defined below
-
-! Display settings -> Super+Shift+d (so Super+d is free for rofi)
-wm.binding.display: Shift+d
-! Settings -> Super+comma (so Super+c is free for code)
-wm.binding.settings: comma
-! Bluetooth -> Super+Ctrl+b (so Super+b is free for firefox)
-wm.binding.bluetooth: Ctrl+b
-! Wifi -> Super+Ctrl+w
-wm.binding.wifi: Ctrl+w
-! Notifications -> Super+Ctrl+n (so Super+n is free for layout default)
-wm.binding.notification_ui: Ctrl+n
+! Regolith Xresources overrides
+! Custom bar colors and fonts are handled in ~/.config/regolith3/i3/config

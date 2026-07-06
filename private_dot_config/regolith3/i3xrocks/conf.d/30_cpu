@@ -1,0 +1,5 @@
+# CPU usage
+[cpu-usage]
+interval=3
+min_width=cpu
+label= 
