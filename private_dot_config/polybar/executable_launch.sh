@@ -1,9 +1,13 @@
-polybar-msg cmd quit
+#!/usr/bin/env bash
+# Launch the Omarchy-style polybar on the primary monitor (falls back to first
+# connected output). Kills any running instance first so it is reload-safe.
+
+polybar-msg cmd quit >/dev/null 2>&1
 killall -q polybar
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -u "$UID" -x polybar >/dev/null; do sleep 0.3; done
 
-echo "---" | tee -a /tmp/polybar1.log 
-polybar bar 2>&1 | tee -a /tmp/polybar1.log & disown
+primary=$(xrandr --query | awk '/ primary/{print $1; exit}')
+: "${primary:=$(xrandr --query | awk '/ connected/{print $1; exit}')}"
 
-echo "Bars launched..."
+MONITOR="$primary" polybar main >>/tmp/polybar.log 2>&1 &
+disown

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Network (nm-applet)
+Exec=/usr/bin/nm-applet
+Hidden=true
+X-GNOME-Autostart-enabled=false

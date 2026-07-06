@@ -8,29 +8,11 @@
 set $mod Mod4
 
 # ─── Bar ───
-bar {
-  position top
-  height 30
-
-  font pango:JetBrainsMono Nerd Font 12, Symbols Nerd Font 14
-
-  colors {
-    background #1c1c1c
-    statusline #cdd6f4
-    separator  #585b70
-
-#                       border  background text
-    focused_workspace   #89b4fa #1c1c1c    #cdd6f4
-    active_workspace    #89b4fa #1c1c1c    #cdd6f4
-    inactive_workspace  #585b70 #1c1c1c    #585b70
-    urgent_workspace    #f38ba8 #1c1c1c    #f38ba8
-  }
-
-  status_command i3xrocks -u ~/.config/regolith3/i3xrocks/conf.d
-  tray_output primary
-  strip_workspace_numbers yes
-  workspace_min_width 30
-}
+# The native i3bar/i3xrocks bar is retired in favour of an Omarchy-style
+# Polybar (floating, rounded, per-module pills). Launched from the autostart
+# section below via ~/.config/polybar/launch.sh. No `bar {}` block = no i3bar,
+# so there is no second bar and no system tray. To revert to i3bar, restore the
+# block from git history and remove the polybar exec.
 
 # ─── Window borders ───
 for_window [all] border pixel 0
@@ -43,7 +25,10 @@ focus_follows_mouse no
 # ─── Gaps ───
 gaps inner 6
 gaps outer 3
-smart_gaps on
+# Extra top gap so tiled windows clear the floating polybar (bar sits at y6–34).
+gaps top 5
+# smart_gaps OFF: with it on, a lone window drops all gaps and slides under the bar.
+smart_gaps off
 popup_during_fullscreen smart
 
 # ─── DBus activation (GNOME session integration) ───
@@ -51,15 +36,21 @@ exec --no-startup-id systemctl --user import-environment XDG_CURRENT_DESKTOP DIS
 exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP DISPLAY I3SOCK
 
-# ─── GNOME session services ───
-exec --no-startup-id /usr/libexec/gnome-flashback-media-keys
-exec --no-startup-id /usr/bin/nm-applet
+# ─── Session services ───
+# NOTE: the GNOME/gnome-flashback session already autostarts nm-applet and
+# gnome-flashback-media-keys (and every /etc/xdg/autostart entry). Do NOT
+# launch them here or via `dex` — doing so spawns duplicate tray icons.
+# nm-applet's tray icon is suppressed via ~/.config/autostart/nm-applet.desktop
+# (the i3xrocks `wifi` block is the network readout instead).
 exec --no-startup-id /usr/bin/rofication-daemon
 exec --no-startup-id /usr/bin/unclutter -b
 exec --no-startup-id i3-swap-focus
+# Flameshot daemon — no tray icon anymore, triggered by the Print keybindings below
+exec --no-startup-id flameshot
+# Omarchy-style Polybar (replaces i3bar); exec_always so it restarts on reload
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # ─── Autostart ───
-exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id export GTK_THEME=Adwaita:dark
 exec_always --no-startup-id sh -c '~/.fehbg 2>/dev/null || feh --bg-fill ~/Pictures/wallpapers/bento.png'
 exec_always picom --config ~/.config/picom/picom.conf
@@ -141,6 +132,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # ─── System ───
 bindsym $mod+Shift+c reload
 bindsym $mod+Ctrl+r restart
+# Reload everything (config + relaunches polybar via exec_always)
+bindsym $mod+Shift+r restart
+# Open Settings (GNOME/Regolith control center)
+bindsym $mod+Shift+s exec --no-startup-id regolith-control-center
 bindsym $mod+Escape exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This ends your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+x exec gnome-session-quit --logout
@@ -166,8 +161,11 @@ bindsym $mod+r mode "resize"
 # ─── Extras ───
 bindsym $mod+Shift+d exec gnome-control-center display
 bindsym $mod+Shift+w exec --no-startup-id ~/.local/bin/random-wallpaper.sh
-bindsym Print exec maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym $mod+Print exec maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+# Mod+s / Print -> Flameshot interactive capture (select region, annotate, save/copy)
+# Mod+Print     -> Flameshot full screen, saved to ~/Pictures
+bindsym $mod+s exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+Print exec --no-startup-id flameshot full -p ~/Pictures/
 
 # ─── Audio ───
 bindsym F1 exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
