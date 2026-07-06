@@ -26,7 +26,7 @@ bar {
     urgent_workspace    #f38ba8 #1c1c1c    #f38ba8
   }
 
-  status_command i3xrocks -u ~/.config/regolith3/i3xrocks/conf.d -d /usr/share/i3xrocks/conf.d
+  status_command i3xrocks -u ~/.config/regolith3/i3xrocks/conf.d
   tray_output primary
   strip_workspace_numbers yes
   workspace_min_width 30
