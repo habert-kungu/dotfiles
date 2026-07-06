@@ -1,7 +1,8 @@
 ###############################################################################
-# Custom keybindings overlay for Regolith
-# Navigation: j=left k=down l=up semicolon=right
-# Conflicts resolved via Xresources overrides
+# Custom i3 config for Regolith
+# Provides custom keybindings while preserving GNOME session integration.
+# Placed at ~/.config/regolith3/i3/config — Regolith uses this instead of
+# the system /etc/regolith/i3/config if this file exists.
 ###############################################################################
 
 set $mod Mod4
@@ -9,17 +10,28 @@ set $mod Mod4
 # ─── Window borders ───
 for_window [all] border pixel 0
 for_window [class="^.*"] border pixel 0
+default_floating_border pixel 1
+floating_maximum_size -1 x -1
+hide_edge_borders smart
+focus_follows_mouse no
 
 # ─── Gaps ───
 gaps inner 2
 gaps outer 2
 smart_gaps off
+popup_during_fullscreen smart
 
-# ─── Hide Regolith's i3bar, we use polybar instead ───
-bar {
-  id bar-0
-  mode hide
-}
+# ─── DBus activation (GNOME session integration) ───
+exec --no-startup-id systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY I3SOCK
+exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP DISPLAY I3SOCK
+
+# ─── GNOME session services ───
+exec --no-startup-id /usr/libexec/gnome-flashback-media-keys
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/rofication-daemon
+exec --no-startup-id /usr/bin/unclutter -b
+exec --no-startup-id i3-swap-focus
 
 # ─── Autostart ───
 exec --no-startup-id dex --autostart --environment i3
@@ -38,6 +50,16 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
+# ─── Arrow key navigation (fallback) ───
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 # ─── Application shortcuts ───
 bindsym $mod+Return exec wezterm
 bindsym $mod+d exec rofi -show drun
@@ -47,6 +69,8 @@ bindsym $mod+t exec thunar
 
 # ─── Layout ───
 bindsym $mod+Shift+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
 bindsym $mod+e layout toggle split
 bindsym $mod+n layout default
 bindsym $mod+Shift+space floating toggle
@@ -56,13 +80,51 @@ bindsym $mod+a focus parent
 # ─── Kill window ───
 bindsym $mod+q kill
 
-# ─── Session ───
+# ─── Workspaces ───
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# ─── System ───
+bindsym $mod+Shift+c reload
+bindsym $mod+Ctrl+r restart
+bindsym $mod+Escape exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3? This ends your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+x exec gnome-session-quit --logout
 bindsym $mod+Shift+p exec gnome-session-quit --power-off
 bindsym $mod+Shift+Ctrl+p exec gnome-session-quit --reboot
 
-# ─── Resize (overrides Regolith's resize mode) ───
-mode "Resize Mode" {
+# ─── Resize mode ───
+mode "resize" {
     bindsym j resize shrink width 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
     bindsym l resize shrink height 10 px or 10 ppt
@@ -75,6 +137,7 @@ mode "Resize Mode" {
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
+bindsym $mod+r mode "resize"
 
 # ─── Extras ───
 bindsym $mod+Shift+d exec gnome-control-center display
@@ -97,3 +160,12 @@ client.unfocused        #b8bb26 #282828  #928374  #b8bb26   #282828
 client.urgent           #b8bb26 #282828  #fb4934  #b8bb26   #282828
 client.placeholder      #b8bb26 #282828  #a89984  #b8bb26   #282828
 client.background       #030C11
+
+# ─── Floating modifier ───
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# ─── Notify systemd about successful session start ───
+exec --no-startup-id [ -z "${NOTIFY_SOCKET-}" ] \
+  && systemctl --user start regolith-x11.target \
+  || systemd-notify --ready
