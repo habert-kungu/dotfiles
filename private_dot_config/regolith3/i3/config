@@ -168,12 +168,11 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Print exec --no-startup-id flameshot full -p ~/Pictures/
 
 # ─── Audio ───
-bindsym F1 exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym F2 exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym F3 exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioMute        exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+# No i3 volume binds. GNOME's gsd-media-keys handles the hardware media keys
+# (XF86AudioMute/Raise/Lower/Play/Next/Prev) natively at the session level —
+# portable to any Regolith machine, with the on-screen volume popup. i3 must
+# NOT grab these keys or it suppresses GNOME's native handling.
+# (Bar still shows volume and scroll-adjusts it; F1/F2/F3 are free for apps.)
 
 # ─── Colors ───
 client.focused          #b8bb26 #282828  #ebdbb2  #b8bb26   #282828
