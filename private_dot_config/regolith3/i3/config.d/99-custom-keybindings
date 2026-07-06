@@ -1,0 +1,161 @@
+###############################################################################
+# Regolith i3 config — custom keybindings + GNOME session integration
+###############################################################################
+
+set $mod Mod4
+
+# Window borders
+for_window [all] border pixel 0
+for_window [class="^.*"] border pixel 0
+
+# Gaps
+gaps inner 2
+gaps outer 2
+
+# DBus activation (Regolith/GNOME session)
+exec --no-startup-id systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY I3SOCK
+exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP DISPLAY I3SOCK
+
+# Start XDG autostart .desktop files using dex
+exec --no-startup-id dex --autostart --environment i3
+
+# Dark theme
+exec --no-startup-id export GTK_THEME=Adwaita:dark
+
+# Polybar (your custom bar)
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
+
+# Wallpaper — feh restores the last-set wallpaper (falls back to default)
+exec_always --no-startup-id sh -c '~/.fehbg 2>/dev/null || feh --bg-fill ~/Pictures/wallpapers/bento.png'
+
+# Compositor (your picom)
+exec_always picom --config ~/.config/picom/picom.conf
+
+# Screen locking (via GNOME)
+bindsym $mod+Escape exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+
+# Screenshots
+bindsym Print exec maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym $mod+Print exec maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+
+# Display settings — GNOME handles displays
+bindsym $mod+Shift+d exec gnome-control-center display
+
+# Random wallpaper cycle
+bindsym $mod+Shift+w exec --no-startup-id ~/.local/bin/random-wallpaper.sh
+
+# Audio controls — wpctl ships with wireplumber
+bindsym F1 exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
+bindsym F2 exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym F3 exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioMute        exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+
+# Window behavior
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# ─── Application shortcuts ───
+bindsym $mod+Return exec wezterm
+bindsym $mod+b exec firefox
+bindsym $mod+t exec thunar
+bindsym $mod+c exec code
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+q kill
+
+# ─── Navigation (j/k/l/;) ───
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# ─── Layout management ───
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+e layout toggle split
+bindsym $mod+n layout default
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# ─── Workspaces ───
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# ─── System controls ───
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec gnome-session-quit --logout
+bindsym $mod+Shift+p exec gnome-session-quit --power-off
+bindsym $mod+Shift+Ctrl+p exec gnome-session-quit --reboot
+
+# ─── Resize mode ───
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# ─── Color scheme ───
+client.focused          #b8bb26 #282828  #ebdbb2  #b8bb26   #282828
+client.focused_inactive #b8bb26 #282828  #a89984  #b8bb26   #282828
+client.unfocused        #b8bb26 #282828  #928374  #b8bb26   #282828
+client.urgent           #b8bb26 #282828  #fb4934  #b8bb26   #282828
+client.placeholder      #b8bb26 #282828  #a89984  #b8bb26   #282828
+client.background       #030C11
