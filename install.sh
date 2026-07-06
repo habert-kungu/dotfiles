@@ -78,6 +78,16 @@ apt_install() {
     $SUDO apt-get install -y --no-install-recommends "$@"
 }
 
+# Install packages one at a time so a single unavailable/broken package does
+# not abort the whole batch — the rest still get installed.
+apt_install_each() {
+    local pkg rc=0
+    for pkg in "$@"; do
+        apt_install "$pkg" || { warn "package '$pkg' failed — continuing"; rc=1; }
+    done
+    return $rc
+}
+
 install_core_deps() {
     apt_install \
         zsh curl git wget stow fzf fd-find ripgrep bat tmux unzip fontconfig \
@@ -133,11 +143,31 @@ install_regolith() {
 #   polybar volume module reads. Screenshots: flameshot. Launcher: rofi.
 # i3 autostart helpers: unclutter, blueman (bluetooth), playerctl (media keys).
 install_desktop_apps() {
-    apt_install \
-        polybar flameshot rofi \
+    # per-package so one failure doesn't block the others. regolith-rofication
+    # provides rofication-daemon (the i3 notification daemon).
+    apt_install_each \
+        polybar flameshot rofi regolith-rofication \
         pavucontrol pipewire pipewire-pulse wireplumber \
         gnome-calendar gnome-system-monitor gnome-control-center \
         blueman unclutter playerctl
+}
+
+# i3-swap-focus (alt-tab-style focus toggle) — not in apt; it's a PyPI tool.
+# Prefer pipx (isolated, respects Debian's PEP 668); fall back to user pip.
+install_i3_swap_focus() {
+    if command -v i3-swap-focus >/dev/null 2>&1; then
+        ok "i3-swap-focus already installed"
+        return 0
+    fi
+    if command -v pipx >/dev/null 2>&1 || apt_install pipx; then
+        if pipx install i3-swap-focus; then
+            pipx ensurepath >/dev/null 2>&1 || true
+            return 0
+        fi
+    fi
+    warn "pipx path failed; falling back to user pip install"
+    pip install --user --break-system-packages i3-swap-focus \
+        || python3 -m pip install --user --break-system-packages i3-swap-focus
 }
 
 # JetBrainsMono Nerd Font + Symbols Nerd Font — REQUIRED for the bar's icons and
@@ -417,6 +447,7 @@ run_step "core dependencies"        install_core_deps         || true
 run_step "Regolith desktop"         install_regolith          || true
 run_step "desktop apps (bar/screenshot/audio)" install_desktop_apps || true
 run_step "Nerd Fonts"               install_fonts             || true
+run_step "i3-swap-focus"            install_i3_swap_focus     || true
 run_step "Neovim"                   install_neovim            || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true
