@@ -447,11 +447,11 @@ run_step "core dependencies"        install_core_deps         || true
 run_step "Regolith desktop"         install_regolith          || true
 run_step "desktop apps (bar/screenshot/audio)" install_desktop_apps || true
 run_step "Nerd Fonts"               install_fonts             || true
-run_step "i3-swap-focus"            install_i3_swap_focus     || true
 run_step "Neovim"                   install_neovim            || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
 run_step "Wezterm"                  install_wezterm           || true
 run_step "programming tools"        install_programming_tools || true
+run_step "i3-swap-focus"            install_i3_swap_focus     || true
 run_step "Miniconda"                install_miniconda         || true
 run_step "Oh My Zsh"                install_oh_my_zsh         || true
 run_step "Zsh plugins"              install_zsh_plugins       || true
