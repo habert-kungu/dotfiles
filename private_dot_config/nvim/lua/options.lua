@@ -5,6 +5,14 @@ require "nvchad.options"
 -- Use system clipboard by default (yank/delete/paste sync with + register)
 vim.opt.clipboard = "unnamedplus"
 
+-- Preview images inline using WezTerm's built-in Kitty protocol
+vim.api.nvim_create_user_command("Img", function()
+  local file = vim.fn.expand("%:p")
+  vim.cmd("silent !wezterm imgcat " .. vim.fn.shellescape(file))
+  vim.cmd("redraw!")
+end, {})
+vim.keymap.set("n", "<leader>i", "<cmd>Img<cr>", { desc = "Preview image" })
+
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
 
 -- how long the cursor must rest before CursorHold fires (drives auto-hover)
