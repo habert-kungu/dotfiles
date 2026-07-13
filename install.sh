@@ -97,7 +97,7 @@ install_core_deps() {
         libxcb-render-util0 libxcb-shape0 \
         libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev \
         libxcb-ewmh-dev libxcb-composite0 libxcb-xfixes0 \
-        feh
+        feh xclip
 }
 
 install_regolith() {
