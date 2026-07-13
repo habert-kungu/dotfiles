@@ -3,7 +3,16 @@
 killall -q polybar
 while pgrep -u "$UID" -x polybar >/dev/null; do sleep 0.3; done
 
-# Wait for xrandr to see monitors (can be slow after boot)
+# ── Auto-detect battery (defaults to BAT0 if none found) ──
+export BATTERY="BAT0"
+for b in BAT0 BAT1 BAT2; do
+  if [ -d "/sys/class/power_supply/$b" ]; then
+    export BATTERY="$b"
+    break
+  fi
+done
+
+# ── Monitor detection (wait for xrandr after boot) ──
 for i in $(seq 1 10); do
   count=$(xrandr --query 2>/dev/null | grep -c ' connected')
   [ "$count" -gt 0 ] && break
