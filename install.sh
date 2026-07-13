@@ -360,29 +360,43 @@ setup_wallpapers() {
 install_openrgb() {
     if command -v openrgb >/dev/null 2>&1; then
         ok "openrgb already installed: $(openrgb --version 2>/dev/null | head -n1)"
-        return 0
+    else
+        local ver="1.0rc3"
+        local commit="6fbcf62"
+        local codename
+        codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
+        local deb="openrgb_${ver}_amd64_${codename}_${commit}.deb"
+        local url="https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_candidate_${ver}/${deb}"
+
+        info "Downloading OpenRGB ${ver} (${codename}) ..."
+        curl -sSL -o "/tmp/${deb}" "$url" || {
+            fail "Failed to download OpenRGB from $url"
+            return 1
+        }
+
+        info "Installing ${deb} ..."
+        $SUDO dpkg -i "/tmp/${deb}" || {
+            info "Installing missing dependencies ..."
+            $SUDO apt-get install -fyq
+            $SUDO dpkg -i "/tmp/${deb}"
+        }
+        rm -f "/tmp/${deb}"
     fi
 
-    local ver="1.0rc2"
-    local commit="0fca93e"
-    local codename
-    codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
-    local deb="openrgb_${ver}_amd64_${codename}_${commit}.deb"
-    local url="https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_candidate_${ver}/${deb}"
-
-    info "Downloading OpenRGB ${ver} (${codename}) ..."
-    curl -sSL -o "/tmp/${deb}" "$url" || {
-        fail "Failed to download OpenRGB from $url"
-        return 1
-    }
-
-    info "Installing ${deb} ..."
-    sudo dpkg -i "/tmp/${deb}" || {
-        info "Installing missing dependencies ..."
-        sudo apt-get install -fyq
-        sudo dpkg -i "/tmp/${deb}"
-    }
-    rm -f "/tmp/${deb}"
+    # udev rule: unbind HyperX keyboard RGB interface from hid-generic
+    local udev_rule="/etc/udev/rules.d/99-hyperx-keyboard.rules"
+    if [ ! -f "$udev_rule" ]; then
+        info "Installing udev rule for HyperX keyboard ..."
+        $SUDO tee "$udev_rule" > /dev/null << 'UDEVEOF'
+# Unbind HyperX Alloy Origins 65 RGB interface from hid-generic so OpenRGB can claim it
+SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", DRIVER=="hid-generic", RUN+="/bin/sh -c 'echo $kernel > /sys/bus/hid/drivers/hid-generic/unbind'"
+UDEVEOF
+        $SUDO udevadm control --reload-rules
+        $SUDO udevadm trigger
+        ok "udev rule installed — replug keyboard or reboot to activate"
+    else
+        ok "udev rule already installed"
+    fi
 }
 
 install_claude() {
