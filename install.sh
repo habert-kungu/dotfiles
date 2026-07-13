@@ -383,20 +383,16 @@ install_openrgb() {
         rm -f "/tmp/${deb}"
     fi
 
-    # udev rule: unbind HyperX keyboard RGB interface from hid-generic
-    local udev_rule="/etc/udev/rules.d/99-hyperx-keyboard.rules"
-    if [ ! -f "$udev_rule" ]; then
-        info "Installing udev rule for HyperX keyboard ..."
-        $SUDO tee "$udev_rule" > /dev/null << 'UDEVEOF'
-# Unbind HyperX Alloy Origins 65 RGB interface from hid-generic so OpenRGB can claim it
-SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", DRIVER=="hid-generic", RUN+="/bin/sh -c 'echo $kernel > /sys/bus/hid/drivers/hid-generic/unbind'"
+    # udev rule: ensure HyperX keyboard interfaces bind to hid-generic
+    local udev_rule="/etc/udev/rules.d/98-hyperx.rules"
+    $SUDO tee "$udev_rule" > /dev/null << 'UDEVEOF'
+# HyperX Alloy Origins 65 — ensure hid-generic binds to keyboard input0/input1
+ACTION=="add", SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", ATTRS{phys}=="*/input0", RUN+="/bin/sh -c 'echo \$kernel > /sys/bus/hid/drivers/hid-generic/bind 2>/dev/null'"
+ACTION=="add", SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", ATTRS{phys}=="*/input1", RUN+="/bin/sh -c 'echo \$kernel > /sys/bus/hid/drivers/hid-generic/bind 2>/dev/null'"
+# Leave input2 unbound so OpenRGB can claim the RGB interface
 UDEVEOF
-        $SUDO udevadm control --reload-rules
-        $SUDO udevadm trigger
-        ok "udev rule installed — replug keyboard or reboot to activate"
-    else
-        ok "udev rule already installed"
-    fi
+    $SUDO udevadm control --reload-rules
+    ok "HyperX udev rules installed"
 }
 
 install_claude() {

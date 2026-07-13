@@ -1,3 +1,0 @@
-# Unbind only the RGB interface (input2) of HyperX Alloy Origins 65 from hid-generic.
-# Keyboard (input0) and media keys (input1) stay bound — typing is unaffected.
-SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", ATTRS{phys}=="*/input2", RUN+="/bin/sh -c 'echo \$kernel > /sys/bus/hid/drivers/hid-generic/unbind'"
