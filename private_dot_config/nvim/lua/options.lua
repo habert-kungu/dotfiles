@@ -5,11 +5,14 @@ require "nvchad.options"
 -- Use system clipboard by default (yank/delete/paste sync with + register)
 vim.opt.clipboard = "unnamedplus"
 
--- Preview images inline using viu (Kitty/WezTerm/Ghostty protocol)
+-- Preview images inline in a terminal split (uses WezTerm/Ghostty Kitty protocol)
 vim.api.nvim_create_user_command("Img", function()
   local file = vim.fn.expand("%:p")
-  vim.cmd("silent !viu " .. vim.fn.shellescape(file))
-  vim.cmd("redraw!")
+  if vim.fn.executable("wezterm") == 1 then
+    vim.cmd("below split | terminal wezterm imgcat " .. vim.fn.shellescape(file))
+  else
+    vim.cmd("below split | terminal viu " .. vim.fn.shellescape(file))
+  end
 end, {})
 vim.keymap.set("n", "<leader>i", "<cmd>Img<cr>", { desc = "Preview image" })
 
