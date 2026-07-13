@@ -5,7 +5,7 @@ require "nvchad.options"
 -- Use system clipboard by default (yank/delete/paste sync with + register)
 vim.opt.clipboard = "unnamedplus"
 
--- Auto-preview images when opening image files (uses WezTerm Kitty protocol)
+-- Auto-preview images when opening image files (Kitty protocol: WezTerm, Ghostty)
 vim.api.nvim_create_autocmd("BufRead", {
   group = vim.api.nvim_create_augroup("ImagePreview", { clear = true }),
   pattern = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.bmp", "*.svg", "*.ico" },
@@ -13,9 +13,7 @@ vim.api.nvim_create_autocmd("BufRead", {
     local file = vim.fn.expand("%:p")
     vim.api.nvim_buf_delete(args.buf, { force = true })
     vim.cmd("below split | terminal")
-    local cmd = vim.fn.executable("wezterm") == 1
-      and ("wezterm imgcat " .. vim.fn.shellescape(file) .. " && read -p ''")
-      or ("viu " .. vim.fn.shellescape(file) .. " && read -p ''")
+    local cmd = "viu " .. vim.fn.shellescape(file) .. " && read -p ''"
     vim.defer_fn(function()
       local chan = vim.bo[vim.api.nvim_get_current_buf()].channel
       if chan and chan > 0 then
