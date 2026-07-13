@@ -244,7 +244,7 @@ install_ghostty() {
         | $SUDO tee "$listfile" > /dev/null || return 1
 
     $SUDO apt-get update -y || return 1
-    apt_install ghostty
+    apt_install ghostty viu
 }
 
 install_wezterm() {
