@@ -74,6 +74,24 @@ return {
     },
   },
 
+  -- Image support (Kitty protocol — works in WezTerm, Kitty)
+  {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    opts = {
+      backend = "kitty",
+      integrations = {
+        markdown = {  enabled = true, clear_in_insert_mode = false },
+        neorg = {  enabled = false },
+        html = {  enabled = false },
+      },
+      max_width = 100,
+      max_height = 12,
+      max_height_window_percentage = 20,
+      max_width_window_percentage = 30,
+    },
+  },
+
   -- Tmux navigator
   {
     "christoomey/vim-tmux-navigator",
