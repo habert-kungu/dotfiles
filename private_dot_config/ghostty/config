@@ -1,0 +1,15 @@
+# Ghostty terminal config — mirrors WezTerm preferences
+font-family = JetBrains Mono
+font-size = 14
+theme = rose-pine-moon
+background-opacity = 1
+window-padding-x = 5
+window-padding-y = 5
+cursor-style = block
+cursor-style-blink = false
+window-decorations = false
+gtk-titlebar = false
+gtk-tabs-location = hidden
+clipboard-read = ask
+clipboard-write = ask
+macos-titlebar-style = hidden
