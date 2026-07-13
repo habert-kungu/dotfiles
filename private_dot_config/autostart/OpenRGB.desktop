@@ -2,5 +2,5 @@
 Type=Application
 Name=OpenRGB Profile
 Comment=Load OpenRGB profile without the GUI
-Exec=/usr/bin/openrgb --server --profile "habert"
+Exec=/home/master/.local/bin/openrgb-load-profile.sh
 NoDisplay=true
