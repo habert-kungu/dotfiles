@@ -383,16 +383,16 @@ install_openrgb() {
         rm -f "/tmp/${deb}"
     fi
 
-    # udev rule: ensure HyperX keyboard interfaces bind to hid-generic
-    local udev_rule="/etc/udev/rules.d/98-hyperx.rules"
-    $SUDO tee "$udev_rule" > /dev/null << 'UDEVEOF'
-# HyperX Alloy Origins 65 — ensure hid-generic binds to keyboard input0/input1
-ACTION=="add", SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", ATTRS{phys}=="*/input0", RUN+="/bin/sh -c 'echo \$kernel > /sys/bus/hid/drivers/hid-generic/bind 2>/dev/null'"
-ACTION=="add", SUBSYSTEM=="hid", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="038f", ATTRS{phys}=="*/input1", RUN+="/bin/sh -c 'echo \$kernel > /sys/bus/hid/drivers/hid-generic/bind 2>/dev/null'"
-# Leave input2 unbound so OpenRGB can claim the RGB interface
-UDEVEOF
+    # HyperX Alloy Origins 65: no udev rule is needed. hid-generic binds all
+    # interfaces automatically and OpenRGB drives the RGB controller over hidraw
+    # (which coexists with hid-generic). Older versions of this script shipped
+    # bind/unbind rules that raced each other and left the keyboard interfaces
+    # unbound — killing ALL keyboard input. Remove any that a prior install left
+    # behind so the keyboard binds normally.
+    $SUDO rm -f /etc/udev/rules.d/98-hyperx.rules \
+                /etc/udev/rules.d/99-hyperx-keyboard.rules
     $SUDO udevadm control --reload-rules
-    ok "HyperX udev rules installed"
+    ok "HyperX: removed stale bind/unbind udev rules (none needed)"
 }
 
 install_claude() {
