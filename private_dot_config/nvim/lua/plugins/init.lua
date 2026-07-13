@@ -90,6 +90,12 @@ return {
       max_height_window_percentage = 20,
       max_width_window_percentage = 30,
     },
+    -- Disable luarocks (image.nvim will use pure-Lua fallback; no ImageMagick needed)
+    lazy = false,
+    build = false,
+    config = function(_, opts)
+      require("image").setup(opts)
+    end,
   },
 
   -- Tmux navigator

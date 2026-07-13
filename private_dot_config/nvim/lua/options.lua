@@ -2,6 +2,9 @@ require "nvchad.options"
 
 -- add yours here!
 
+-- Use system clipboard by default (yank/delete/paste sync with + register)
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
 
 -- how long the cursor must rest before CursorHold fires (drives auto-hover)
