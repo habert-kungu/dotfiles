@@ -97,7 +97,7 @@ install_core_deps() {
         libxcb-render-util0 libxcb-shape0 \
         libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev \
         libxcb-ewmh-dev libxcb-composite0 libxcb-xfixes0 \
-        feh xclip
+        feh xclip lazygit eza zoxide
 }
 
 install_regolith() {
@@ -222,29 +222,6 @@ install_neovim() {
 
 install_terminals() {
     apt_install kitty alacritty
-}
-
-install_ghostty() {
-    if command -v ghostty >/dev/null 2>&1; then
-        ok "ghostty already installed: $(ghostty --version 2>/dev/null | head -n1)"
-        return 0
-    fi
-
-    local keyring=/etc/apt/keyrings/debian.griffo.io.gpg
-    local listfile=/etc/apt/sources.list.d/debian.griffo.io.list
-    local codename
-    codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
-    : "${codename:=trixie}"
-
-    $SUDO install -d -m 0755 /etc/apt/keyrings
-    curl -fsSL https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc \
-        | $SUDO gpg --dearmor --yes -o "$keyring" || return 1
-
-    echo "deb [signed-by=$keyring] https://debian.griffo.io/apt $codename main" \
-        | $SUDO tee "$listfile" > /dev/null || return 1
-
-    $SUDO apt-get update -y || return 1
-    apt_install_each ghostty viu zig lazygit yazi eza zoxide starship atuin uv bun
 }
 
 install_wezterm() {
@@ -472,7 +449,6 @@ run_step "desktop apps (bar/screenshot/audio)" install_desktop_apps || true
 run_step "Nerd Fonts"               install_fonts             || true
 run_step "Neovim"                   install_neovim            || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true
-run_step "Ghostty"                   install_ghostty           || true
 run_step "Wezterm"                   install_wezterm           || true
 run_step "programming tools"        install_programming_tools || true
 run_step "i3-swap-focus"            install_i3_swap_focus     || true
