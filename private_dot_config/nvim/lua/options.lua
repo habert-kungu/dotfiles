@@ -5,24 +5,6 @@ require "nvchad.options"
 -- Use system clipboard by default (yank/delete/paste sync with + register)
 vim.opt.clipboard = "unnamedplus"
 
--- Auto-preview images when opening image files (Kitty protocol: WezTerm, Ghostty)
-vim.api.nvim_create_autocmd("BufRead", {
-  group = vim.api.nvim_create_augroup("ImagePreview", { clear = true }),
-  pattern = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.bmp", "*.svg", "*.ico" },
-  callback = function(args)
-    local file = vim.fn.expand("%:p")
-    vim.api.nvim_buf_delete(args.buf, { force = true })
-    vim.cmd("below split | terminal")
-    local cmd = "viu " .. vim.fn.shellescape(file) .. " && read -p ''"
-    vim.defer_fn(function()
-      local chan = vim.bo[vim.api.nvim_get_current_buf()].channel
-      if chan and chan > 0 then
-        vim.fn.chansend(chan, cmd .. "\n")
-      end
-    end, 200)
-  end,
-})
-
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
 
 -- how long the cursor must rest before CursorHold fires (drives auto-hover)
