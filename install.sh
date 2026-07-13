@@ -244,7 +244,7 @@ install_ghostty() {
         | $SUDO tee "$listfile" > /dev/null || return 1
 
     $SUDO apt-get update -y || return 1
-    apt_install ghostty viu
+    apt_install_each ghostty viu zig lazygit yazi eza zoxide starship atuin uv bun
 }
 
 install_wezterm() {
