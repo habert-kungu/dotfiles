@@ -4,6 +4,7 @@
 # Installer + repo meta
 install.sh
 README.md
+HANDOFF.md
 Dockerfile
 .gitignore
 

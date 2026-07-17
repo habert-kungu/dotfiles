@@ -146,10 +146,28 @@ install_desktop_apps() {
     # per-package so one failure doesn't block the others. regolith-rofication
     # provides rofication-daemon (the i3 notification daemon).
     apt_install_each \
-        polybar flameshot rofi regolith-rofication \
+        picom polybar flameshot rofi regolith-rofication \
         pavucontrol pipewire pipewire-pulse wireplumber \
         gnome-calendar gnome-system-monitor gnome-control-center \
         blueman unclutter playerctl
+}
+
+# GTK theme + dark mode. ayu-theme ships in the Regolith apt repo, so this
+# must run after install_regolith. gsettings needs a running session dbus —
+# when run from a TTY the settings.ini files applied by chezmoi still cover
+# GTK apps, and gsettings can be re-run after login.
+setup_gtk_theme() {
+    apt_install_each ayu-theme papirus-icon-theme
+    if command -v gsettings >/dev/null 2>&1; then
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' \
+            || warn "gsettings color-scheme failed (no session bus?)"
+        gsettings set org.gnome.desktop.interface gtk-theme 'Ayu-Mirage-Dark' \
+            || warn "gsettings gtk-theme failed"
+        gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' \
+            || warn "gsettings icon-theme failed"
+    else
+        warn "gsettings not found — dark mode relies on gtk settings.ini only"
+    fi
 }
 
 # i3-swap-focus (alt-tab-style focus toggle) — not in apt; it's a PyPI tool.
@@ -400,7 +418,7 @@ install_claude() {
         ok "claude already installed: $(claude --version 2>/dev/null | head -n1)"
         return 0
     fi
-    curl -sSL https://cli.anthropic.com/install.sh | sh
+    curl -fsSL https://claude.ai/install.sh | bash
 }
 
 install_opencode() {
@@ -456,6 +474,7 @@ run_step "apt update"               apt_update                || true
 run_step "core dependencies"        install_core_deps         || true
 run_step "Regolith desktop"         install_regolith          || true
 run_step "desktop apps (bar/screenshot/audio)" install_desktop_apps || true
+run_step "GTK theme + dark mode"    setup_gtk_theme           || true
 run_step "Nerd Fonts"               install_fonts             || true
 run_step "Neovim"                   install_neovim            || true
 run_step "terminals (kitty, alacritty)" install_terminals     || true

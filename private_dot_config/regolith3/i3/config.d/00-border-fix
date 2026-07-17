@@ -1,0 +1,2 @@
+# Border fix: remove white outline until relogin with new config
+for_window [all] border pixel 0

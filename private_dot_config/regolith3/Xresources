@@ -2,3 +2,7 @@
 i3xrocks.value.color: #cdd6f4
 i3xrocks.label.color: #585b70
 i3xrocks.value.font: JetBrainsMono Nerd Font 12
+!regolith.wallpaper.file: /usr/share/desktop-base/homeworld-theme/wallpaper/gnome-background.xml
+!regolith.lockscreen.wallpaper.file: /usr/share/desktop-base/homeworld-theme/wallpaper/gnome-background.xml
+regolith.wallpaper.file: /usr/share/desktop-base/homeworld-theme/wallpaper/gnome-background.xml
+regolith.lockscreen.wallpaper.file: /usr/share/desktop-base/homeworld-theme/wallpaper/gnome-background.xml
